@@ -1,15 +1,9 @@
 DIV.helperInscription {
-    position: absolute;
     font-size: 35px;
     margin-top: 0%;
-    height: 2%;
-    width: 50%;
 }
 
 DIV.advertsInscription {
-    position: absolute;
-    height: 2%;
-    width: 50%;
     margin-top: 0%;
     margin-left: 52%;
     font-size: 35px;
@@ -32,36 +26,33 @@ DIV.advertsArrow {
 }
 
 DIV.textMistake {
-    position: absolute;
-    margin-top: 25%;
+    width: 100%;
+    position: relative;
+    margin-top: 13em;
     color: #888888;
     font-size: x-small;
 }
 
 DIV.help {
     position: relative;
-    width: 80%;
-    padding-top: 4%;
+    float: left;
+    width: 70%;
 }
 
 .elementOfHelp {
     display: inline;
-    margin-top: 4%;
+    padding: 8px 20px 8px 20px;
+    float: left;
     color: #666666;
-    font-size: x-small;
-    width: 100%;
 }
 
 .titleOfElement{
     float: left;
-    padding-top: 20px;
-    padding-left: 20px;
+    margin: 5px 0 0 5px;
 }
 
-.elementOfHelpSubscribe{
-    position: absolute;
-    margin-left: 23%;
-    margin-bottom: 20%;
+.titleOfElement p{
+    max-width: 70%;
     color: #414141;
     font-size: x-small;
 }
