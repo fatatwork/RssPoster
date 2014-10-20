@@ -87,7 +87,8 @@ DIV.ikra {
 }
 
 DIV.footer {
-    margin-left: 70px;
+    width: 100%;
+    padding-left: 70px;
     font-size: 14px;
     color: #606060;
     padding-top: 60px;
@@ -459,15 +460,14 @@ DIV.path A:visited {
     color: #000075;
 }
 
-DIV.NewsInMain {
-    padding-bottom: 0px;
+.NewsInMain{
+    
 }
 
-DIV.NewsInMain DIV {
-    padding-bottom: 15px;
-}
-
-DIV.NewsInMain A {
+.NewsInMain span{
+    font-size: x-small;
+    font-family: georgia, palatino;
+    font-style: italic;
 }
 
 A.newsAll {
