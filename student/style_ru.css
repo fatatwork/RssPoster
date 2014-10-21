@@ -73,8 +73,9 @@ DIV.mainpath {
 
 DIV.main {
     position: relative;
-    margin-left: 50px;
+    margin-left: 25px;
     margin-right: 217px;
+    height: 87%;
     background: url('/design/klaksa.jpg') no-repeat 90% 90%;
 }
 
