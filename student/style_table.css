@@ -9,8 +9,8 @@ DIV.advertsInscription {
 DIV.textMistake {
     width: 90%;
     display: block;
-    margin-top: 11em;
-    margin-right: ;
+    padding-left: 50px;
+    margin-top: 5em;
     color: #888888;
     font-size: x-small;
 }
@@ -19,6 +19,7 @@ DIV.help {
     position: relative;
     float: left;
     width: 53.7%;
+    height: 60%;
 }
 
 DIV.elementOfHelpLeft {
@@ -45,7 +46,7 @@ DIV.titleOfElement{
 }
 
 DIV.titleOfElement p{
-    max-width: 53%;
+    width: 100%;
     color: #414141;
     font-size: x-small;
 }
@@ -57,13 +58,11 @@ DIV.titleOfElement p{
     float: left;
     display: block;
     width: 50%;
-    height: 70%;
 }
 .rightElements{
     float: right;
     display: block;
     width: 50%;
-    height: 71%;
 }
 .adverts{
     padding-left: 30px;
