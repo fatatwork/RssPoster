@@ -1,12 +1,12 @@
-DIV.helperInscription {
+    .helperInscription {
     font-size: 35px;
 }
 
-DIV.advertsInscription {
+.advertsInscription {
     font-size: 35px;
 }
 
-DIV.textMistake {
+.textMistake {
     width: 90%;
     display: block;
     padding-left: 50px;
@@ -15,55 +15,71 @@ DIV.textMistake {
     font-size: x-small;
 }
 
-DIV.help {
+.help {
     position: relative;
     float: left;
-    width: 53.7%;
-    height: 60%;
+    max-width: 55%;
 }
 
-DIV.elementOfHelpLeft {
+.help > div > div {
+    padding: 8px 20px 8px 20px;
+    min-height: 75px;
+
+}
+
+.informer{
+    position: relative;
+    float: right;
+    width: 40%;
+    max-width: 45%;
+}
+
+/*
+.elementOfHelpLeft {
     position: relative;
     padding: 8px 20px 8px 20px;
     float: left;
     color: #666666;
 }
-DIV.elementOfHelpRight {
+
+.elementOfHelpRight {
     position: relative;
     padding: 8px 20px 8px 20px;
-    heigth: 18%;
     float: right;
     color: #666666;
 }
+*/
 
-DIV.titleOfElement{
-    float: left;
-    display: inline-block;
-    height: 22%;
-    margin-top: -60px;
-    margin-left: 72px;
-    padding-right: 20%;
+.titleOfElement{
+    display: block;
+    margin-left: 80px;
 }
 
-DIV.titleOfElement p{
-    width: 110%;
+.titleOfElement a{
+    font-size: 20px;
+}
+
+.titleOfElement p{ /*Стиль подзаголовка*/
     color: #414141;
     font-size: x-small;
 }
 
 .helperImage{
     float: left;
+    width:60px;
+    height:60px;
 }
+
 .leftElements{
     float: left;
-    display: block;
     width: 50%;
 }
+
 .rightElements{
-    float: right;
-    display: block;
+    float: left;
     width: 50%;
 }
-.adverts{
-    padding-left: 30px;
+
+#bottomBlock{
+    display: inline-block;
 }
