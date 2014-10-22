@@ -11,6 +11,7 @@ html, body {
 BODY {
     font-size: 16px;
     font-family: Times New Roman;
+    min-width: 1070px;
 }
 
 TABLE {
@@ -75,12 +76,14 @@ DIV.main {
     position: relative;
     margin-left: 50px;
     margin-right: 217px;
-    height: 90%;
+    min-width: 760px;
     background: url('/design/klaksa.jpg') no-repeat 90% 90%;
 }
 
 DIV.ikra {
     float: right;
+    width: 216px;
+    height: 264px;
 }
 
 #clear {
@@ -239,6 +242,8 @@ textarea {
 ul#cssmenu,
 ul#cssmenuPh,
 ul#cssmenuFilter {
+    position: absolute;
+    z-index: 1;
     margin: 0;
     border: 0 none;
     padding: 0;
