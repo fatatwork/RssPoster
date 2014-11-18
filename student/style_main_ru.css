@@ -3,10 +3,6 @@
     font-size: 35px;
 }
 
-.advertsInscription {
-    font-size: 35px;
-}
-
 .textMistake {
     width: 90%;
     display: block;
@@ -19,7 +15,6 @@
 .help {
     position: relative;
     float: left;
-    max-width: 55%;
 }
 
 .help > div > div {
@@ -93,4 +88,20 @@ BODY {
     margin-top: 0px;
     margin-bottom: 0px;
     margin-right: 0px;
+}
+
+div.caroufredsel_wrapper{
+    display: block;
+    text-align: start;
+    float: none;
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: auto;
+    width: 950px;
+    height: 81px;
+    margin: 0px;
+    overflow: hidden;
 }
