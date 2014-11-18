@@ -13,6 +13,7 @@
 }
 
 .help {
+    margin-top: 30px;
     position: relative;
     float: left;
 }
@@ -30,22 +31,6 @@
     max-width: 45%;
 }
 
-/*
-.elementOfHelpLeft {
-    position: relative;
-    padding: 8px 20px 8px 20px;
-    float: left;
-    color: #666666;
-}
-
-.elementOfHelpRight {
-    position: relative;
-    padding: 8px 20px 8px 20px;
-    float: right;
-    color: #666666;
-}
-*/
-
 .titleOfElement {
     display: block;
     margin-left: 80px;
@@ -58,10 +43,11 @@
 .titleOfElement p {
     /*Стиль подзаголовка*/
     color: #414141;
-    font-size: x-small;
+    font-size: 80%;
 }
 
 .helperImage {
+    border: 1px dashed #b0b0b0;
     float: left;
     width: 60px;
     height: 60px;
@@ -95,13 +81,20 @@ div.caroufredsel_wrapper{
     text-align: start;
     float: none;
     position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
     z-index: auto;
     width: 950px;
     height: 81px;
-    margin: 0px;
     overflow: hidden;
 }
+
+div.caroufredsel_wrapper, .button_PN{
+    margin-top: 25px;
+}
+/*
+#UMK{
+    margin: 50px 50px 50px 20px;
+}
+#UMK a{
+    font-size: 120%;
+}
+*/
