@@ -13,8 +13,6 @@
 
     .NewsMainMain {
         padding-top: 15px;
-        padding-left: 80px;
-        padding-right: 80px;
     }
 
     .AnonsArtMain {
@@ -63,7 +61,6 @@
     .button_PN {
         width: 100%;
         position: relative;
-        height: 30px;
     }
     /*подключил абсолютный адрес картинок с кнопками*/
     a.prev, a.next {
@@ -71,13 +68,15 @@
         width: 67px;
         height: 67px;
         display: block;
-        position: absolute;
         border: 0;
         top: 32px;
     }
 
     a.prev {
-        left: -83px;
+        float: left;
+        margin-left: 10px;
+        margin-right: 10px;
+        left: 70px;
         background-position: 0 -67px;
     }
 
@@ -90,7 +89,10 @@
     }
 
     a.next {
-        right: -70px;
+        float: right;
+        margin-left: 10px;
+        margin-right: 10px;
+        right: 0px;
         background-position: -67px -67px;
     }
 
