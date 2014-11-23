@@ -16,12 +16,17 @@
     margin-top: 30px;
     position: relative;
     float: left;
+    max-width: 1490px;
+    background-color: rgba(255,255,255,0.3);
+    -moz-border-radius: 15px;
+    border-radius: 15px;
 }
 
-.help > div > div {
-    padding: 8px 20px 8px 20px;
-    min-height: 75px;
-
+.help > div {
+    float: left;
+    width: 400px;
+    min-height: 85px;
+    margin-left: 50px;
 }
 
 .informer {
@@ -53,16 +58,6 @@
     height: 60px;
 }
 
-.leftElements {
-    float: left;
-    width: 50%;
-}
-
-.rightElements {
-    float: left;
-    width: 50%;
-}
-
 #bottomBlock {
     display: inline-block;
 }
@@ -90,6 +85,14 @@ div.caroufredsel_wrapper{
 div.caroufredsel_wrapper, .button_PN{
     margin-top: 25px;
 }
+
+#UMK{
+    min-width: 100%;
+    float: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 /*
 #UMK{
     margin: 50px 50px 50px 20px;
