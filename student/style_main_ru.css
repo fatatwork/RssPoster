@@ -64,7 +64,7 @@
 
 BODY {
     padding: 0;
-    background: url('/design/zachetka.jpg') no-repeat;
+    background: url('/design/wide_header.jpg') no-repeat 0% 0%;
     margin-left: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -91,6 +91,11 @@ div.caroufredsel_wrapper, .button_PN{
     float: none;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+#wideFooter{
+    width: 100%;
+    margin-bottom: -6px;
 }
 
 /*
