@@ -17,7 +17,7 @@
     position: relative;
     float: left;
     max-width: 1490px;
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgba(255, 255, 255, 0.3);
     -moz-border-radius: 15px;
     border-radius: 15px;
 }
@@ -71,7 +71,7 @@ BODY {
     margin-right: 0px;
 }
 
-div.caroufredsel_wrapper{
+div.caroufredsel_wrapper {
     display: block;
     text-align: start;
     float: none;
@@ -82,18 +82,18 @@ div.caroufredsel_wrapper{
     overflow: hidden;
 }
 
-div.caroufredsel_wrapper, .button_PN{
+div.caroufredsel_wrapper, .button_PN {
     margin-top: 25px;
 }
 
-#UMK{
+#UMK {
     min-width: 100%;
     float: none;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-#wideFooter{
+#wideFooter {
     width: 100%;
     margin-bottom: -6px;
 }

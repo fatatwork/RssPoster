@@ -1,9 +1,20 @@
 @media only screen and (min-width: 781px) and (max-width: 2900px) {
 
     .AnonsInMain {
-        width: 100%;
+        text-align: left;
+        float: none;
+        position: absolute;
+        top: 0px;
+        right: auto;
+        bottom: auto;
+        left: 0px;
+        margin: 0px;
+        width: 2048px;
+        height: 89px;
+
+        /*width: 100%;
         overflow: hidden;
-        padding-top: 2px;
+        padding-top: 2px;*/
     }
 
     .AnonsInMainIn {
@@ -16,7 +27,7 @@
     }
 
     .AnonsArtMain {
-        width: 400px;
+        width: 300px;
         padding-right: 15px;
         padding-left: 5px;
         margin-bottom: 13px;
@@ -48,7 +59,7 @@
     }
 
     .AnonsArtMain .AnonsTextMain {
-        margin-left: 100px;
+        margin-left: 30px;
     }
 
     .AnonsArtMain .AnonsTextMain DIV {
@@ -62,6 +73,7 @@
         width: 100%;
         position: relative;
     }
+
     /*подключил абсолютный адрес картинок с кнопками*/
     a.prev, a.next {
         background: url('http://bsmu.by/design/button_news_new_2.png') no-repeat transparent;
