@@ -1,0 +1,257 @@
+@import url('style_desktop.css');
+@import url('style_mobile.css');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+BODY {
+    font-size: 16px;
+    font-family: Times New Roman;
+}
+
+TABLE {
+    font-size: 16px;
+    font-family: Times New Roman;
+}
+
+A {
+    font-size: 16px;
+    font-family: Times New Roman;
+    color: #000075;
+}
+
+A:visited {
+    color: #000075;
+}
+
+A:hover {
+    color: #d00101;
+    text-decoration: none;
+}
+
+DIV.header {
+    height: 118px;
+    width: 100%;
+}
+
+DIV.logo {
+    padding-left: 250px;
+}
+
+DIV.logo A {
+    font-size: 50px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+DIV.logo A:hover {
+    color: #FFFFFF;
+}
+
+DIV.logo A:visited {
+    color: #FFFFFF;
+}
+
+DIV.menu {
+    padding-left: 494px;
+}
+
+DIV.menu A {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+DIV.mainpath {
+    margin-left: 70px;
+    margin-right: 20px;
+}
+
+DIV.main {
+    position: relative;
+    margin-left: 50px;
+    margin-right: 217px;
+    min-width: 760px;
+}
+
+DIV.ikra {
+    position: absolute;
+    right: 0px;
+    width: 216px;
+    height: 264px;
+    margin: 0px;
+    border-width: 0px;
+}
+
+#clear {
+    clear: both;
+}
+
+DIV.footer {
+    width: 100%;
+    padding-left: 70px;
+    font-size: 14px;
+    color: #606060;
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+DIV.footer A {
+    font-size: 14px;
+    color: #606060;
+}
+
+DIV.footer A:visited {
+    color: #606060;
+}
+
+TABLE.menuMain IMG {
+    border: 1px dotted #000075;
+}
+
+TABLE.menuMain A {
+    font-size: 20px;
+    color: #000075;
+}
+
+TABLE.menuMain A:visited {
+    color: #000075;
+}
+
+TABLE.menuMain A:hover {
+    color: #d00101;
+}
+
+TABLE.menuMain A:hover IMG {
+    border: 1px dotted #d00101;
+}
+
+TABLE.AlphbetPhone TD {
+    padding: 5px;
+    vertical-align: top;
+}
+
+TABLE.AlphbetPhone TH {
+    border-bottom: 1px solid #cfc0a2;
+    vertical-align: bottom;
+}
+
+TABLE.PhSpr TD {
+    padding: 5px;
+    vertical-align: top;
+}
+
+TABLE.PhSpr TH {
+    border-bottom: 1px solid #cfc0a2;
+    vertical-align: bottom;
+}
+
+TABLE.PhSpr TD EM {
+    color: #606060;
+}
+
+TABLE.PhSpr TD I {
+    color: #606060;
+}
+
+TABLE.PhSpr TD.hdr {
+    border-top: 1px solid #cfc0a2;
+}
+
+TABLE.timetable TH {
+    border-bottom: 1px solid #cfc0a2;
+    vertical-align: bottom;
+    text-align: left;
+    font-size: 24pt;
+    font-style: italic;
+    font-weight: normal;
+}
+
+TABLE.timetable TD EM {
+    color: #606060;
+}
+
+TABLE.timetable TD SUP {
+    text-decoration: underline;
+}
+
+P.linksGroup A {
+    padding: 5px 5px 5px 5px;
+}
+
+.hoverAlpha {
+    background-color: #f5ecdb;
+}
+
+/*.clickedAlpha { background-color: #09202e; color:#fc9234; }*/
+
+HR {
+    color: #e6dcca;
+    background-color: #e6dcca;
+    height: 1px;
+    border-width: 0px;
+}
+
+input {
+    border: 1px #cfc0a2 solid;
+    font-size: 14px;
+}
+
+textarea {
+    border: 1px #cfc0a2 solid;
+    font-size: 14px;
+}
+
+/* ������ ������� -------------------------------------------------------------------*/
+
+#contact-wrapper {
+    padding: 20px;
+}
+
+#contact-wrapper .submit {
+    background-color: #b10000;
+    border: 1px solid #b10000;
+    color: #ffffff;
+    font-style: italic;
+    font-family: Times New Roman;
+}
+
+/*---------------------------------------------------------------*/
+.helperInscription {
+    font-size: 190%;
+}
+
+.help > div {
+    float: left;
+    width: 350px;
+    min-height: 85px;
+    margin-left: 50px;
+}
+
+.titleOfElement {
+    display: block;
+    margin-left: 80px;
+}
+
+.titleOfElement a {
+    font-size: 20px;
+}
+
+.titleOfElement p {
+    /*Стиль подзаголовка*/
+    color: #414141;
+    font-size: 80%;
+}
+
+.helperImage {
+    border: 1px dashed #b0b0b0;
+    float: left;
+    width: 60px;
+    height: 60px;
+}
