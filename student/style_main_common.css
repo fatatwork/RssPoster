@@ -227,13 +227,6 @@ textarea {
     font-size: 190%;
 }
 
-.help > div {
-    float: left;
-    width: 350px;
-    min-height: 85px;
-    margin-left: 50px;
-}
-
 .titleOfElement {
     display: block;
     margin-left: 80px;
@@ -255,3 +248,171 @@ textarea {
     width: 60px;
     height: 60px;
 }
+
+ /*----------------------------------------------------*/
+    .AnonsInMain {
+        text-align: left;
+        float: none;
+        position: absolute;
+        top: 0px;
+        right: auto;
+        bottom: auto;
+        left: 0px;
+        margin: 0px;
+        width: 2048px;
+        height: 89px;
+    }
+
+    .AnonsInMainIn {
+        display: inline-block;
+        clear: both;
+    }
+
+    .NewsMainMain {
+        padding-top: 15px;
+    }
+
+    .AnonsArtMain {
+        width: 300px;
+        padding-right: 15px;
+        padding-left: 5px;
+        margin-bottom: 13px;
+        float: left;
+        position: relative;
+        display: block;
+        font-size: 11px;
+        font-family: Verdana;
+    }
+
+    AnonsArtMain A {
+        font-size: 150%;
+        font-family: Verdana;
+    }
+
+    .AnonsArtMain A:visited {
+    }
+
+    .AnonsArtMain A:hover {
+    }
+
+    .AnonsArtMain .AnonsImgMain {
+        float: left;
+    }
+
+    .AnonsArtMain .AnonsImgMain IMG {
+        border: 1px dashed #b0b0b0;
+        padding: 3px;
+    }
+
+    .AnonsArtMain .AnonsTextMain DIV {
+        font-size: 9px;
+        font-family: Helvetica;
+        margin-bottom: 4px;
+        color: #606060;
+    }
+
+    .button_PN {
+        width: 100%;
+        position: relative;
+    }
+
+    /*подключил абсолютный адрес картинок с кнопками*/
+    a.prev, a.next {
+        background: url('http://bsmu.by/design/button_news_new_2.png') no-repeat transparent;
+        width: 67px;
+        height: 67px;
+        display: block;
+        border: 0;
+        top: 32px;
+    }
+
+    a.prev {
+        float: left;
+        margin-left: 10px;
+        margin-right: 10px;
+        left: 70px;
+        background-position: 0 -67px;
+    }
+
+    a.prev:hover {
+        background-position: 0 0;
+    }
+
+    a.prev.disabled {
+        background-position: 0 -134px !important;
+    }
+
+    a.next {
+        float: right;
+        margin-left: 10px;
+        margin-right: 10px;
+        right: 0px;
+        background-position: -67px -67px;
+    }
+
+    a.next:hover {
+        background-position: -67px 0;
+    }
+
+    a.next.disabled {
+        background-position: -67px -134px !important;
+    }
+
+    a.prev.disabled, a.next.disabled {
+        cursor: default;
+    }
+
+    a.prev span, a.next span {
+        display: none;
+    }
+
+    #bigimg {
+        z-index: 9999;
+    }
+
+    .AnonsInRubric {
+        margin-right: 280px;
+    }
+
+    .AnonsArtRubric {
+        display: inline;
+        float: left;
+        margin-left: 30px;
+    }
+
+    .AnonsArtRubric A {
+    }
+
+    .AnonsArtRubric .In {
+        float: left;
+    }
+
+    .AnonsArtRubric .In IMG {
+    }
+
+    .AnonsArtRubric .InText {
+        margin-left: 170px;
+    }
+
+    .AnonsArtRubric .InText DIV {
+        font-size: 11px;
+        font-family: Helvetica;
+        margin-bottom: 3px;
+    }
+
+    .NewsContent {
+        float: left;
+        width: 58%;
+        margin-right: 60px;
+    }
+
+    .NewsContent H1 {
+        margin-top: 0;
+        line-height: 30px;
+    }
+
+    .AnonsOther {
+        float: left;
+        width: 36%;
+        margin-top: 35px;
+    }
