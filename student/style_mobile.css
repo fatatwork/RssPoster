@@ -1,24 +1,34 @@
 @media screen and (max-device-width: 916px) {
 
+DIV.main {
+        position: relative;
+        min-width: 100%;
+    }
 .help {
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-left: 30px;
     position: relative;
     float: left;
     min-width: 100%;
     background-color: rgba(255, 255, 255, 0.3);
     -moz-border-radius: 15px;
     border-radius: 15px;
+    clear: both;
+    font-size: 100%;
 }
+
+ .help > div {
+        float: left;
+        width: 350px;
+        min-height: 85px;
+        margin-left: 50px;
+    }
 
 #wideFooter{
 	display: none;
 }
 
-DIV.ikra{
-	display: none;
-}
-
-.textMistake{
+DIV.ikra, .textMistake, #foo1_prev, #foo1_next {
 	display: none;
 }
 
@@ -33,7 +43,7 @@ DIV.ikra{
 .AnonsInMain{width:100%!important;
 }
 .AnonsArtMain {
-	width: 92%!important;
+	width: 100%!important;
 	margin: 0 2% 15px 2%!important;
 	float:none!important; 
 	clear:both!important; 
@@ -78,5 +88,4 @@ DIV.MenuMainIn .news_headings A.LentaRSS:hover, #all_news A.LentaRSS:hover { bac
 .NewsContent { width:90%;margin-right:60px;}
 .NewsContent H1 { margin-top:0;line-height:30px;}
 .AnonsOther { float:left;width:100%;margin-top:35px;}
-input.searchArt { width:270px;}
 .AnonsArtMain .AnonsTextMain DIV {font-size: 9px;font-family: Helvetica;margin-bottom: 4px;color: #606060;}
