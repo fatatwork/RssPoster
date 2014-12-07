@@ -36,48 +36,9 @@ A:hover {
     text-decoration: none;
 }
 
-DIV.header {
-    height: 118px;
-    width: 100%;
-}
-
-DIV.logo {
-    padding-left: 250px;
-}
-
-DIV.logo A {
-    font-size: 50px;
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-DIV.logo A:hover {
-    color: #FFFFFF;
-}
-
-DIV.logo A:visited {
-    color: #FFFFFF;
-}
-
-DIV.menu {
-    padding-left: 494px;
-}
-
-DIV.menu A {
-    font-size: 20px;
-    margin-right: 10px;
-}
-
 DIV.mainpath {
     margin-left: 70px;
     margin-right: 20px;
-}
-
-DIV.main {
-    position: relative;
-    margin-left: 50px;
-    margin-right: 217px;
-    min-width: 760px;
 }
 
 DIV.ikra {
@@ -87,6 +48,11 @@ DIV.ikra {
     height: 264px;
     margin: 0px;
     border-width: 0px;
+}
+
+#bottomBlock {
+    display: block;
+    float: left;
 }
 
 #clear {
@@ -242,7 +208,7 @@ textarea {
     font-size: 80%;
 }
 
-.helperImage {
+.help img {
     border: 1px dashed #b0b0b0;
     float: left;
     width: 60px;
@@ -280,7 +246,7 @@ textarea {
         float: left;
         position: relative;
         display: block;
-        font-size: 11px;
+        font-size: 100%;
         font-family: Verdana;
     }
 
@@ -305,7 +271,7 @@ textarea {
     }
 
     .AnonsArtMain .AnonsTextMain DIV {
-        font-size: 9px;
+        font-size: 90%;
         font-family: Helvetica;
         margin-bottom: 4px;
         color: #606060;
