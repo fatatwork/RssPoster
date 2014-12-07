@@ -6,7 +6,6 @@
         background: url('/design/wide_header.jpg') no-repeat 0% 0%;
     }
 
-
     .textMistake {
         width: 90%;
         display: block;
@@ -14,6 +13,13 @@
         margin-top: 5em;
         color: #888888;
         font-size: x-small;
+    }
+
+    DIV.main {
+        position: relative;
+        margin-left: 50px;
+        margin-right: 217px;
+        min-width: 760px;
     }
 
     .help {
@@ -31,11 +37,6 @@
         width: 350px;
         min-height: 85px;
         margin-left: 50px;
-    }
-
-
-    #bottomBlock {
-        display: inline-block;
     }
 
     div.caroufredsel_wrapper {
@@ -64,8 +65,40 @@
         margin-bottom: -6px;
     }
 
+    DIV.header {
+    height: 118px;
+    width: 100%;
+    }
+
+    DIV.logo {
+        padding-left: 250px;
+    }
+
+    DIV.logo A {
+        font-size: 50px;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    DIV.logo A:hover {
+        color: #FFFFFF;
+    }
+
+    DIV.logo A:visited {
+        color: #FFFFFF;
+    }
+
+    DIV.menu {
+        padding-left: 494px;
+    }
+
+    DIV.menu A {
+        font-size: 20px;
+        margin-right: 10px;
+    }
 
     /*-------------------------------------------------------*/
+    
     ul#cssmenu,
     ul#cssmenuPh,
     ul#cssmenuFilter {
