@@ -89,6 +89,7 @@
     }
 
     DIV.menu {
+        padding-top: 20px;
         padding-left: 33%;
             /*494px;*/
     }
@@ -97,17 +98,16 @@
 
     }
     DIV.menu ul li a{
-        border-radius: 5px;
         color: white;
-        background-color: indianred;
+        background-color: #b10000;
+
         text-decoration: none;
     }
 
     DIV.menu ul li a:hover{
-        border-radius: 5px;
         color: white;
         background-color: #b10000;
-
+        background-color: indianred;
     }
 
 
@@ -774,11 +774,7 @@
         padding-top: 60px;
         padding-bottom: 30px;
     }
-div.links{
-    padding-top:15px;
-    width: 60%;
-    display: block;
-}
+
 div.links  a:hover {
    background-color: #b10000;
    color: #ffffff;

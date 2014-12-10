@@ -126,6 +126,7 @@
         color: #fff
     }
     DIV.menu{
+        padding-top: 20px;
         width: 300px;
     }
     DIV.menu ul li {
@@ -229,9 +230,5 @@
     }
     html {
         overflow-x: hidden;
-    }
-div.mainpath{
-    padding-left: 0;
-    padding-right: 0;
     }
 }
