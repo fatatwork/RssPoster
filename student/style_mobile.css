@@ -20,7 +20,7 @@
     }
     DIV.logo a{
     color:white;
-    font-size: 25px;
+    font-size: 28px;
     text-decoration: none;
     }
     .help {
@@ -125,7 +125,18 @@
         background-color: #ca2222;
         color: #fff
     }
-
+    DIV.menu{
+        width: 300px;
+    }
+    DIV.menu ul li {
+        line-height: 1.4;
+         display: block;
+    }
+    DIV.menu ul li a{
+        font-size: 19px;
+        color: #b10000;
+        text-decoration: none;
+    }
     #all_news {
         padding-left: 10px;
         margin-bottom: 5px;
@@ -216,9 +227,11 @@
         display: block;
         padding-top: 15px;
     }
-    div.links{
-        padding-top:15px;
-        width: 100%;
-        display: block;
+    html {
+        overflow-x: hidden;
+    }
+div.mainpath{
+    padding-left: 0;
+    padding-right: 0;
     }
 }

@@ -88,9 +88,28 @@
         color: #FFFFFF;
     }
 
-    DIV.menu {DIV.menu
-        padding-left: 494px;
+    DIV.menu {
+        padding-left: 33%;
+            /*494px;*/
     }
+    DIV.menu ul li {
+        display: inline;
+
+    }
+    DIV.menu ul li a{
+        border-radius: 5px;
+        color: white;
+        background-color: indianred;
+        text-decoration: none;
+    }
+
+    DIV.menu ul li a:hover{
+        border-radius: 5px;
+        color: white;
+        background-color: #b10000;
+
+    }
+
 
     DIV.menu A {
         font-size: 20px;
