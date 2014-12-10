@@ -1,4 +1,5 @@
-@media screen and (max-device-width: 916px) {
+@media only screen and (min-width: 10px) and (max-width: 916px) {
+
 
     DIV.main {
         position: relative;
@@ -212,7 +213,7 @@
         padding-bottom: 10px;
     }
     .NewsMainMain {
-        display: none;
+        display: block;
         padding-top: 15px;
     }
     div.links{
@@ -220,3 +221,4 @@
         width: 100%;
         display: block;
     }
+}

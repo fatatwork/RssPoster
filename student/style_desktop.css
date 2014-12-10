@@ -1,5 +1,4 @@
-@media screen and (min-device-width: 917px) {
-
+@media only screen and (min-width: 917px) and (max-width: 2700px) {
     BODY {
         min-width: 917px;
         overflow-x: hidden;
@@ -89,13 +88,13 @@
         color: #FFFFFF;
     }
 
-    DIV.menu {
+    DIV.menu {DIV.menu
         padding-left: 494px;
     }
 
     DIV.menu A {
         font-size: 20px;
-        margin-right: 10px;
+        margin-right: 10px
     }
 
     /*-------------------------------------------------------*/
@@ -764,4 +763,5 @@ div.links{
 div.links  a:hover {
    background-color: #b10000;
    color: #ffffff;
+ }
 }
