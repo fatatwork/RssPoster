@@ -43,9 +43,14 @@
         text-align: start;
         float: none;
         position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
         z-index: auto;
-        width: 950px;
-        height: 81px;
+        width: 80%;
+        height: 80px;
+        margin: 0px;
         overflow: hidden;
     }
 
@@ -56,7 +61,7 @@
     #UMK {
         min-width: 100%;
         float: none;
-        margin-top: 20px;
+        margin-top: 13px;
         margin-bottom: 20px;
     }
 
@@ -100,7 +105,7 @@
     DIV.menu ul li a{
         color: white;
         background-color: #b10000;
-
+        padding: 4px;
         text-decoration: none;
     }
 
@@ -114,6 +119,11 @@
     DIV.menu A {
         font-size: 20px;
         margin-right: 10px
+    }
+
+    .button_PN {
+        width: 100%;
+        position: relative;
     }
 
     /*-------------------------------------------------------*/

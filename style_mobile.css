@@ -5,6 +5,7 @@
         position: relative;
         min-width: 100%;
         font-size: 14px;
+        margin-top: 34px;
     }
 
     DIV.header {
@@ -12,23 +13,25 @@
         height: 30px;
         width: 100%;
     }
+
     DIV.logo {
         display: block;
         margin-top: -62px;
-        padding-left: 10px;
+        margin-left: 20px;
         text-align: left;
     }
+
     DIV.logo a{
-    color:white;
-    font-size: 28px;
-    text-decoration: none;
+        color:white;
+        font-size: 28px;
+        text-decoration: none;
     }
+
     .help {
         margin-top: 15px;
-        margin-left: -45px;
         position: relative;
         float: left;
-        width: 100%;
+        width: 90%;
         background-color: rgba(255, 255, 255, 0.3);
         -moz-border-radius: 15px;
         border-radius: 15px;
@@ -38,16 +41,16 @@
 
     .help > div {
         float: left;
-        width: 350px;
+        min-width: 100%;
         min-height: 85px;
-        margin-left: 50px;
+        margin-left: 10px;
     }
 
     #wideFooter {
         display: none;
     }
 
-    DIV.ikra, .textMistake, #foo1_prev, #foo1_next {
+    DIV.ikra, .textMistake, #foo1_prev, #foo1_next, .button_PN {
         display: none;
     }
 
@@ -59,6 +62,7 @@
 
     .caroufredsel_wrapper {
         margin-top: 10px !important;
+        max-width: 85%;
     }
 
     .AnonsInMain {
@@ -130,12 +134,15 @@
         width: 300px;
     }
     DIV.menu ul li {
-        line-height: 1.4;
-         display: block;
+        line-height: 2;
+        display: inline-block;
     }
     DIV.menu ul li a{
-        font-size: 19px;
-        color: #b10000;
+        font-size: 18px;
+        padding: 4px;
+        margin-right: 2px;
+        color: #fff;
+        background-color: #b10000;
         text-decoration: none;
     }
     #all_news {
@@ -226,7 +233,7 @@
     }
     .NewsMainMain {
         display: block;
-        padding-top: 15px;
+        padding-top: 0px !important;
     }
     html {
         overflow-x: hidden;
