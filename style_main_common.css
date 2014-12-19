@@ -183,12 +183,12 @@ textarea {
 /*---------------------------------------------------------------*/
 .helperInscription {
     font-size: 190%;
-    margin-left: 10px;
+    margin-left: 49px;
 }
 
 .titleOfElement {
     display: block;
-    margin-left: 80px;
+    margin-left: 72px;
 }
 
 .titleOfElement a {
@@ -212,7 +212,8 @@ textarea {
 /*----------------------------------------------------*/
 
 .NewsMainMain {
-padding-top: 15px;
+padding-left: 103px;
+padding-right: 90px;
 }
 .AnonsArtMain {
 width: 300px;
@@ -222,7 +223,7 @@ margin-bottom: 13px;
 float: left;
 position: relative;
 display: block;
-font-size: 100%;
+font-size: 88%;
 font-family: Verdana;
 }
 AnonsArtMain A {
@@ -252,7 +253,7 @@ position: relative;
 }
 /*подключил абсолютный адрес картинок с кнопками*/
 a.prev, a.next {
-background: url('http://bsmu.by/design/button_news_new_2.png') no-repeat transparent;
+background: url('/design/button_news_new_2.png') no-repeat transparent;
 width: 67px;
 height: 67px;
 display: block;
@@ -261,9 +262,7 @@ top: 32px;
 }
 a.prev {
 float: left;
-margin-left: 10px;
-margin-right: 10px;
-left: 70px;
+margin-left: -81px;
 background-position: 0 -67px;
 }
 a.prev:hover {
@@ -274,9 +273,7 @@ background-position: 0 -134px !important;
 }
 a.next {
 float: right;
-margin-left: 10px;
-margin-right: 10px;
-right: 0px;
+margin-right: -70px;
 background-position: -67px -67px;
 }
 a.next:hover {

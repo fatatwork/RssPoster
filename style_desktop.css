@@ -16,7 +16,7 @@
 
     DIV.main {
         position: relative;
-        margin-left: 50px;
+        margin-left: 57px;
         margin-right: 217px;
         min-width: 760px;
     }
@@ -73,10 +73,12 @@
     DIV.header {
         height: 118px;
         width: 100%;
+        margin-top: 75px;
     }
 
     DIV.logo {
-        padding-left: 250px;
+        position: relative;
+        padding-left: 251px;
     }
 
     DIV.logo A {
@@ -94,8 +96,9 @@
     }
 
     DIV.menu {
-        padding-top: 3,5px;
-        padding-left: 452px;
+        position: absolute;
+        margin-left: 452px;
+        margin-top: -12px;
             /*494px;*/
     }
     DIV.menu ul li {
@@ -791,3 +794,4 @@ div.links  a:hover {
    color: #ffffff;
  }
 }
+
