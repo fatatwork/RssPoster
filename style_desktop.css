@@ -1,4 +1,4 @@
-@media only screen and (min-width: 917px) and (max-width: 2700px) {
+@media only screen and (min-width: 917px) {
     BODY {
         min-width: 917px;
         overflow-x: visible;
@@ -76,9 +76,14 @@
         margin-top: 75px;
     }
 
+    DIV.header *{
+        opacity: 0.99;
+    }
+
     DIV.logo {
         position: relative;
         padding-left: 251px;
+        z-index: 2;
     }
 
     DIV.logo A {
@@ -95,20 +100,40 @@
         color: #FFFFFF;
     }
 
+    @media only screen and (min-width: 917px) and (max-width: 1045px) { 
+        
+        DIV.menu {
+            position: absolute !important;
+            white-space: nowrap;
+            margin-right: 10px;
+            right: 3px;
+            margin-top: -12px !important;
+            z-index: 1;
+        }
+        
+        DIV.menu ul li {
+            display: inline-block !important;
+        }
+        
+        DIV.menu:hover{
+            z-index: 3;
+        }
+    }
+
     DIV.menu {
         position: absolute;
         margin-left: 452px;
         margin-top: -12px;
-            /*494px;*/
     }
+
     DIV.menu ul li {
         display: inline;
-
     }
+    
     DIV.menu ul li a{
         color: white;
         background-color: #b10000;
-        padding: 6px;
+        padding: 7px;
         text-decoration: none;
     }
 
@@ -116,13 +141,13 @@
         color: white;
         background-color: #b10000;
         background-color: indianred;
-       box-shadow: -3px 7px 7px #402020;
+        box-shadow: 5px 5px 2px #402020;
     }
 
 
     DIV.menu A {
         font-size: 20px;
-        margin-right: 10px
+        margin-right: 14px
     }
 
     .button_PN {

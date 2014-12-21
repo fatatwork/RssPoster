@@ -54,6 +54,9 @@
         display: none;
     }
 
+    .helperInscription {
+        margin-left: 12px !important;
+    }
     /*News-------------------------------------------------------------------------*/
     .caroufredsel_wrapper, .AnonsInMain {
         position: static !important;
@@ -131,7 +134,8 @@
     }
     DIV.menu{
         padding-top: 0px;
-        padding-left:100px;
+        padding-left: 116px;
+        margin-top: -21px;
     }
     DIV.menu ul li {
         line-height: 2;
@@ -145,6 +149,23 @@
         background-color: #b10000;
         text-decoration: none;
     }
+
+     @media only screen and (max-width: 296px) { 
+        
+        DIV.menu {
+            position: absolute !important;
+            right: 0px;
+        }
+
+        DIV.menu ul li{
+            width: 135px;
+        }
+        
+        DIV.menu ul li {
+            display: inline-block !important;
+        }
+    }
+
     #all_news {
         padding-left: 10px;
         margin-bottom: 5px;

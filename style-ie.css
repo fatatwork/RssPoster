@@ -10,6 +10,20 @@ BODY {
     overflow-x: hidden;
     background: url('/design/wide_header.jpg') no-repeat 0% 0%;
 }
+div.menu{
+    padding-top: 3,5px;
+    padding-left: 452px;
+}
+DIV.logo {
+        padding-left: 250px;
+    }
+
+    DIV.logo A {
+        font-size: 50px;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
 
 .textMistake {
     width: 90%;
