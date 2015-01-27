@@ -13,16 +13,16 @@
         color: #888888;
         font-size: x-small;
     }
-        .AnonsArtMain {
-    width: 300px;
-    padding-right: 15px;
-    padding-left: 5px;
-    margin-bottom: 13px;
-    float: left;
-    position: relative;
-    display: block;
-    font-size: 88%;
-    font-family: Verdana;
+    .AnonsArtMain {
+        width: 300px;
+        padding-right: 15px;
+        padding-left: 5px;
+        margin-bottom: 13px;
+        float: left;
+        position: relative;
+        display: block;
+        font-size: 11px;
+        font-family: Verdana;
     }
 
     DIV.main {
@@ -103,16 +103,13 @@
         text-decoration: none;
     }
 
-    DIV.logo A:hover {
+    DIV.logo A:hover, A:visited {
         color: #FFFFFF;
     }
 
-    DIV.logo A:visited {
-        color: #FFFFFF;
-    }
 
     @media only screen and (min-width: 917px) and (max-width: 1045px) { 
-        
+
         DIV.menu {
             position: absolute !important;
             white-space: nowrap;
@@ -826,9 +823,9 @@
         padding-bottom: 30px;
     }
 
-div.links  a:hover {
-   background-color: #b10000;
-   color: #ffffff;
+    div.links  a:hover {
+     background-color: #b10000;
+     color: #ffffff;
  }
 }
 
