@@ -20,12 +20,11 @@
         text-align: left;
     }
 
-    DIV.logo a{
-        color:white;
-        font-size: 28px;
-        text-decoration: none;
-
-    }
+        DIV.logo a {
+            color: white;
+            font-size: 28px;
+            text-decoration: none;
+        }
 
     .help {
         margin-top: 15px;
@@ -39,12 +38,12 @@
         font-size: 100%;
     }
 
-    .help > div {
-        float: left;
-        min-width: 100%;
-        min-height: 85px;
-        margin-left: 10px;
-    }
+        .help > div {
+            float: left;
+            min-width: 100%;
+            min-height: 85px;
+            margin-left: 10px;
+        }
 
     #wideFooter {
         display: none;
@@ -86,9 +85,9 @@
         float: left;
     }
 
-    .AnonsImgMain IMG {
-        padding: 3px;
-    }
+        .AnonsImgMain IMG {
+            padding: 3px;
+        }
 
     DIV.MenuMainIn .news_headings A {
         color: #fff;
@@ -105,102 +104,102 @@
         padding: 4px 6px 4px 6px;
     }
 
-    DIV.MenuMainIn .news_headings A.current_url {
-        background-color: #1b2257;
-        text-decoration: none;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px
-    }
+        DIV.MenuMainIn .news_headings A.current_url {
+            background-color: #1b2257;
+            text-decoration: none;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
 
-    DIV.MenuMainIn .news_headings A.LentaRSS, #all_news A.LentaRSS {
-        margin-left: 24px;
-        margin-top: 11px;
-        padding: 0 2px 0 4px;
-        font-size: 10px;
-        display: block;
-        width: 20px;
-        background-color: #ea8027;
-        text-decoration: none;
-        color: #fff
-    }
+        DIV.MenuMainIn .news_headings A.LentaRSS, #all_news A.LentaRSS {
+            margin-left: 24px;
+            margin-top: 11px;
+            padding: 0 2px 0 4px;
+            font-size: 10px;
+            display: block;
+            width: 20px;
+            background-color: #ea8027;
+            text-decoration: none;
+            color: #fff;
+        }
 
-    DIV.MenuMainIn .news_headings A.LentaRSS:visited, #all_news A.LentaRSS:visited {
-        background-color: #ea8027;
-        color: #fff
-    }
+            DIV.MenuMainIn .news_headings A.LentaRSS:visited, #all_news A.LentaRSS:visited {
+                background-color: #ea8027;
+                color: #fff;
+            }
 
-    DIV.MenuMainIn .news_headings A.LentaRSS:hover, #all_news A.LentaRSS:hover {
-        background-color: #ca2222;
-        color: #fff
-    }
+            DIV.MenuMainIn .news_headings A.LentaRSS:hover, #all_news A.LentaRSS:hover {
+                background-color: #ca2222;
+                color: #fff;
+            }
 
-    DIV.menu{
+    DIV.menu {
         padding-top: 0px;
         padding-left: 116px;
         margin-top: -21px;
     }
 
-    DIV.menu ul li {
-        line-height: 2;
-        display: block;
-    }
+        DIV.menu ul li {
+            line-height: 2;
+            display: block;
+        }
 
-    DIV.menu ul li a{
-        font-size: 18px;
-        padding: 4px;
-        margin-right: 2px;
-        color: #fff;
-        background-color: #b10000;
-        text-decoration: none;
-    }
+            DIV.menu ul li a {
+                font-size: 18px;
+                padding: 4px;
+                margin-right: 2px;
+                color: #fff;
+                background-color: #b10000;
+                text-decoration: none;
+            }
 
-     @media only screen and (max-width: 296px) { 
+    @media only screen and (max-width: 296px) {
         DIV.menu {
             position: absolute !important;
             right: 0px;
         }
 
-        DIV.menu ul li{
-            width: 135px;
-        }
+            DIV.menu ul li {
+                width: 135px;
+            }
 
-        DIV.menu ul li {
-            display: inline-block !important;
-        }
+            DIV.menu ul li {
+                display: inline-block !important;
+            }
     }
 
     #all_news {
         padding-left: 10px;
         margin-bottom: 5px;
-        padding-bottom: 15px
+        padding-bottom: 15px;
     }
 
-    #all_news A {
-        font-size: 16px;
-        float: left
-    }
+        #all_news A {
+            font-size: 16px;
+            float: left;
+        }
 
-    #all_news A.LentaRSS {
-        margin-left: 15px;
-        margin-top: 7px;
-        padding: 0 2px 0 4px;
-        font-size: 10px;
-        font-family: Verdana;
-        display: block;
-        width: 20px;
-        background-color: #ea8027;
-        text-decoration: none;
-        color: #fff
-    }
+            #all_news A.LentaRSS {
+                margin-left: 15px;
+                margin-top: 7px;
+                padding: 0 2px 0 4px;
+                font-size: 10px;
+                font-family: Verdana;
+                display: block;
+                width: 20px;
+                background-color: #ea8027;
+                text-decoration: none;
+                color: #fff;
+            }
 
-    #all_news A.LentaRSS:visited {
-        background-color: #ea8027;
-    }
+                #all_news A.LentaRSS:visited {
+                    background-color: #ea8027;
+                }
 
-    #all_news A.LentaRSS:hover {
-        background-color: #ca2222;
-    }
+                #all_news A.LentaRSS:hover {
+                    background-color: #ca2222;
+                }
 
     .AnonsArtRubric {
         display: inline;
@@ -208,29 +207,29 @@
         margin-left: 30px;
     }
 
-    .AnonsArtRubric .In {
-        float: left
-    }
+        .AnonsArtRubric .In {
+            float: left;
+        }
 
-    .AnonsArtRubric .InText {
-        margin-left: 170px
-    }
+        .AnonsArtRubric .InText {
+            margin-left: 170px;
+        }
 
-    .AnonsArtRubric .InText DIV {
-        font-size: 11px;
-        font-family: Helvetica;
-        margin-bottom: 3px;
-    }
+            .AnonsArtRubric .InText DIV {
+                font-size: 11px;
+                font-family: Helvetica;
+                margin-bottom: 3px;
+            }
 
     .NewsContent {
         width: 90%;
         margin-right: 60px;
     }
 
-    .NewsContent H1 {
-        margin-top: 0;
-        line-height: 30px;
-    }
+        .NewsContent H1 {
+            margin-top: 0;
+            line-height: 30px;
+        }
 
     .AnonsOther {
         float: left;
@@ -269,5 +268,4 @@
     html {
         overflow-x: visible;
     }
-
 }
