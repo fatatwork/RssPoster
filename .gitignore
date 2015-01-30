@@ -38,8 +38,11 @@ design/
 ############
 *.json
 ############
-## Windows
+## Windows VS
 ############
+Web.config
+*.publishproj
+App_data/
 # Windows image file caches
 Thumbs.db
 # Folder config file
