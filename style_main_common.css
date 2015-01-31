@@ -11,14 +11,12 @@ margin:0;
 padding:0;
 }
 
-BODY,TABLE {
+BODY, A {
 font-size:16px;
 font-family:Times New Roman;
 }
 
 A {
-font-size:16px;
-font-family:Times New Roman;
 color:#000075;
 }
 
@@ -38,7 +36,7 @@ right:0;
 width:216px;
 height:264px;
 border-width:0;
-margin:0;
+margin-top: 30px;
 }
 
 #bottomBlock {
@@ -47,22 +45,9 @@ float:left;
 width:90%;
 }
 
-#clear {
-clear:both;
-}
-
 DIV.footer A {
 font-size:14px;
 color:#606060;
-}
-
-TABLE.menuMain IMG {
-border:1px dotted #000075;
-}
-
-TABLE.menuMain A {
-font-size:20px;
-color:#000075;
 }
 
 TABLE.menuMain A:hover {
@@ -73,52 +58,8 @@ TABLE.menuMain A:hover IMG {
 border:1px dotted #d00101;
 }
 
-TABLE.PhSpr TD.hdr {
-border-top:1px solid #cfc0a2;
-}
-
-TABLE.timetable TH {
-border-bottom:1px solid #cfc0a2;
-vertical-align:bottom;
-text-align:left;
-font-size:24pt;
-font-style:italic;
-font-weight:400;
-}
-
-TABLE.timetable TD SUP {
-text-decoration:underline;
-}
-
-P.linksGroup A {
-padding:5px;
-}
-
-.hoverAlpha {
-background-color:#f5ecdb;
-}
-
-HR {
-color:#e6dcca;
-background-color:#e6dcca;
-height:1px;
-border-width:0;
-}
-
-#contact-wrapper {
-padding:20px;
-}
-
-#contact-wrapper .submit {
-background-color:#b10000;
-border:1px solid #b10000;
-color:#fff;
-font-style:italic;
-font-family:Times New Roman;
-}
-
 .helperInscription {
-font-size:190%;
+font-size:30px;
 margin-left:49px;
 }
 
@@ -133,7 +74,7 @@ font-size:20px;
 
 .titleOfElement p {
 color:#414141;
-font-size:80%;
+font-size:14px;
 margin-top:0;
 }
 
@@ -149,18 +90,8 @@ padding-left:103px;
 padding-right:90px;
 }
 
-AnonsArtMain A {
-font-size:150%;
-font-family:Verdana;
-}
-
-.AnonsArtMain .AnonsImgMain IMG {
-border:1px dashed #b0b0b0;
-padding:3px;
-}
-
 .AnonsArtMain .AnonsTextMain DIV {
-font-size:90%;
+font-size:10px;
 font-family:Helvetica;
 margin-bottom:4px;
 color:#606060;
@@ -204,10 +135,6 @@ a.next:hover {
 background-position:-67px 0;
 }
 
-a.next.disabled {
-background-position:-67px -134px!important;
-}
-
 a.prev.disabled,a.next.disabled {
 cursor:default;
 }
@@ -216,56 +143,12 @@ a.prev span,a.next span {
 display:none;
 }
 
-#bigimg {
-z-index:9999;
-}
-
-.AnonsInRubric {
-margin-right:280px;
-}
-
-.AnonsArtRubric {
-display:inline;
-float:left;
-margin-left:30px;
-}
-
-.AnonsArtRubric .InText {
-margin-left:170px;
-}
-
-.AnonsArtRubric .InText DIV {
-font-size:11px;
-font-family:Helvetica;
-margin-bottom:3px;
-}
-
-.NewsContent {
-float:left;
-width:58%;
-margin-right:60px;
-}
-
-.NewsContent H1 {
-margin-top:0;
-}
-
-A:visited,TABLE.menuMain A:visited {
+A:visited, A:visited {
 color:#000075;
 }
 
-DIV.footer A:visited,TABLE.PhSpr TD EM,TABLE.PhSpr TD I,TABLE.timetable TD EM {
+DIV.footer A:visited {
 color:#606060;
-}
-
-TABLE.AlphbetPhone TD,TABLE.PhSpr TD {
-vertical-align:top;
-padding:5px;
-}
-
-TABLE.AlphbetPhone TH,TABLE.PhSpr TH {
-border-bottom:1px solid #cfc0a2;
-vertical-align:bottom;
 }
 
 input,textarea {

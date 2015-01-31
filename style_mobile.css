@@ -35,7 +35,7 @@
         -moz-border-radius: 15px;
         border-radius: 15px;
         clear: both;
-        font-size: 100%;
+        font-size: 14px;
     }
 
         .help > div {
@@ -45,19 +45,13 @@
             margin-left: 10px;
         }
 
-    #wideFooter {
-        display: none;
-    }
-
-    DIV.ikra, .textMistake, #foo1_prev, #foo1_next, .button_PN {
+    DIV.ikra, .textMistake, #foo1_prev, #foo1_next, .button_PN,  #wideFooter {
         display: none;
     }
 
     .helperInscription {
         margin-left: 7px !important;
     }
-
-    /*News-------------------------------------------------------------------------*/
 
     .caroufredsel_wrapper, .AnonsInMain {
         position: static !important;
@@ -85,15 +79,6 @@
         float: left;
     }
 
-        .AnonsImgMain IMG {
-            padding: 3px;
-        }
-
-    DIV.MenuMainIn .news_headings A {
-        color: #fff;
-        display: block;
-    }
-
     DIV.MenuMainIn .news_headings A {
         float: left;
         margin-right: 5px;
@@ -103,36 +88,6 @@
         display: block;
         padding: 4px 6px 4px 6px;
     }
-
-        DIV.MenuMainIn .news_headings A.current_url {
-            background-color: #1b2257;
-            text-decoration: none;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            border-radius: 3px;
-        }
-
-        DIV.MenuMainIn .news_headings A.LentaRSS, #all_news A.LentaRSS {
-            margin-left: 24px;
-            margin-top: 11px;
-            padding: 0 2px 0 4px;
-            font-size: 10px;
-            display: block;
-            width: 20px;
-            background-color: #ea8027;
-            text-decoration: none;
-            color: #fff;
-        }
-
-            DIV.MenuMainIn .news_headings A.LentaRSS:visited, #all_news A.LentaRSS:visited {
-                background-color: #ea8027;
-                color: #fff;
-            }
-
-            DIV.MenuMainIn .news_headings A.LentaRSS:hover, #all_news A.LentaRSS:hover {
-                background-color: #ca2222;
-                color: #fff;
-            }
 
     DIV.menu {
         padding-top: 0px;
@@ -162,23 +117,9 @@
 
             DIV.menu ul li {
                 width: 135px;
-            }
-
-            DIV.menu ul li {
                 display: inline-block !important;
             }
     }
-
-    #all_news {
-        padding-left: 10px;
-        margin-bottom: 5px;
-        padding-bottom: 15px;
-    }
-
-        #all_news A {
-            font-size: 16px;
-            float: left;
-        }
 
             #all_news A.LentaRSS {
                 margin-left: 15px;
@@ -200,42 +141,6 @@
                 #all_news A.LentaRSS:hover {
                     background-color: #ca2222;
                 }
-
-    .AnonsArtRubric {
-        display: inline;
-        float: left;
-        margin-left: 30px;
-    }
-
-        .AnonsArtRubric .In {
-            float: left;
-        }
-
-        .AnonsArtRubric .InText {
-            margin-left: 170px;
-        }
-
-            .AnonsArtRubric .InText DIV {
-                font-size: 11px;
-                font-family: Helvetica;
-                margin-bottom: 3px;
-            }
-
-    .NewsContent {
-        width: 90%;
-        margin-right: 60px;
-    }
-
-        .NewsContent H1 {
-            margin-top: 0;
-            line-height: 30px;
-        }
-
-    .AnonsOther {
-        float: left;
-        width: 100%;
-        margin-top: 35px;
-    }
 
     .AnonsArtMain .AnonsTextMain DIV {
         font-size: 9px;
@@ -263,9 +168,5 @@
         padding-top: 176px !important;
         padding-left: 0px !important;
         padding-right: 0px !important;
-    }
-
-    html {
-        overflow-x: visible;
     }
 }
