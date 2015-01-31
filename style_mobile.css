@@ -45,7 +45,7 @@
             margin-left: 10px;
         }
 
-    DIV.ikra, .textMistake, #foo1_prev, #foo1_next, .button_PN,  #wideFooter {
+    DIV.ikra, .textMistake, #foo1_prev, #foo1_next, .button_PN, #wideFooter {
         display: none;
     }
 
@@ -121,26 +121,26 @@
             }
     }
 
-            #all_news A.LentaRSS {
-                margin-left: 15px;
-                margin-top: 7px;
-                padding: 0 2px 0 4px;
-                font-size: 10px;
-                font-family: Verdana;
-                display: block;
-                width: 20px;
-                background-color: #ea8027;
-                text-decoration: none;
-                color: #fff;
-            }
+    #all_news A.LentaRSS {
+        margin-left: 15px;
+        margin-top: 7px;
+        padding: 0 2px 0 4px;
+        font-size: 10px;
+        font-family: Verdana;
+        display: block;
+        width: 20px;
+        background-color: #ea8027;
+        text-decoration: none;
+        color: #fff;
+    }
 
-                #all_news A.LentaRSS:visited {
-                    background-color: #ea8027;
-                }
+        #all_news A.LentaRSS:visited {
+            background-color: #ea8027;
+        }
 
-                #all_news A.LentaRSS:hover {
-                    background-color: #ca2222;
-                }
+        #all_news A.LentaRSS:hover {
+            background-color: #ca2222;
+        }
 
     .AnonsArtMain .AnonsTextMain DIV {
         font-size: 9px;
