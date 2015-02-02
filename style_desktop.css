@@ -252,3 +252,39 @@
         color: #ffffff;
     }
 }
+
+div.letters {
+    width: 100%;
+    height: 100%;
+    display: inline-table;
+}
+
+div.lettersAtoM, div.lettersNtoS {
+    float: left;
+    display: inline;
+    padding-left: 30px;
+    width: 30%;
+    height: 100%;
+}
+
+div.letter, div.letterSmall, div.letterLarge, div.letterLargeRu {
+    float: left;
+    display: inline-flex;
+    padding-left: 30px;
+    width: 380px;
+}
+
+div.letterSmall {
+    height: 90px;
+}
+
+div.letter {
+    height: 190px;
+}
+
+div.letterLarge {
+    height: 380px;
+}
+div.letterLargeRu{
+    height: 360px;
+}
