@@ -251,7 +251,6 @@
         background-color: #b10000;
         color: #ffffff;
     }
-}
 
 div.letters {
     width: 100%;
@@ -262,29 +261,20 @@ div.letters {
 div.lettersAtoM, div.lettersNtoS {
     float: left;
     display: inline;
-    padding-left: 30px;
-    width: 30%;
+    width: 40%;
     height: 100%;
+}
+
+div.lettersNtoS{
+    padding-left: 30px;
 }
 
 div.letter, div.letterSmall, div.letterLarge, div.letterLargeRu {
     float: left;
     display: inline-flex;
-    padding-left: 30px;
-    width: 380px;
+    width: 100%;
 }
 
-div.letterSmall {
-    height: 90px;
-}
-
-div.letter {
-    height: 190px;
-}
-
-div.letterLarge {
-    height: 380px;
-}
-div.letterLargeRu{
-    height: 360px;
+.searchFile{
+    width: 34%;
 }
