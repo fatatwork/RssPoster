@@ -31,6 +31,9 @@
         margin-left: 57px;
         margin-right: 217px;
         min-width: 760px;
+        background-color: rgba(255, 255, 255, 0.3);
+        -moz-border-radius: 15px;
+        border-radius: 15px;
     }
 
     .help {
@@ -101,6 +104,7 @@
         DIV.logo A {
             font-size: 50px;
             color: #FFFFFF;
+            font-style:italic;
             text-decoration: none;
         }
 
@@ -144,7 +148,8 @@
                 background-color: #b10000;
                 padding: 7px;
                 margin-right: 8px;
-                text-decoration: none;
+                font-style:italic;
+                text-decoration:none;
             }
 
                 DIV.menu ul li a:hover {

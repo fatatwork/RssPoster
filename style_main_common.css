@@ -25,9 +25,23 @@ A {
         text-decoration: none;
     }
 
+.main p{
+    margin: 10px;
+    
+}
+
+div.main h2 h3{
+    clear: both; 
+    margin-top: 2px;
+}
+
 DIV.mainpath {
     margin-left: 70px;
     margin-right: 20px;
+}
+div.path a{
+    color: #b10000;
+    font-size: 17px;
 }
 
 DIV.ikra {
@@ -58,9 +72,19 @@ TABLE.menuMain A:hover {
         border: 1px dotted #d00101;
     }
 
-.helperInscription {
+.textHeader {
     font-size: 30px;
     margin-left: 49px;
+}
+
+.subHeader{
+    text-align: left;
+    font-size: 23px;
+    font-style:italic;
+}   
+
+div.main ul{
+    list-style-type: square;
 }
 
 .titleOfElement {
@@ -83,6 +107,42 @@ TABLE.menuMain A:hover {
     float: left;
     width: 60px;
     height: 60px;
+}
+
+div.indentText p{
+    padding-left: 30px;
+}
+div.indentText img{
+    padding: 10px 0 10px 0;
+}
+
+div.leftBlock{
+    float: left; 
+    width: 50%;
+}
+
+div.smallList{
+    float: right; 
+    margin-right: 100px; 
+    border: 1px solid #000; 
+    border-radius: 15px; 
+    padding: 15px; 
+    background-color: #3c4797; 
+    width: 150px;
+    clear: right;
+}
+
+div.smallList h1{
+    text-align: center;
+}
+
+div.smallList a{
+    font-size: 24px; 
+    color: #fff;
+}
+
+div.oneColumn > *{
+    clear: both;
 }
 
 .NewsMainMain {
