@@ -268,10 +268,6 @@
             font-size: x-large;
         }
 
-        div.letters p {
-            padding-left: 30px;
-        }
-
     div.lettersAtoM, div.lettersNtoS {
         float: left;
         display: inline;
@@ -280,15 +276,24 @@
     }
 
     div.lettersNtoS {
-        padding-left: 30px;
     }
 
     div.letter, div.letterSmall, div.letterLarge, div.letterLargeRu {
         float: left;
-        display: inline-flex;
         width: 100%;
     }
 
     .searchFile {
         width: 34%;
     }
+
+    div.edMaterialRu, div.edMaterialEn {
+        font-size: 35px;
+    }
+
+        div.edMaterialRu strong span {
+            color: #b10000;
+            font-size: 16px;
+        }
+
+}
