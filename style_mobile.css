@@ -169,4 +169,26 @@
         padding-left: 0px !important;
         padding-right: 0px !important;
     }
+
+    div.letters p span {
+        color: #d10000;
+        font-size: 18px;
+    }
+
+    div.edMaterialRu {
+        padding-top: 134px;
+        font-size: 22px;
+    }
+
+        div.edMaterialRu strong span {
+            display:none;
+        }
+
+    div.edMaterialEn {
+        padding-top:110px;
+        font-size: 22px;
+    }
+    div.mainpath{
+        display:none;
+    }
 }

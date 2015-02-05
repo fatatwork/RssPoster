@@ -76,6 +76,10 @@ TABLE.menuMain A:hover {
     font-size: 30px;
     margin-left: 49px;
 }
+.textHeader strong span{
+     color: #b10000;
+     font-size:16px;
+}
 
 .subHeader{
     text-align: left;
