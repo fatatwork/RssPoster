@@ -1,299 +1,395 @@
-@media only screen and (min-width: 917px) {
-    BODY {
-        min-width: 917px;
-        overflow-x: visible;
-        background: url('/design/wide_header.jpg') no-repeat 0% 0%;
-    }
-
-    .textMistake {
-        width: 90%;
-        display: block;
-        padding-left: 70px;
-        margin-top: 5em;
-        color: #888888;
-        font-size: x-small;
-    }
-
-    .AnonsArtMain {
-        width: 300px;
-        padding-right: 15px;
-        padding-left: 5px;
-        margin-bottom: 13px;
-        float: left;
-        position: relative;
-        display: block;
-        font-size: 11px;
-        font-family: Verdana;
-    }
-
-    DIV.main {
-        position: relative;
-        margin-left: 57px;
-        margin-right: 217px;
-        min-width: 760px;
-        background-color: rgba(255, 255, 255, 0.3);
-        -moz-border-radius: 15px;
-        border-radius: 15px;
-    }
-
-    .help {
-        margin-top: 30px;
-        position: relative;
-        float: left;
-        min-width: 800px;
-        background-color: rgba(255, 255, 255, 0.3);
-        -moz-border-radius: 15px;
-        border-radius: 15px;
-    }
-
-        .help > div {
-            float: left;
-            width: 350px;
-            min-height: 85px;
-            margin-left: 50px;
-        }
-
-    div.caroufredsel_wrapper {
-        display: block;
-        text-align: start;
-        float: none;
-        position: relative;
-        top: auto;
-        right: auto;
-        bottom: auto;
-        left: auto;
-        z-index: auto;
-        width: 80%;
-        height: 80px;
-        margin: 0px;
-        overflow: hidden;
-    }
-
-    div.caroufredsel_wrapper, .button_PN {
-        margin-top: 25px;
-    }
-
-    #UMK {
-        min-width: 100%;
-        float: none;
-        margin-top: 13px;
-        margin-bottom: 20px;
-    }
-
-    #wideFooter {
-        width: 100%;
-        margin-bottom: -6px;
-    }
-
-    DIV.header {
-        height: 118px;
-        width: 100%;
-        margin-top: 75px;
-    }
-
-        DIV.header * {
-            opacity: 0.99;
-        }
-
-    DIV.logo {
-        position: relative;
-        padding-left: 251px;
-        z-index: 2;
-    }
-
-        DIV.logo A {
-            font-size: 50px;
-            color: #FFFFFF;
-            font-style: italic;
-            text-decoration: none;
-        }
-
-            DIV.logo A:hover {
-                color: #FFFFFF;
-            }
-
-
-    @media only screen and (min-width: 917px) and (max-width: 1045px) {
-
-        DIV.menu {
-            position: absolute !important;
-            white-space: nowrap;
-            margin-right: 10px;
-            right: 3px;
-            margin-top: -12px !important;
-            z-index: 1;
-        }
-
-            DIV.menu ul li {
-                display: inline-block !important;
-            }
-
-            DIV.menu:hover {
-                z-index: 3;
-            }
-    }
-
-    DIV.menu {
-        position: absolute;
-        margin-left: 452px;
-        margin-top: -12px;
-    }
-
-        DIV.menu ul li {
-            display: inline;
-        }
-
-            DIV.menu ul li a {
-                color: white;
-                background-color: #b10000;
-                padding: 7px;
-                margin-right: 8px;
-                font-style: italic;
-                text-decoration: none;
-            }
-
-                DIV.menu ul li a:hover {
-                    color: white;
-                    background-color: #b10000;
-                    background-color: indianred;
-                    box-shadow: 5px 5px 2px #402020;
-                }
-
-
-        DIV.menu A {
-            font-size: 20px;
-            margin-right: 14px;
-        }
-
-    .button_PN {
-        width: 100%;
-        position: relative;
-    }
-
-    ul#cssmenu li:hover li a,
-    ul#cssmenuPh li:hover li a,
-    ul#cssmenuFilter li:hover li a, ul#cssmenuFilter li:hover li b {
-        float: none;
-    }
-
-    ul#cssmenu li:hover ul,
-    ul#cssmenuPh li:hover ul ul,
-    ul#cssmenuFilter li:hover ul ul {
-        display: none;
-    }
-
-    ul#cssmenu li:hover ul,
-    ul#cssmenu ul li:hover ul,
-    ul#cssmenuFilter li:hover ul,
-    ul#cssmenuFilter ul li:hover ul,
-    ul#cssmenuPh li:hover ul,
-    ul#cssmenuPh ul li:hover ul {
-        display: block;
-        background-color: #b10000;
-        margin: 0px 15px 0px 20px;
-        -moz-box-shadow: -3px 7px 7px #402020;
-        -webkit-box-shadow: -3px 7px 7px #402020;
-        box-shadow: -3px 7px 7px #402020;
-    }
-
-    ul#cssmenu li:hover a.MenuIn,
-    ul#cssmenu ul li:hover a.MenuIn,
-    ul#cssmenuFilter li:hover a.MenuIn,
-    ul#cssmenuFilter ul li:hover a.MenuIn,
-    ul#cssmenuPh li:hover a.MenuIn,
-    ul#cssmenuPh ul li:hover a.MenuIn, {
-        background-color: #b10000;
-        color: #FFFFFF;
-        border-bottom: 0px;
-        cursor: default;
-        -moz-box-shadow: -3px 7px 7px #402020;
-        -webkit-box-shadow: -3px 7px 7px #402020;
-        box-shadow: -3px 7px 7px #402020;
-    }
-
-    A.menu:hover {
-    }
-
-    DIV.path {
-        padding-right: 20px;
-        padding-bottom: 20px;
-    }
-
-        DIV.path A:hover {
-            color: #d30000;
-        }
-
-    A.linkFiles:hover {
-    }
-
-    DIV.DocsInMain DIV A:hover {
-    }
-
-    A.DocsAll:hover {
-    }
-
-    A.linkDocs:hover {
-    }
-
-    div.menuMain A:hover {
-        color: #d00101;
-    }
-
-        div.menuMain A:hover IMG {
-            border: 1px dotted #d00101;
-        }
-
-    DIV.footer {
-        width: 100%;
-        padding-left: 70px;
-        font-size: 14px;
-        color: #606060;
-        padding-top: 60px;
-        padding-bottom: 30px;
-    }
-
-    div.links a:hover {
-        background-color: #b10000;
-        color: #ffffff;
-    }
-
-    div.letters {
-        width: 100%;
-        height: 100%;
-        display: inline-table;
-    }
-
-        div.letters p span {
-            color: #d10000;
-            font-size: x-large;
-        }
-
-    div.lettersAtoM, div.lettersNtoS {
-        float: left;
-        display: inline;
-        width: 40%;
-        height: 100%;
-    }
-
-    div.lettersNtoS {
-    }
-
-    div.letter, div.letterSmall, div.letterLarge, div.letterLargeRu {
-        float: left;
-        width: 100%;
-    }
-
-    .searchFile {
-        width: 34%;
-    }
-
-    div.edMaterialRu, div.edMaterialEn {
-        font-size: 35px;
-    }
-
-        div.edMaterialRu strong span {
-            color: #b10000;
-            font-size: 16px;
-        }
-
-}
+@media only screen and (min-width: 917px) {
+
+    BODY {
+        min-width: 917px;
+        overflow-x: visible;
+        background: url('/design/wide_header.jpg') no-repeat 0% 0%;
+    }
+
+
+
+    .textMistake {
+        width: 90%;
+        display: block;
+        padding-left: 70px;
+        margin-top: 5em;
+        color: #888888;
+        font-size: x-small;
+    }
+
+
+
+    .AnonsArtMain {
+        width: 300px;
+        padding-right: 15px;
+        padding-left: 5px;
+        margin-bottom: 13px;
+        float: left;
+        position: relative;
+        display: block;
+        font-size: 11px;
+        font-family: Verdana;
+    }
+
+
+
+    DIV.main {
+        position: relative;
+        margin-left: 57px;
+        margin-right: 217px;
+        min-width: 760px;
+        background-color: rgba(255, 255, 255, 0.3);
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+    }
+
+
+
+    .help {
+        margin-top: 30px;
+        position: relative;
+        float: left;
+        min-width: 800px;
+        background-color: rgba(255, 255, 255, 0.3);
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+    }
+
+
+
+        .help > div {
+            float: left;
+            width: 350px;
+            min-height: 85px;
+            margin-left: 50px;
+        }
+
+
+
+    div.caroufredsel_wrapper {
+        display: block;
+        text-align: start;
+        float: none;
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        z-index: auto;
+        width: 80%;
+        height: 80px;
+        margin: 0px;
+        overflow: hidden;
+    }
+
+
+
+    div.caroufredsel_wrapper, .button_PN {
+        margin-top: 25px;
+    }
+
+
+
+    #UMK {
+        min-width: 100%;
+        float: none;
+        margin-top: 13px;
+        margin-bottom: 20px;
+    }
+
+
+
+    #wideFooter {
+        width: 100%;
+        margin-bottom: -6px;
+    }
+
+
+
+    DIV.header {
+        height: 118px;
+        width: 100%;
+        margin-top: 75px;
+    }
+
+
+
+        DIV.header * {
+            opacity: 0.99;
+        }
+
+
+
+    DIV.logo {
+        position: relative;
+        padding-left: 251px;
+        z-index: 2;
+    }
+
+
+
+        DIV.logo A {
+            font-size: 50px;
+            color: #FFFFFF;
+            font-style: italic;
+            text-decoration: none;
+        }
+
+
+
+            DIV.logo A:hover {
+                color: #FFFFFF;
+            }
+
+
+
+
+
+    @media only screen and (min-width: 917px) and (max-width: 1045px) {
+
+
+
+        DIV.menu {
+            position: absolute !important;
+            white-space: nowrap;
+            margin-right: 10px;
+            right: 3px;
+            margin-top: -12px !important;
+            z-index: 1;
+        }
+
+
+
+            DIV.menu ul li {
+                display: inline-block !important;
+            }
+
+
+
+            DIV.menu:hover {
+                z-index: 3;
+            }
+    }
+
+
+
+    DIV.menu {
+        position: absolute;
+        margin-left: 452px;
+        margin-top: -12px;
+    }
+
+
+
+        DIV.menu ul li {
+            display: inline;
+        }
+
+
+
+            DIV.menu ul li a {
+                color: white;
+                background-color: #b10000;
+                padding: 7px;
+                margin-right: 8px;
+                font-style: italic;
+                text-decoration: none;
+            }
+
+
+
+                DIV.menu ul li a:hover {
+                    color: white;
+                    background-color: #b10000;
+                    background-color: indianred;
+                    box-shadow: 5px 5px 2px #402020;
+                }
+
+
+
+
+
+        DIV.menu A {
+            font-size: 20px;
+            margin-right: 14px;
+        }
+
+
+
+    .button_PN {
+        width: 100%;
+        position: relative;
+    }
+
+
+
+    ul#cssmenu li:hover li a,
+    ul#cssmenuPh li:hover li a,
+    ul#cssmenuFilter li:hover li a, ul#cssmenuFilter li:hover li b {
+        float: none;
+    }
+
+
+
+    ul#cssmenu li:hover ul,
+    ul#cssmenuPh li:hover ul ul,
+    ul#cssmenuFilter li:hover ul ul {
+        display: none;
+    }
+
+
+
+    ul#cssmenu li:hover ul,
+    ul#cssmenu ul li:hover ul,
+    ul#cssmenuFilter li:hover ul,
+    ul#cssmenuFilter ul li:hover ul,
+    ul#cssmenuPh li:hover ul,
+    ul#cssmenuPh ul li:hover ul {
+        display: block;
+        background-color: #b10000;
+        margin: 0px 15px 0px 20px;
+        -moz-box-shadow: -3px 7px 7px #402020;
+        -webkit-box-shadow: -3px 7px 7px #402020;
+        box-shadow: -3px 7px 7px #402020;
+    }
+
+
+
+    ul#cssmenu li:hover a.MenuIn,
+    ul#cssmenu ul li:hover a.MenuIn,
+    ul#cssmenuFilter li:hover a.MenuIn,
+    ul#cssmenuFilter ul li:hover a.MenuIn,
+    ul#cssmenuPh li:hover a.MenuIn,
+    ul#cssmenuPh ul li:hover a.MenuIn, {
+        background-color: #b10000;
+        color: #FFFFFF;
+        border-bottom: 0px;
+        cursor: default;
+        -moz-box-shadow: -3px 7px 7px #402020;
+        -webkit-box-shadow: -3px 7px 7px #402020;
+        box-shadow: -3px 7px 7px #402020;
+    }
+
+
+
+    A.menu:hover {
+    }
+
+
+
+    DIV.path {
+        padding-right: 20px;
+        padding-bottom: 20px;
+    }
+
+
+
+        DIV.path A:hover {
+            color: #d30000;
+        }
+
+
+
+    A.linkFiles:hover {
+    }
+
+
+
+    DIV.DocsInMain DIV A:hover {
+    }
+
+
+
+    A.DocsAll:hover {
+    }
+
+
+
+    A.linkDocs:hover {
+    }
+
+
+
+    div.menuMain A:hover {
+        color: #d00101;
+    }
+
+
+
+        div.menuMain A:hover IMG {
+            border: 1px dotted #d00101;
+        }
+
+
+
+    DIV.footer {
+        width: 100%;
+        padding-left: 70px;
+        font-size: 14px;
+        color: #606060;
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+
+
+
+    div.links a:hover {
+        background-color: #b10000;
+        color: #ffffff;
+    }
+
+
+
+    div.letters {
+        width: 100%;
+        height: 100%;
+        display: inline-table;
+    }
+
+
+
+        div.letters p span {
+            color: #d10000;
+            font-size: x-large;
+        }
+
+
+
+    div.lettersAtoM, div.lettersNtoS {
+        float: left;
+        display: inline;
+        width: 40%;
+        height: 100%;
+    }
+
+
+
+    div.lettersNtoS {
+    }
+
+
+
+    div.letter, div.letterSmall, div.letterLarge, div.letterLargeRu {
+        float: left;
+        width: 100%;
+    }
+
+
+
+    .searchFile {
+        width: 34%;
+    }
+
+
+
+    div.edMaterialRu, div.edMaterialEn {
+        font-size: 35px;
+    }
+
+
+
+        div.edMaterialRu strong span {
+            color: #b10000;
+            font-size: 16px;
+        }
+}
