@@ -253,4 +253,8 @@
     div.mainpath {
         display: none;
     }
+
+    .textHeader {
+        display: none;
+    }
 }
