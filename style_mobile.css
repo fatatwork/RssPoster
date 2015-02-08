@@ -6,7 +6,6 @@
         position: relative;
         min-width: 100%;
         font-size: 14px;
-        padding-top: 150px;
     }
 
 
@@ -217,7 +216,7 @@
 
 
     .NewsMainMain {
-        display: none;
+        display: block;
         padding-top: 176px !important;
         padding-left: 0px !important;
         padding-right: 0px !important;
