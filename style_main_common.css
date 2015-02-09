@@ -1,5 +1,6 @@
 @import url(/style_desktop.css);
 @import url(/style_mobile.css);
+
 html, body {
     outline: 0;
     font-weight: inherit;
@@ -9,32 +10,40 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
 BODY, A {
     font-size: 16px;
     font-family: Times New Roman;
 }
+
 A {
     color: #000075;
 }
+
     A:hover {
         color: #d00101;
         text-decoration: none;
     }
+
 .main p {
     margin: 0px;
 }
+
 div.main h2 h3 {
     clear: both;
     margin-top: 2px;
 }
+
 DIV.mainpath {
     margin-left: 70px;
     margin-right: 20px;
 }
+
 div.path a {
     color: #b10000;
     font-size: 17px;
 }
+
 DIV.ikra {
     position: absolute;
     right: 0;
@@ -43,61 +52,76 @@ DIV.ikra {
     border-width: 0;
     margin-top: 30px;
 }
+
 #bottomBlock {
     display: block;
     float: left;
     width: 90%;
 }
+
 DIV.footer A {
     font-size: 14px;
     color: #606060;
 }
+
 TABLE.menuMain A:hover {
     color: #d00101;
 }
+
     TABLE.menuMain A:hover IMG {
         border: 1px dotted #d00101;
     }
+
 .textHeader {
     font-size: 35px;
     margin-left: 0px;
 }
+
 .subHeader {
     text-align: left;
     font-size: 23px;
     font-style: italic;
 }
+
 div.main ul {
     list-style-type: square;
 }
+
 .titleOfElement {
     display: block;
     margin-left: 72px;
 }
+
     .titleOfElement a {
         font-size: 20px;
     }
+
     .titleOfElement p {
         color: #414141;
         font-size: 14px;
         margin-top: 0;
     }
+
 .help img {
     border: 1px dashed #b0b0b0;
     float: left;
     width: 60px;
     height: 60px;
 }
+
 div.indentText p {
     padding-left: 30px;
 }
+
 div.indentText img {
     padding: 10px 0 10px 0;
 }
+
 div.leftBlock {
     float: left;
     width: 50%;
 }
+
 div.smallList {
     float: right;
     margin-right: 100px;
@@ -108,73 +132,87 @@ div.smallList {
     width: 150px;
     clear: right;
 }
+
     div.smallList h1 {
         text-align: center;
     }
+
     div.smallList a {
         font-size: 24px;
         color: #fff;
     }
+
 div.oneColumn > * {
     clear: both;
 }
+
 .NewsMainMain {
     padding-left: 103px;
     padding-right: 90px;
 }
+
 .AnonsArtMain .AnonsTextMain DIV {
     font-size: 10px;
     font-family: Helvetica;
     margin-bottom: 4px;
     color: #606060;
 }
+
 .button_PN {
     width: 100%;
     position: relative;
 }
+
 a.prev, a.next {
-    background: url(/design/button_news_new_2.jpg) no-repeat transparent;
+    background: url(/design/button_news_new_4.png) no-repeat transparent;
     width: 67px;
-    height: 67px;
+    height: 48px;
     display: block;
     border: 0;
     top: 32px;
 }
+
 a.prev {
     float: left;
     margin-left: -81px;
-    background-position: 0 -67px;
+    background-position: 0 0;
 }
-    a.prev:hover {
-        background-position: 0 0;
-    }
+
     a.prev.disabled {
-        background-position: 0 -134px !important;
+        background-position: 0 -47px !important;
     }
+
 a.next {
     float: right;
-    margin-right: -70px;
-    background-position: -67px -67px;
+    margin-right: -77px;
+    background-position: -67px 0;
 }
-    a.next:hover {
-        background-position: -67px 0;
+
+    a.next.disabled {
+        background-position: -67px -47px !important;
     }
+
     a.prev.disabled, a.next.disabled {
         cursor: default;
     }
+
     a.prev span, a.next span {
         display: none;
     }
+
 A:visited, A:visited {
     color: #000075;
 }
+
 DIV.footer A:visited {
     color: #606060;
 }
+
 input, textarea {
     border: 1px #cfc0a2 solid;
     font-size: 14px;
 }
+
 .AnonsArtMain .AnonsImgMain, .AnonsArtRubric .In {
     float: left;
 }
