@@ -1,40 +1,25 @@
 @media only screen and (min-width: 10px) and (max-width: 916px) {
-
-
-
     DIV.main {
         position: relative;
         min-width: 100%;
         font-size: 14px;
     }
-
-
-
     DIV.header {
         display: inline-block;
         height: 30px;
         width: 100%;
     }
-
-
-
     DIV.logo {
         display: block;
         margin-top: 21px;
         margin-left: 20px;
         text-align: left;
     }
-
-
-
         DIV.logo a {
             color: white;
             font-size: 28px;
             text-decoration: none;
         }
-
-
-
     .help {
         margin-top: 15px;
         position: relative;
@@ -46,50 +31,29 @@
         clear: both;
         font-size: 14px;
     }
-
-
-
         .help > div {
             float: left;
             min-width: 100%;
             min-height: 85px;
             margin-left: 10px;
         }
-
-
-
     DIV.ikra, .textMistake, #foo1_prev, #foo1_next, .button_PN, #wideFooter {
         display: none;
     }
-
-
-
     .helperInscription {
         margin-left: 7px !important;
     }
-
-
-
     .caroufredsel_wrapper, .AnonsInMain {
         position: static !important;
         height: auto !important;
     }
-
-
-
     .caroufredsel_wrapper {
         margin-top: 10px !important;
         max-width: 85%;
     }
-
-
-
     .AnonsInMain {
         width: 100% !important;
     }
-
-
-
     .AnonsArtMain {
         width: 100% !important;
         margin: 0 2% 15px 2% !important;
@@ -97,15 +61,9 @@
         clear: both !important;
         display: table !important;
     }
-
-
-
     .AnonsImgMain {
         float: left;
     }
-
-
-
     DIV.MenuMainIn .news_headings A {
         float: left;
         margin-right: 5px;
@@ -115,24 +73,15 @@
         display: block;
         padding: 4px 6px 4px 6px;
     }
-
-
-
     DIV.menu {
         padding-top: 0px;
         padding-left: 116px;
         margin-top: -21px;
     }
-
-
-
         DIV.menu ul li {
             line-height: 2;
             display: block;
         }
-
-
-
             DIV.menu ul li a {
                 font-size: 18px;
                 padding: 4px;
@@ -141,26 +90,16 @@
                 background-color: #b10000;
                 text-decoration: none;
             }
-
-
-
     @media only screen and (max-width: 296px) {
-
         DIV.menu {
             position: absolute !important;
             right: 0px;
         }
-
-
-
             DIV.menu ul li {
                 width: 135px;
                 display: inline-block !important;
             }
     }
-
-
-
     #all_news A.LentaRSS {
         margin-left: 15px;
         margin-top: 7px;
@@ -173,37 +112,22 @@
         text-decoration: none;
         color: #fff;
     }
-
-
-
         #all_news A.LentaRSS:visited {
             background-color: #ea8027;
         }
-
-
-
         #all_news A.LentaRSS:hover {
             background-color: #ca2222;
         }
-
-
-
     .AnonsArtMain .AnonsTextMain DIV {
         font-size: 9px;
         font-family: Helvetica;
         margin-bottom: 4px;
         color: #606060;
     }
-
-
-
     #bottomBlock {
         display: block;
         float: left;
     }
-
-
-
     DIV.footer {
         width: 100%;
         font-size: 8px;
@@ -212,47 +136,30 @@
         padding-top: 10px;
         padding-bottom: 10px;
     }
-
-
-
     .NewsMainMain {
         display: block;
         padding-top: 176px !important;
         padding-left: 0px !important;
         padding-right: 0px !important;
     }
-
-
-
     div.letters p span {
         color: #d10000;
         font-size: 18px;
     }
-
-
-
     div.edMaterialRu {
         padding-top: 134px;
         font-size: 22px;
     }
-
-
-
         div.edMaterialRu strong span {
             display: none;
         }
-
-
-
     div.edMaterialEn {
         padding-top: 110px;
         font-size: 22px;
     }
-
     div.mainpath {
         display: none;
     }
-
     .textHeader {
         display: none;
     }
