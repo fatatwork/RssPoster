@@ -164,9 +164,9 @@ div.oneColumn > * {
 }
 
 a.prev, a.next {
-    background: url(/design/button_news_new_4.png) no-repeat transparent;
+    background: url(/design/button_news_new_3.1.png) no-repeat transparent;
     width: 67px;
-    height: 48px;
+    height: 67px;
     display: block;
     border: 0;
     top: 32px;
@@ -175,21 +175,29 @@ a.prev, a.next {
 a.prev {
     float: left;
     margin-left: -81px;
-    background-position: 0 0;
+    background-position: 0 -67px;
 }
 
+a.prev:hover {
+         background-position: 0px 0px;
+     }
+
     a.prev.disabled {
-        background-position: 0 -47px !important;
+        background-position: 0 -134px !important;
     }
 
 a.next {
     float: right;
     margin-right: -77px;
-    background-position: -67px 0;
+    background-position: -67px -67px;
 }
 
+a.next:hover {
+         background-position: -67px 0 !important;
+     }
+
     a.next.disabled {
-        background-position: -67px -47px !important;
+        background-position: -67px -134px !important;
     }
 
     a.prev.disabled, a.next.disabled {
