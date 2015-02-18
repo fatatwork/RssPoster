@@ -1,7 +1,6 @@
 <?php
      session_start();
      $username = $_SESSION['user'];
-     unset($_SESSION['user']);
      $comment = trim($_REQUEST['user_comment']);
      if(!$comment) die("Error comment");
      if($username){

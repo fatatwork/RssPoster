@@ -1,3 +1,9 @@
+<?php 
+session_start();
+$s = file_get_contents('http://ulogin.ru/token.php?token=' . $_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
+$user = json_decode($s, true);
+$_SESSION['user']=$user;
+ ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -95,13 +101,8 @@
                 <br />
                 <!-- ‘орма отправл€юща€ данные -->
                 <script src="//ulogin.ru/js/ulogin.js"></script>
-                <div id="uLogin" data-ulogin="display=small;fields=first_name,last_name;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri=http%3A%2F%2Fbsmu.akson.by%2Flove.html"></div>
-                 <?php 
-                $s = file_get_contents('http://ulogin.ru/token.php?token=' . $_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
-                $user = json_decode($s, true); 
-                session_start();
-                $_SESSION['user'] = $user;
-                ?>
+                <div id="uLogin" data-ulogin="display=small;fields=first_name,last_name;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri=http%3A%2F%2Fbsmu.akson.by%2Flove.php"></div>
+                
                 <form class="comments" method="POST" action="sample.php">
                    <textarea name="user_comment" cols="50" rows="10"></textarea>
                 <input type="submit"/>
