@@ -1,14 +1,24 @@
-<script src="/ulogin.js"></script>
-<div id="uLogin" data-ulogin="display=small;fields=first_name,last_name;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri=http%3A%2F%2Fbsmu.akson.by%2Fsample.php"></div>
-    
-    <?php
-     $s = file_get_contents('http://ulogin.ru/token.php?token=' . $_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
-     $user = json_decode($s, true);
-     if($user['first_name']){
-     echo ("Your name is ".$user['first_name']);
-     echo ("Your login with ".$user['network']);
-     echo ("Your id ".$user['identity']);
-     }
+<?php
+     session_start();
+     $username = $_SESSION['user'];
+     unset($_SESSION['user']);
+     $comment = trim($_REQUEST['user_comment']);
+     if(!$comment) die("Error comment");
+     if($username){
+          $db_name="user1137761_testn";
+          $dbhost = "localhost"; // Имя хоста БД
+          $dbusername = "mainuser"; // Пользователь БД
+          $dbpass = "XnCyWPmG"; // Пароль к базе
+          $dbconnect = mysql_connect ($dbhost, $dbusername, $dbpass); 
+          if (!$dbconnect){ die("<p>Ошибка подключения к базе данных: " . mysql_error() . "</p>"); }
+          mysql_select_db($db_name) or die ("<p>Невозможно выбрать базу: " . mysql_error() . "</p>");
+
+          $query = "INSERT INTO comments (firstname, lastname, url, network, comment)" .
+    "VALUES ('{$username['first_name']}', '{$username['last_name']}', '{$username['identity']}', '{$username['network']}', '{$comment}');";
+          $result = mysql_query($query);
+          if(!$result) die("<p>Невозможно сделать запись комментария: " . mysql_error() . "</p>"); 
+          else echo ("Success");
+     } else echo ("Error");
                     //$user['network'] - соц. сеть, через которую авторизовался пользователь
                     //$user['identity'] - уникальная строка определяющая конкретного пользователя соц. сети
                     //$user['first_name'] - имя пользователя
