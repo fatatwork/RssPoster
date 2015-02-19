@@ -13,7 +13,7 @@ setcookie('last_name', $last_name, time()+604800);
 setcookie('network', $network, time()+604800);
 setcookie('identity', $identity, time()+604800);
 }
- ?>
+?>
 <!DOCTYPE html>
 <meta charset="UTF8">
 <html xmlns="http://www.w3.org/1999/xhtml">
