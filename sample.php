@@ -1,5 +1,4 @@
-﻿<?php 
-     require 'app_config.php'; //подключение файла с данными для входа в БД
+﻿<?php
      $boolCheckCookie = false;
      if(isset($_COOKIE['first_name'])){ $username['first_name'] = $_COOKIE['first_name']; $boolCheckCookie = true;}
      if(isset($_COOKIE['last_name'])){ $username['last_name'] = $_COOKIE['last_name']; $boolCheckCookie = true;}
@@ -10,7 +9,7 @@
           session_start();
           if(isset($_SESSION['user'])){ $username = $_SESSION['user'];}
      }
-     
+     require 'app_config.php'; //подключение файла с данными для входа в БД
      $comment = trim($_REQUEST['user_comment']);
      if(!$comment) die("Error comment");
      if(isset($username)){
@@ -24,7 +23,6 @@
           mysql_query("SET SESSION collation_connection = 'utf8_general_ci';");
 
           mysql_select_db($db_name) or die ("<p>Невозможно выбрать базу: " . mysql_error() . "</p>");
-
 
           $query = "INSERT INTO users (first_name, last_name, network, network_url)" .
           "VALUES ('{$username['first_name']}', '{$username['last_name']}', '{$username['network']}', '{$username['identity']}');";
