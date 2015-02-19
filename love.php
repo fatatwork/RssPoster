@@ -2,7 +2,17 @@
 session_start();
 $s = file_get_contents('http://ulogin.ru/token.php?token=' . $_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
 $user = json_decode($s, true);
+if(isset($user)){
 $_SESSION['user']=$user;
+$first_name = $user['first_name'];
+$last_name = $user['last_name'];
+$network = $user['network'];
+$identity = $user['identity'];
+setcookie('first_name', $first_name, time()+604800);
+setcookie('last_name', $last_name, time()+604800);
+setcookie('network', $network, time()+604800);
+setcookie('identity', $identity, time()+604800);
+}
  ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
