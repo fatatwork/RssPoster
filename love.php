@@ -15,11 +15,12 @@ setcookie('identity', $identity, time()+604800);
 }
  ?>
 <!DOCTYPE html>
+<meta charset="UTF8">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>День всех влюбленных не прошел незамеченным!</title>
-    <meta name="DESCRIPTION" content="Белорусский государственный медицинский университет - ведущее высшее медицинское учебное учреждение Республики Беларусь, имеющее заслуженный международный авторитет и признание. На кафедрах университета обучаются 7046 студентов, 68 аспирантов и 286 клинических ординаторов, в том числе 808 иностранных студентов и 74 иностранных клинических ординатора.">
-    <meta name="KEYWORDS" content="Общеуниверситетские, БГМУ, белорусский государственный медицинский университет, университет, вуз, минск, образование, высшее образование, цт, централизованное тестирование, абитуриент, студент, наука, аспирантура, медицинский, врач">
+    <title>Р”РµРЅСЊ РІСЃРµС… РІР»СЋР±Р»РµРЅРЅС‹С… РЅРµ РїСЂРѕС€РµР» РЅРµР·Р°РјРµС‡РµРЅРЅС‹Рј!</title>
+    <meta name="DESCRIPTION" content="Р‘РµР»РѕСЂСѓСЃСЃРєРёР№ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅС‹Р№ РјРµРґРёС†РёРЅСЃРєРёР№ СѓРЅРёРІРµСЂСЃРёС‚РµС‚ - РІРµРґСѓС‰РµРµ РІС‹СЃС€РµРµ РјРµРґРёС†РёРЅСЃРєРѕРµ СѓС‡РµР±РЅРѕРµ СѓС‡СЂРµР¶РґРµРЅРёРµ Р РµСЃРїСѓР±Р»РёРєРё Р‘РµР»Р°СЂСѓСЃСЊ, РёРјРµСЋС‰РµРµ Р·Р°СЃР»СѓР¶РµРЅРЅС‹Р№ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Р№ Р°РІС‚РѕСЂРёС‚РµС‚ Рё РїСЂРёР·РЅР°РЅРёРµ. РќР° РєР°С„РµРґСЂР°С… СѓРЅРёРІРµСЂСЃРёС‚РµС‚Р° РѕР±СѓС‡Р°СЋС‚СЃСЏ 7046 СЃС‚СѓРґРµРЅС‚РѕРІ, 68 Р°СЃРїРёСЂР°РЅС‚РѕРІ Рё 286 РєР»РёРЅРёС‡РµСЃРєРёС… РѕСЂРґРёРЅР°С‚РѕСЂРѕРІ, РІ С‚РѕРј С‡РёСЃР»Рµ 808 РёРЅРѕСЃС‚СЂР°РЅРЅС‹С… СЃС‚СѓРґРµРЅС‚РѕРІ Рё 74 РёРЅРѕСЃС‚СЂР°РЅРЅС‹С… РєР»РёРЅРёС‡РµСЃРєРёС… РѕСЂРґРёРЅР°С‚РѕСЂР°.">
+    <meta name="KEYWORDS" content="РћР±С‰РµСѓРЅРёРІРµСЂСЃРёС‚РµС‚СЃРєРёРµ, Р‘Р“РњРЈ, Р±РµР»РѕСЂСѓСЃСЃРєРёР№ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅС‹Р№ РјРµРґРёС†РёРЅСЃРєРёР№ СѓРЅРёРІРµСЂСЃРёС‚РµС‚, СѓРЅРёРІРµСЂСЃРёС‚РµС‚, РІСѓР·, РјРёРЅСЃРє, РѕР±СЂР°Р·РѕРІР°РЅРёРµ, РІС‹СЃС€РµРµ РѕР±СЂР°Р·РѕРІР°РЅРёРµ, С†С‚, С†РµРЅС‚СЂР°Р»РёР·РѕРІР°РЅРЅРѕРµ С‚РµСЃС‚РёСЂРѕРІР°РЅРёРµ, Р°Р±РёС‚СѓСЂРёРµРЅС‚, СЃС‚СѓРґРµРЅС‚, РЅР°СѓРєР°, Р°СЃРїРёСЂР°РЅС‚СѓСЂР°, РјРµРґРёС†РёРЅСЃРєРёР№, РІСЂР°С‡">
     <meta name="ROBOTS" content="all">
     <meta http-equiv="X-UA-Compatible" content="IE=9">
 
@@ -48,18 +49,18 @@ setcookie('identity', $identity, time()+604800);
     <div id="naviP">
         <div class="defaultP" id="menuP">
             <ul>
-                <li><a href="http://www.bsmu.by/">Главная</a></li>
-                <li><a href="http://www.bsmu.by/page/6/44/">Университет</a></li>
-                <li><a href="http://www.bsmu.by/page/4/33/">Абитуриент</a></li>
-                <li><a href="http://www.bsmu.by/page/3/32/">Студент</a></li>
-                <li><a href="http://www.bsmu.by/page/5/40/">Выпускник</a></li>
-                <li><a href="http://www.bsmu.by/page/8/64/">Врач</a></li>
-                <li><a href="http://www.bsmu.by/qa/">Вопрос/Ответ</a></li>
+                <li><a href="http://www.bsmu.by/">Р“Р»Р°РІРЅР°СЏ</a></li>
+                <li><a href="http://www.bsmu.by/page/6/44/">РЈРЅРёРІРµСЂСЃРёС‚РµС‚</a></li>
+                <li><a href="http://www.bsmu.by/page/4/33/">РђР±РёС‚СѓСЂРёРµРЅС‚</a></li>
+                <li><a href="http://www.bsmu.by/page/3/32/">РЎС‚СѓРґРµРЅС‚</a></li>
+                <li><a href="http://www.bsmu.by/page/5/40/">Р’С‹РїСѓСЃРєРЅРёРє</a></li>
+                <li><a href="http://www.bsmu.by/page/8/64/">Р’СЂР°С‡</a></li>
+                <li><a href="http://www.bsmu.by/qa/">Р’РѕРїСЂРѕСЃ/РћС‚РІРµС‚</a></li>
             </ul>
         </div>
     </div>
     <div id="Header_cont">
-        <div id="Logo"><a title="Главная страница" href="http://www.bsmu.by/"></a></div>
+        <div id="Logo"><a title="Р“Р»Р°РІРЅР°СЏ СЃС‚СЂР°РЅРёС†Р°" href="http://www.bsmu.by/"></a></div>
         <div id="Search">
             <div id="l_box1">
                 <a class="op_box1">Languages</a><span style="color: #a5a5a5;"> &nbsp;&rarr;&nbsp;Rus</span>
@@ -71,8 +72,8 @@ setcookie('identity', $identity, time()+604800);
                 </div>
             </div>
             <form name="frmsearch" class="search" method=GET action="http://www.bsmu.by/search/">
-                <div><input class=search_input name=words maxlength=120 value=''><input type=image class=search_image title="Найти" alt="Найти" src="http://www.bsmu.by/design/search_ru.gif"></div>
-            </form> <a href="http://www.bsmu.by/map/">Карта сайта</a>
+                <div><input class=search_input name=words maxlength=120 value=''><input type=image class=search_image title="РќР°Р№С‚Рё" alt="РќР°Р№С‚Рё" src="http://www.bsmu.by/design/search_ru.gif"></div>
+            </form> <a href="http://www.bsmu.by/map/">РљР°СЂС‚Р° СЃР°Р№С‚Р°</a>
         </div>
     </div>
     <div class="niled">&nbsp;</div>
@@ -84,32 +85,32 @@ setcookie('identity', $identity, time()+604800);
         <script src="http://www.bsmu.by/scripts/jquery.smooth-scroll.min.js"></script>
         <script src="http://www.bsmu.by/scripts/photo.js"></script>
         <div class="MenuMainIn">
-            <h1>Новости</h1>
-            <div class="news_headings"><a href="http://www.bsmu.by/allarticles/rubric1/">Общеуниверситетские</a> <a href="http://www.bsmu.by/allarticles/rubric2/">Международные</a> <a href="http://www.bsmu.by/allarticles/rubric3/">Учебные</a> <a href="http://www.bsmu.by/allarticles/rubric4/">Воспитательные</a> <a class="LentaRSS" href="http://www.bsmu.by/rss/rss.xml">RSS</a></div>
+            <h1>РќРѕРІРѕСЃС‚Рё</h1>
+            <div class="news_headings"><a href="http://www.bsmu.by/allarticles/rubric1/">РћР±С‰РµСѓРЅРёРІРµСЂСЃРёС‚РµС‚СЃРєРёРµ</a> <a href="http://www.bsmu.by/allarticles/rubric2/">РњРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Рµ</a> <a href="http://www.bsmu.by/allarticles/rubric3/">РЈС‡РµР±РЅС‹Рµ</a> <a href="http://www.bsmu.by/allarticles/rubric4/">Р’РѕСЃРїРёС‚Р°С‚РµР»СЊРЅС‹Рµ</a> <a class="LentaRSS" href="http://www.bsmu.by/rss/rss.xml">RSS</a></div>
             <div class="niled">&nbsp;</div>
         </div>
         <div class="OtherPages OtherPagesQNP">
-            <p><div class=path><font size="1" color="#a50000">&rarr;</font> <a href="http://www.bsmu.by">Главная</a> <font size="1" color="#a50000">&rarr;</font> <a href="http://www.bsmu.by/allarticles/">Новости</a> <font size="1" color="#a50000">&rarr;</font> <a href="http://www.bsmu.by/allarticles/rubric1/">Общеуниверситетские</a></div></p>
+            <p><div class=path><font size="1" color="#a50000">&rarr;</font> <a href="http://www.bsmu.by">Р“Р»Р°РІРЅР°СЏ</a> <font size="1" color="#a50000">&rarr;</font> <a href="http://www.bsmu.by/allarticles/">РќРѕРІРѕСЃС‚Рё</a> <font size="1" color="#a50000">&rarr;</font> <a href="http://www.bsmu.by/allarticles/rubric1/">РћР±С‰РµСѓРЅРёРІРµСЂСЃРёС‚РµС‚СЃРєРёРµ</a></div></p>
             <div class="NewsContent">
-                <span style="font-family: helvetica; color: #747474; font-size: 30px;">17</span><span style="font-family: helvetica; font-size: 11px; color: #747474;"> февраля 2015 г.</span>
-                <h1>День всех влюбленных не прошел незамеченным! Студенчество университета ярко и весело отметило День Святого Валентина.</h1>
-                <p><img src="http://www.bsmu.by/ImgForArticles/201502171431371.jpg" alt="День всех влюбленных не прошел незамеченным!"></p>
-                <p><p>Студенчество университета ярко и весело отметило День Святого Валентина. Развлекательная шоу-программа о любви, молодости и красоте была представлена зрителю в фойе главного корпуса. Выступали не только самодеятельные коллективы университета, но и наши юные друзья &ndash; детский ансамбль &laquo;Праменчык&raquo; средней школы № 101 и детская вокальная студия &laquo;Микс&raquo; средней школы № 161. Организаторы угощали собравшихся печеньем в форме сердечек &ndash; символа этого праздника.</p>
+                <span style="font-family: helvetica; color: #747474; font-size: 30px;">17</span><span style="font-family: helvetica; font-size: 11px; color: #747474;"> С„РµРІСЂР°Р»СЏ 2015 Рі.</span>
+                <h1>Р”РµРЅСЊ РІСЃРµС… РІР»СЋР±Р»РµРЅРЅС‹С… РЅРµ РїСЂРѕС€РµР» РЅРµР·Р°РјРµС‡РµРЅРЅС‹Рј! РЎС‚СѓРґРµРЅС‡РµСЃС‚РІРѕ СѓРЅРёРІРµСЂСЃРёС‚РµС‚Р° СЏСЂРєРѕ Рё РІРµСЃРµР»Рѕ РѕС‚РјРµС‚РёР»Рѕ Р”РµРЅСЊ РЎРІСЏС‚РѕРіРѕ Р’Р°Р»РµРЅС‚РёРЅР°.</h1>
+                <p><img src="http://www.bsmu.by/ImgForArticles/201502171431371.jpg" alt="Р”РµРЅСЊ РІСЃРµС… РІР»СЋР±Р»РµРЅРЅС‹С… РЅРµ РїСЂРѕС€РµР» РЅРµР·Р°РјРµС‡РµРЅРЅС‹Рј!"></p>
+                <p><p>РЎС‚СѓРґРµРЅС‡РµСЃС‚РІРѕ СѓРЅРёРІРµСЂСЃРёС‚РµС‚Р° СЏСЂРєРѕ Рё РІРµСЃРµР»Рѕ РѕС‚РјРµС‚РёР»Рѕ Р”РµРЅСЊ РЎРІСЏС‚РѕРіРѕ Р’Р°Р»РµРЅС‚РёРЅР°. Р Р°Р·РІР»РµРєР°С‚РµР»СЊРЅР°СЏ С€РѕСѓ-РїСЂРѕРіСЂР°РјРјР° Рѕ Р»СЋР±РІРё, РјРѕР»РѕРґРѕСЃС‚Рё Рё РєСЂР°СЃРѕС‚Рµ Р±С‹Р»Р° РїСЂРµРґСЃС‚Р°РІР»РµРЅР° Р·СЂРёС‚РµР»СЋ РІ С„РѕР№Рµ РіР»Р°РІРЅРѕРіРѕ РєРѕСЂРїСѓСЃР°. Р’С‹СЃС‚СѓРїР°Р»Рё РЅРµ С‚РѕР»СЊРєРѕ СЃР°РјРѕРґРµСЏС‚РµР»СЊРЅС‹Рµ РєРѕР»Р»РµРєС‚РёРІС‹ СѓРЅРёРІРµСЂСЃРёС‚РµС‚Р°, РЅРѕ Рё РЅР°С€Рё СЋРЅС‹Рµ РґСЂСѓР·СЊСЏ &ndash; РґРµС‚СЃРєРёР№ Р°РЅСЃР°РјР±Р»СЊ &laquo;РџСЂР°РјРµРЅС‡С‹Рє&raquo; СЃСЂРµРґРЅРµР№ С€РєРѕР»С‹ в„– 101 Рё РґРµС‚СЃРєР°СЏ РІРѕРєР°Р»СЊРЅР°СЏ СЃС‚СѓРґРёСЏ &laquo;РњРёРєСЃ&raquo; СЃСЂРµРґРЅРµР№ С€РєРѕР»С‹ в„– 161. РћСЂРіР°РЅРёР·Р°С‚РѕСЂС‹ СѓРіРѕС‰Р°Р»Рё СЃРѕР±СЂР°РІС€РёС…СЃСЏ РїРµС‡РµРЅСЊРµРј РІ С„РѕСЂРјРµ СЃРµСЂРґРµС‡РµРє &ndash; СЃРёРјРІРѕР»Р° СЌС‚РѕРіРѕ РїСЂР°Р·РґРЅРёРєР°.</p>
                 <p>
-                    <div class='album' alt='День всех влюбленных не прошел незамеченным!' name='album620'>
+                    <div class='album' alt='Р”РµРЅСЊ РІСЃРµС… РІР»СЋР±Р»РµРЅРЅС‹С… РЅРµ РїСЂРѕС€РµР» РЅРµР·Р°РјРµС‡РµРЅРЅС‹Рј!' name='album620'>
                         <div class='alb_cont' id='alb_cont620'>
                             <div id='btn_left' class='btn_left_noactive'>&nbsp;</div>
-                            <div class='album_box' id='album_box620'><div class='album_img' id='album_img620' alt='День всех влюбленных не прошел незамеченным!'><a href='http://www.bsmu.by/PhotoAlbums/201502171404072.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171404072.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/201502171405503.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171405503.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/201502171407384.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171407384.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/201502171412075.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171412075.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/201502171414356.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171414356.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/201502171416537.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171416537.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/201502171418188.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171418188.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/201502171421019.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171421019.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/2015021714224910.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_2015021714224910.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/2015021714263111.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_2015021714263111.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/2015021714284112.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_2015021714284112.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/2015021714300013.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_2015021714300013.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/2015021714311414.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_2015021714311414.jpg' width='150' height='100'></a></div></div><div id='btn_right' class='btn_right_active' alt='13'>&nbsp;</div>
+                            <div class='album_box' id='album_box620'><div class='album_img' id='album_img620' alt='Р”РµРЅСЊ РІСЃРµС… РІР»СЋР±Р»РµРЅРЅС‹С… РЅРµ РїСЂРѕС€РµР» РЅРµР·Р°РјРµС‡РµРЅРЅС‹Рј!'><a href='http://www.bsmu.by/PhotoAlbums/201502171404072.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171404072.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/201502171405503.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171405503.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/201502171407384.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171407384.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/201502171412075.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171412075.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/201502171414356.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171414356.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/201502171416537.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171416537.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/201502171418188.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171418188.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/201502171421019.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_201502171421019.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/2015021714224910.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_2015021714224910.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/2015021714263111.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_2015021714263111.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/2015021714284112.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_2015021714284112.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/2015021714300013.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_2015021714300013.jpg' width='150' height='100'></a><a href='http://www.bsmu.by/PhotoAlbums/2015021714311414.jpg' rel='lightbox[album620]' title='' class='pre'><img src='http://www.bsmu.by/PhotoAlbums/s_2015021714311414.jpg' width='150' height='100'></a></div></div><div id='btn_right' class='btn_right_active' alt='13'>&nbsp;</div>
                         </div>
                         <script type='text/javascript'>
                             Album_pre['album620'] = [13];
                         </script>
                     </div><div style='clear:both;'></div>
                 </p>
-                <p>Всех влюбленных поздравили проректор по воспитательной работе Манулик Владимир Александрович и заместитель начальник отдела организации воспитательной и внеучебной работы Первого Московского государственного медицинского университета им. И.М. Сеченова Чуфаров Алексей Сергеевич, который находился в университете с официальным визитом.</p>
-                <p><em>Методист ОВРМ Янь Ольга Юрьевна</em></p></p>
+                <p>Р’СЃРµС… РІР»СЋР±Р»РµРЅРЅС‹С… РїРѕР·РґСЂР°РІРёР»Рё РїСЂРѕСЂРµРєС‚РѕСЂ РїРѕ РІРѕСЃРїРёС‚Р°С‚РµР»СЊРЅРѕР№ СЂР°Р±РѕС‚Рµ РњР°РЅСѓР»РёРє Р’Р»Р°РґРёРјРёСЂ РђР»РµРєСЃР°РЅРґСЂРѕРІРёС‡ Рё Р·Р°РјРµСЃС‚РёС‚РµР»СЊ РЅР°С‡Р°Р»СЊРЅРёРє РѕС‚РґРµР»Р° РѕСЂРіР°РЅРёР·Р°С†РёРё РІРѕСЃРїРёС‚Р°С‚РµР»СЊРЅРѕР№ Рё РІРЅРµСѓС‡РµР±РЅРѕР№ СЂР°Р±РѕС‚С‹ РџРµСЂРІРѕРіРѕ РњРѕСЃРєРѕРІСЃРєРѕРіРѕ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅРѕРіРѕ РјРµРґРёС†РёРЅСЃРєРѕРіРѕ СѓРЅРёРІРµСЂСЃРёС‚РµС‚Р° РёРј. Р.Рњ. РЎРµС‡РµРЅРѕРІР° Р§СѓС„Р°СЂРѕРІ РђР»РµРєСЃРµР№ РЎРµСЂРіРµРµРІРёС‡, РєРѕС‚РѕСЂС‹Р№ РЅР°С…РѕРґРёР»СЃСЏ РІ СѓРЅРёРІРµСЂСЃРёС‚РµС‚Рµ СЃ РѕС„РёС†РёР°Р»СЊРЅС‹Рј РІРёР·РёС‚РѕРј.</p>
+                <p><em>РњРµС‚РѕРґРёСЃС‚ РћР’Р Рњ РЇРЅСЊ РћР»СЊРіР° Р®СЂСЊРµРІРЅР°</em></p></p>
                 <br />
-                <!-- Форма отправляющая данные -->
+                <!-- Р¤РѕСЂРјР° РѕС‚РїСЂР°РІР»СЏСЋС‰Р°СЏ РґР°РЅРЅС‹Рµ -->
                 <script src="//ulogin.ru/js/ulogin.js"></script>
                 <div id="uLogin" data-ulogin="display=small;fields=first_name,last_name;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri=http%3A%2F%2Fbsmu.akson.by%2Flove.php"></div>
                 
@@ -124,73 +125,73 @@ setcookie('identity', $identity, time()+604800);
                 <p>
 
                     <div class="AnonsArtRubric">
-                        <div class="In"><a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article989/"><img src="http://www.bsmu.by/ImgForArticles/s_201502171247581.jpg" alt="Встреча с учащимися из Могилевской области."></a></div>
+                        <div class="In"><a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article989/"><img src="http://www.bsmu.by/ImgForArticles/s_201502171247581.jpg" alt="Р’СЃС‚СЂРµС‡Р° СЃ СѓС‡Р°С‰РёРјРёСЃСЏ РёР· РњРѕРіРёР»РµРІСЃРєРѕР№ РѕР±Р»Р°СЃС‚Рё."></a></div>
                         <div class="InText">
-                            <div><span style="font-size: 18px;">16</span> февраля</div>
-                            <a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article989/">Встреча с учащимися из Могилевской области.</a><br />Обсуждение вопросов поступления в БГМУ.
+                            <div><span style="font-size: 18px;">16</span> С„РµРІСЂР°Р»СЏ</div>
+                            <a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article989/">Р’СЃС‚СЂРµС‡Р° СЃ СѓС‡Р°С‰РёРјРёСЃСЏ РёР· РњРѕРіРёР»РµРІСЃРєРѕР№ РѕР±Р»Р°СЃС‚Рё.</a><br />РћР±СЃСѓР¶РґРµРЅРёРµ РІРѕРїСЂРѕСЃРѕРІ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РІ Р‘Р“РњРЈ.
                         </div>
                     </div>
                     <div class="niled">&nbsp;</div>
 
                     <div class="AnonsArtRubric">
-                        <div class="In"><a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article992/"><img src="http://www.bsmu.by/ImgForArticles/s_201502171602131.jpg" alt="VI Всероссийская студенческая стоматологическая Олимпиада с международным участием"></a></div>
+                        <div class="In"><a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article992/"><img src="http://www.bsmu.by/ImgForArticles/s_201502171602131.jpg" alt="VI Р’СЃРµСЂРѕСЃСЃРёР№СЃРєР°СЏ СЃС‚СѓРґРµРЅС‡РµСЃРєР°СЏ СЃС‚РѕРјР°С‚РѕР»РѕРіРёС‡РµСЃРєР°СЏ РћР»РёРјРїРёР°РґР° СЃ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Рј СѓС‡Р°СЃС‚РёРµРј"></a></div>
                         <div class="InText">
-                            <div><span style="font-size: 18px;">13</span> февраля</div>
-                            <a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article992/">VI Всероссийская студенческая стоматологическая Олимпиада с международным участием</a><br />- 2015.
+                            <div><span style="font-size: 18px;">13</span> С„РµРІСЂР°Р»СЏ</div>
+                            <a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article992/">VI Р’СЃРµСЂРѕСЃСЃРёР№СЃРєР°СЏ СЃС‚СѓРґРµРЅС‡РµСЃРєР°СЏ СЃС‚РѕРјР°С‚РѕР»РѕРіРёС‡РµСЃРєР°СЏ РћР»РёРјРїРёР°РґР° СЃ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Рј СѓС‡Р°СЃС‚РёРµРј</a><br />- 2015.
                         </div>
                     </div>
                     <div class="niled">&nbsp;</div>
 
                     <div class="AnonsArtRubric">
-                        <div class="In"><a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article988/"><img src="http://www.bsmu.by/ImgForArticles/s_201502161519072.jpg" alt="Массовое профориентационное мероприятие."></a></div>
+                        <div class="In"><a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article988/"><img src="http://www.bsmu.by/ImgForArticles/s_201502161519072.jpg" alt="РњР°СЃСЃРѕРІРѕРµ РїСЂРѕС„РѕСЂРёРµРЅС‚Р°С†РёРѕРЅРЅРѕРµ РјРµСЂРѕРїСЂРёСЏС‚РёРµ."></a></div>
                         <div class="InText">
-                            <div><span style="font-size: 18px;">13</span> февраля</div>
-                            <a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article988/">Массовое профориентационное мероприятие.</a><br />Встреча со старшеклассниками Крупского района Минской области.
+                            <div><span style="font-size: 18px;">13</span> С„РµРІСЂР°Р»СЏ</div>
+                            <a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article988/">РњР°СЃСЃРѕРІРѕРµ РїСЂРѕС„РѕСЂРёРµРЅС‚Р°С†РёРѕРЅРЅРѕРµ РјРµСЂРѕРїСЂРёСЏС‚РёРµ.</a><br />Р’СЃС‚СЂРµС‡Р° СЃРѕ СЃС‚Р°СЂС€РµРєР»Р°СЃСЃРЅРёРєР°РјРё РљСЂСѓРїСЃРєРѕРіРѕ СЂР°Р№РѕРЅР° РњРёРЅСЃРєРѕР№ РѕР±Р»Р°СЃС‚Рё.
                         </div>
                     </div>
                     <div class="niled">&nbsp;</div>
 
                     <div class="AnonsArtRubric">
-                        <div class="In"><a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article986/"><img src="http://www.bsmu.by/ImgForArticles/s_201502121103421.jpg" alt="Отчетная профсоюзная конференция первичной профсоюзной организации студентов"></a></div>
+                        <div class="In"><a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article986/"><img src="http://www.bsmu.by/ImgForArticles/s_201502121103421.jpg" alt="РћС‚С‡РµС‚РЅР°СЏ РїСЂРѕС„СЃРѕСЋР·РЅР°СЏ РєРѕРЅС„РµСЂРµРЅС†РёСЏ РїРµСЂРІРёС‡РЅРѕР№ РїСЂРѕС„СЃРѕСЋР·РЅРѕР№ РѕСЂРіР°РЅРёР·Р°С†РёРё СЃС‚СѓРґРµРЅС‚РѕРІ"></a></div>
                         <div class="InText">
-                            <div><span style="font-size: 18px;">12</span> февраля</div>
-                            <a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article986/">Отчетная профсоюзная конференция первичной профсоюзной организации студентов</a><br />БГМУ.
+                            <div><span style="font-size: 18px;">12</span> С„РµРІСЂР°Р»СЏ</div>
+                            <a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article986/">РћС‚С‡РµС‚РЅР°СЏ РїСЂРѕС„СЃРѕСЋР·РЅР°СЏ РєРѕРЅС„РµСЂРµРЅС†РёСЏ РїРµСЂРІРёС‡РЅРѕР№ РїСЂРѕС„СЃРѕСЋР·РЅРѕР№ РѕСЂРіР°РЅРёР·Р°С†РёРё СЃС‚СѓРґРµРЅС‚РѕРІ</a><br />Р‘Р“РњРЈ.
                         </div>
                     </div>
                     <div class="niled">&nbsp;</div>
 
                     <div class="AnonsArtRubric">
-                        <div class="In"><a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article984/"><img src="http://www.bsmu.by/ImgForArticles/s_201502111420041.jpg" alt="Диалог администрации университета и иностранных слушателей"></a></div>
+                        <div class="In"><a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article984/"><img src="http://www.bsmu.by/ImgForArticles/s_201502111420041.jpg" alt="Р”РёР°Р»РѕРі Р°РґРјРёРЅРёСЃС‚СЂР°С†РёРё СѓРЅРёРІРµСЂСЃРёС‚РµС‚Р° Рё РёРЅРѕСЃС‚СЂР°РЅРЅС‹С… СЃР»СѓС€Р°С‚РµР»РµР№"></a></div>
                         <div class="InText">
-                            <div><span style="font-size: 18px;">11</span> февраля</div>
-                            <a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article984/">Диалог администрации университета и иностранных слушателей</a><br />Обсуждение вопросов организации учебного процесса.
+                            <div><span style="font-size: 18px;">11</span> С„РµРІСЂР°Р»СЏ</div>
+                            <a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article984/">Р”РёР°Р»РѕРі Р°РґРјРёРЅРёСЃС‚СЂР°С†РёРё СѓРЅРёРІРµСЂСЃРёС‚РµС‚Р° Рё РёРЅРѕСЃС‚СЂР°РЅРЅС‹С… СЃР»СѓС€Р°С‚РµР»РµР№</a><br />РћР±СЃСѓР¶РґРµРЅРёРµ РІРѕРїСЂРѕСЃРѕРІ РѕСЂРіР°РЅРёР·Р°С†РёРё СѓС‡РµР±РЅРѕРіРѕ РїСЂРѕС†РµСЃСЃР°.
                         </div>
                     </div>
                     <div class="niled">&nbsp;</div>
 
                     <div class="AnonsArtRubric">
-                        <div class="In"><a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article980/"><img src="http://www.bsmu.by/ImgForArticles/s_201501291343291.jpg" alt="Лучшая докторская диссертация 2014 года"></a></div>
+                        <div class="In"><a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article980/"><img src="http://www.bsmu.by/ImgForArticles/s_201501291343291.jpg" alt="Р›СѓС‡С€Р°СЏ РґРѕРєС‚РѕСЂСЃРєР°СЏ РґРёСЃСЃРµСЂС‚Р°С†РёСЏ 2014 РіРѕРґР°"></a></div>
                         <div class="InText">
-                            <div><span style="font-size: 18px;">29</span> января</div>
-                            <a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article980/">Лучшая докторская диссертация 2014 года</a><br />по медицинским наукам в Республике Беларусь.
+                            <div><span style="font-size: 18px;">29</span> СЏРЅРІР°СЂСЏ</div>
+                            <a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article980/">Р›СѓС‡С€Р°СЏ РґРѕРєС‚РѕСЂСЃРєР°СЏ РґРёСЃСЃРµСЂС‚Р°С†РёСЏ 2014 РіРѕРґР°</a><br />РїРѕ РјРµРґРёС†РёРЅСЃРєРёРј РЅР°СѓРєР°Рј РІ Р РµСЃРїСѓР±Р»РёРєРµ Р‘РµР»Р°СЂСѓСЃСЊ.
                         </div>
                     </div>
                     <div class="niled">&nbsp;</div>
 
                     <div class="AnonsArtRubric">
-                        <div class="In"><a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article979/"><img src="http://www.bsmu.by/ImgForArticles/s_201501281529091.jpg" alt="Конференция по актуальным вопросам акушерства и гинекологии в рамках научной сессии БГМУ,"></a></div>
+                        <div class="In"><a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article979/"><img src="http://www.bsmu.by/ImgForArticles/s_201501281529091.jpg" alt="РљРѕРЅС„РµСЂРµРЅС†РёСЏ РїРѕ Р°РєС‚СѓР°Р»СЊРЅС‹Рј РІРѕРїСЂРѕСЃР°Рј Р°РєСѓС€РµСЂСЃС‚РІР° Рё РіРёРЅРµРєРѕР»РѕРіРёРё РІ СЂР°РјРєР°С… РЅР°СѓС‡РЅРѕР№ СЃРµСЃСЃРёРё Р‘Р“РњРЈ,"></a></div>
                         <div class="InText">
-                            <div><span style="font-size: 18px;">28</span> января</div>
-                            <a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article979/">Конференция по актуальным вопросам акушерства и гинекологии в рамках научной сессии БГМУ,</a><br />посвященная 85-летию Герасимовича Г.И.
+                            <div><span style="font-size: 18px;">28</span> СЏРЅРІР°СЂСЏ</div>
+                            <a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article979/">РљРѕРЅС„РµСЂРµРЅС†РёСЏ РїРѕ Р°РєС‚СѓР°Р»СЊРЅС‹Рј РІРѕРїСЂРѕСЃР°Рј Р°РєСѓС€РµСЂСЃС‚РІР° Рё РіРёРЅРµРєРѕР»РѕРіРёРё РІ СЂР°РјРєР°С… РЅР°СѓС‡РЅРѕР№ СЃРµСЃСЃРёРё Р‘Р“РњРЈ,</a><br />РїРѕСЃРІСЏС‰РµРЅРЅР°СЏ 85-Р»РµС‚РёСЋ Р“РµСЂР°СЃРёРјРѕРІРёС‡Р° Р“.Р.
                         </div>
                     </div>
                     <div class="niled">&nbsp;</div>
 
                     <div class="AnonsArtRubric">
-                        <div class="In"><a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article978/"><img src="http://www.bsmu.by/ImgForArticles/s_201501271449353i270114.jpg" alt="Иностранные студенты БГМУ"></a></div>
+                        <div class="In"><a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article978/"><img src="http://www.bsmu.by/ImgForArticles/s_201501271449353i270114.jpg" alt="РРЅРѕСЃС‚СЂР°РЅРЅС‹Рµ СЃС‚СѓРґРµРЅС‚С‹ Р‘Р“РњРЈ"></a></div>
                         <div class="InText">
-                            <div><span style="font-size: 18px;">27</span> января</div>
-                            <a title="Прочитать новость" href="http://www.bsmu.by/allarticles/rubric1/article978/">Иностранные студенты БГМУ</a><br />на балу православной  молодёжи.
+                            <div><span style="font-size: 18px;">27</span> СЏРЅРІР°СЂСЏ</div>
+                            <a title="РџСЂРѕС‡РёС‚Р°С‚СЊ РЅРѕРІРѕСЃС‚СЊ" href="http://www.bsmu.by/allarticles/rubric1/article978/">РРЅРѕСЃС‚СЂР°РЅРЅС‹Рµ СЃС‚СѓРґРµРЅС‚С‹ Р‘Р“РњРЈ</a><br />РЅР° Р±Р°Р»Сѓ РїСЂР°РІРѕСЃР»Р°РІРЅРѕР№  РјРѕР»РѕРґС‘Р¶Рё.
                         </div>
                     </div>
                     <div class="niled">&nbsp;</div>
@@ -205,32 +206,32 @@ setcookie('identity', $identity, time()+604800);
         <div id="goverment">
             <div id="blazon"><img src="http://www.bsmu.by/design/gerb_rgb.jpg" alt="" /></div>
             <div class="govermentbox">
-                <div>Президент Республики Беларусь</div>
+                <div>РџСЂРµР·РёРґРµРЅС‚ Р РµСЃРїСѓР±Р»РёРєРё Р‘РµР»Р°СЂСѓСЃСЊ</div>
                 <a href="http://president.gov.by">president.gov.by</a>
             </div>
             <div class="govermentbox">
-                <div>Совет Республики Беларусь</div>
+                <div>РЎРѕРІРµС‚ Р РµСЃРїСѓР±Р»РёРєРё Р‘РµР»Р°СЂСѓСЃСЊ</div>
                 <a href="http://sovrep.gov.by">sovrep.gov.by</a>
             </div>
             <div class="govermentbox">
-                <div>Министерство здравоохранения</div>
+                <div>РњРёРЅРёСЃС‚РµСЂСЃС‚РІРѕ Р·РґСЂР°РІРѕРѕС…СЂР°РЅРµРЅРёСЏ</div>
                 <a href="http://minzdrav.gov.by">minzdrav.gov.by</a>
             </div>
             <div class="govermentbox">
-                <div>Министерство образования</div>
+                <div>РњРёРЅРёСЃС‚РµСЂСЃС‚РІРѕ РѕР±СЂР°Р·РѕРІР°РЅРёСЏ</div>
                 <a href="http://edu.gov.by">edu.gov.by</a>
             </div>
         </div>
         <div class="niled">&nbsp;</div>
-        <div id="copyright1">&copy; 1921&mdash;2015 Учреждение образования &laquo;Белорусский государственный медицинский университет&raquo;.</div>
-        <div id="copyright2">При перепечатке текстовой информации и фотографий&nbsp;гиперссылка на сайт обязательна. Все права на графические и текстовые материалы принадлежат их авторам.</div>
+        <div id="copyright1">&copy; 1921&mdash;2015 РЈС‡СЂРµР¶РґРµРЅРёРµ РѕР±СЂР°Р·РѕРІР°РЅРёСЏ &laquo;Р‘РµР»РѕСЂСѓСЃСЃРєРёР№ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅС‹Р№ РјРµРґРёС†РёРЅСЃРєРёР№ СѓРЅРёРІРµСЂСЃРёС‚РµС‚&raquo;.</div>
+        <div id="copyright2">РџСЂРё РїРµСЂРµРїРµС‡Р°С‚РєРµ С‚РµРєСЃС‚РѕРІРѕР№ РёРЅС„РѕСЂРјР°С†РёРё Рё С„РѕС‚РѕРіСЂР°С„РёР№&nbsp;РіРёРїРµСЂСЃСЃС‹Р»РєР° РЅР° СЃР°Р№С‚ РѕР±СЏР·Р°С‚РµР»СЊРЅР°. Р’СЃРµ РїСЂР°РІР° РЅР° РіСЂР°С„РёС‡РµСЃРєРёРµ Рё С‚РµРєСЃС‚РѕРІС‹Рµ РјР°С‚РµСЂРёР°Р»С‹ РїСЂРёРЅР°РґР»РµР¶Р°С‚ РёС… Р°РІС‚РѕСЂР°Рј.</div>
         <div class="niled">&nbsp;</div>
         <div id="footerinfo">
-            <a href="http://www.bsmu.by/page/18/1481/">Контактная информация</a>
-            <p>220116, г. Минск, пр. Дзержинского, 83<br />Тел: +375 17 272-61-96. Факс: +375 17 272-61-97<br />Эл. почта: <a href="mailto:bsmu@bsmu.by">bsmu@bsmu.by</a><br /><br /></p>
+            <a href="http://www.bsmu.by/page/18/1481/">РљРѕРЅС‚Р°РєС‚РЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ</a>
+            <p>220116, Рі. РњРёРЅСЃРє, РїСЂ. Р”Р·РµСЂР¶РёРЅСЃРєРѕРіРѕ, 83<br />РўРµР»: +375 17 272-61-96. Р¤Р°РєСЃ: +375 17 272-61-97<br />Р­Р». РїРѕС‡С‚Р°: <a href="mailto:bsmu@bsmu.by">bsmu@bsmu.by</a><br /><br /></p>
         </div>
         <div class="banner_Partn">
-            <p><img src="http://www.bsmu.by/images/MainPage/part_m.png" alt="" width="22" height="22" /><br /><a href="http://belodent.org/">Стоматологический информационно-образовательный портал belodent.org</a><br /><a title="Витебский государственный ордена Дружбы народов медицинский университе" href="http://www.vsmu.by/ru/">ВГМУ</a> <a title="Витебский государственный университет им. П. М. Машерова" href="http://www.vsu.by/index.php/ru/">ВГУ</a> <a title="Гродненский государственный медицинский университет" href="http://grsmu.by/">ГрГМУ</a> <a title="Белорусский государственный университет информатики и радиоэлектроники" href="http://www.bsuir.by/">БГУИР</a>&nbsp;<a title="Гродненский государственный университет имени Янки Купалы" href="http://www.grsu.by/">ГрГУ</a> <a title="Минский инновационный университет" href="http://www.miu.by/">МИУ</a> <a title="Брестский государственный университет имени А.С. Пушкина" href="http://brsu.by/">БрГУ</a> <a title="Гомельский государственный технический университет имени П.О. Сухого" href="http://gstu.by/">ГГТУ</a> <a title="Академия управления при Президенте Республики Беларусь" href="http://pac.by/">АУпПРБ</a> <a title="Могилевский государственный университет имени А.А. Кулешова" href="http://msu.mogilev.by/">МГУ</a> <a title="Барановичский государственный университет" href="http://barsu.by/">БарГУ</a></p>
+            <p><img src="http://www.bsmu.by/images/MainPage/part_m.png" alt="" width="22" height="22" /><br /><a href="http://belodent.org/">РЎС‚РѕРјР°С‚РѕР»РѕРіРёС‡РµСЃРєРёР№ РёРЅС„РѕСЂРјР°С†РёРѕРЅРЅРѕ-РѕР±СЂР°Р·РѕРІР°С‚РµР»СЊРЅС‹Р№ РїРѕСЂС‚Р°Р» belodent.org</a><br /><a title="Р’РёС‚РµР±СЃРєРёР№ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅС‹Р№ РѕСЂРґРµРЅР° Р”СЂСѓР¶Р±С‹ РЅР°СЂРѕРґРѕРІ РјРµРґРёС†РёРЅСЃРєРёР№ СѓРЅРёРІРµСЂСЃРёС‚Рµ" href="http://www.vsmu.by/ru/">Р’Р“РњРЈ</a> <a title="Р’РёС‚РµР±СЃРєРёР№ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅС‹Р№ СѓРЅРёРІРµСЂСЃРёС‚РµС‚ РёРј. Рџ. Рњ. РњР°С€РµСЂРѕРІР°" href="http://www.vsu.by/index.php/ru/">Р’Р“РЈ</a> <a title="Р“СЂРѕРґРЅРµРЅСЃРєРёР№ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅС‹Р№ РјРµРґРёС†РёРЅСЃРєРёР№ СѓРЅРёРІРµСЂСЃРёС‚РµС‚" href="http://grsmu.by/">Р“СЂР“РњРЈ</a> <a title="Р‘РµР»РѕСЂСѓСЃСЃРєРёР№ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅС‹Р№ СѓРЅРёРІРµСЂСЃРёС‚РµС‚ РёРЅС„РѕСЂРјР°С‚РёРєРё Рё СЂР°РґРёРѕСЌР»РµРєС‚СЂРѕРЅРёРєРё" href="http://www.bsuir.by/">Р‘Р“РЈРР </a>&nbsp;<a title="Р“СЂРѕРґРЅРµРЅСЃРєРёР№ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅС‹Р№ СѓРЅРёРІРµСЂСЃРёС‚РµС‚ РёРјРµРЅРё РЇРЅРєРё РљСѓРїР°Р»С‹" href="http://www.grsu.by/">Р“СЂР“РЈ</a> <a title="РњРёРЅСЃРєРёР№ РёРЅРЅРѕРІР°С†РёРѕРЅРЅС‹Р№ СѓРЅРёРІРµСЂСЃРёС‚РµС‚" href="http://www.miu.by/">РњРРЈ</a> <a title="Р‘СЂРµСЃС‚СЃРєРёР№ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅС‹Р№ СѓРЅРёРІРµСЂСЃРёС‚РµС‚ РёРјРµРЅРё Рђ.РЎ. РџСѓС€РєРёРЅР°" href="http://brsu.by/">Р‘СЂР“РЈ</a> <a title="Р“РѕРјРµР»СЊСЃРєРёР№ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅС‹Р№ С‚РµС…РЅРёС‡РµСЃРєРёР№ СѓРЅРёРІРµСЂСЃРёС‚РµС‚ РёРјРµРЅРё Рџ.Рћ. РЎСѓС…РѕРіРѕ" href="http://gstu.by/">Р“Р“РўРЈ</a> <a title="РђРєР°РґРµРјРёСЏ СѓРїСЂР°РІР»РµРЅРёСЏ РїСЂРё РџСЂРµР·РёРґРµРЅС‚Рµ Р РµСЃРїСѓР±Р»РёРєРё Р‘РµР»Р°СЂСѓСЃСЊ" href="http://pac.by/">РђРЈРїРџР Р‘</a> <a title="РњРѕРіРёР»РµРІСЃРєРёР№ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅС‹Р№ СѓРЅРёРІРµСЂСЃРёС‚РµС‚ РёРјРµРЅРё Рђ.Рђ. РљСѓР»РµС€РѕРІР°" href="http://msu.mogilev.by/">РњР“РЈ</a> <a title="Р‘Р°СЂР°РЅРѕРІРёС‡СЃРєРёР№ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅС‹Р№ СѓРЅРёРІРµСЂСЃРёС‚РµС‚" href="http://barsu.by/">Р‘Р°СЂР“РЈ</a></p>
             <p><a href="http://www.alexa.com/"><img src="http://www.bsmu.by/images/MainPage/alexa.jpg" alt="" width="60" height="56" /></a></p>
         </div>
     </div>
