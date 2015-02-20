@@ -9,7 +9,7 @@
           session_start();
           if(isset($_SESSION['user'])){ $username = $_SESSION['user'];}
      } 
-     require 'app_config.php'; //подключение файла с данными для входа в БД
+     require_once '/app_config.php'; //подключение файла с данными для входа в БД
 
      $comment = trim($_REQUEST['user_comment']);
      if(!$comment) die("Error comment");
