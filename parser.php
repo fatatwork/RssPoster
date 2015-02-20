@@ -92,7 +92,6 @@ if($diff>=20){
             addComment($user_id, $comment_life, $comment_time);
             getCommentsCount($user_id);
           }
-          //запись количества общего комментов
-			
+          //запись количества общего комментов	
 }
 ?>
