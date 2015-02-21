@@ -70,7 +70,7 @@ unset($html);
 if($comment_life>=20){
 	$message = "Последний коммент был оставлен $comment_life минут(ы) назад пользователем $author
 	$url";
-//	mail("good-1991@mail.ru", "Chat", $message);
+	mail("good-1991@mail.ru", "Chat", $message);
 
      	  $dbconnect = mysql_connect ($dbhost, $dbusername, $dbpass) or die("<p>Ошибка подключения к базе данных: " . mysql_error() . "</p>");
           //говорим базе что записываем в нее все в utf8
