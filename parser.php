@@ -21,8 +21,7 @@ function searchUser($first_name, $last_name){//ищем юзера по url во
      function addComment($user_id, $comment_life, $comment_time){//добавляем комментарий
           $query= "INSERT INTO vk_comments (user_id, comment_life, comment_time) VALUES ('{$user_id}', '{$comment_life}', '{$comment_time}');";
           $res =mysql_query($query) or die("<p>Невозможно сделать запись комментария: " . mysql_error() . "</p>");
-          if($res) return true;
-          else return false;
+          return $res;
      }
      function getCommentsCount($u_id){
      	  $query="SELECT * FROM vk_comments WHERE user_id='{$u_id}';";
@@ -68,10 +67,10 @@ echo " LIFE = $comment_life </br>";
 $html->clear();//очистка памяти от объекта
 unset($html);
 
-if($diff>=20){
+if($comment_life>=20){
 	$message = "Последний коммент был оставлен $comment_life минут(ы) назад пользователем $author
 	$url";
-	mail("good-1991@mail.ru", "Chat", $message);
+//	mail("good-1991@mail.ru", "Chat", $message);
 
      	  $dbconnect = mysql_connect ($dbhost, $dbusername, $dbpass) or die("<p>Ошибка подключения к базе данных: " . mysql_error() . "</p>");
           //говорим базе что записываем в нее все в utf8
