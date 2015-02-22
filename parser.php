@@ -73,7 +73,7 @@ echo "<a href=\"https://m.vk.com/wall-43932139_5970?post_add#post_add\">Add post
 $html->clear();//очистка памяти от объекта
 unset($html);
 
-if($comment_life>=30 && $author_id!="id152223765"){
+if($comment_life>=45 && $author_id!="id152223765"){
 	$message = "Последний коммент был оставлен $comment_life минут(ы) назад пользователем
   $first_name $last_name
   http://vk.com/$author_id 
