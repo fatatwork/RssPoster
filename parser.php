@@ -38,7 +38,7 @@ $html = file_get_html($url);
 if(!$html) echo "error";
 $fnd_author=$html->find('a.pi_author');//в масссиве вк всегда 51 коммент
 $fnd_comment=$html->find('div.pi_text');
-for($i=1; $i<count($fnd_author); $i++){
+for($i=31; $i<count($fnd_author); $i++){
   $author=trim($fnd_author[$i]->innertext);
   if($author=="Официальное сообщество Plantronics"){
   $message="Сообщение от администрации $url";
@@ -83,7 +83,8 @@ if($comment_life>=30 && $author_id!="id152223765"){
 	$message = "Последний коммент был оставлен $comment_life минут(ы) назад пользователем
   $first_name $last_name
   http://vk.com/$author_id 
-  обсуждение $url";
+  обсуждение 
+  $url";
 	mail("good-1991@mail.ru", "Chat", $message);
 
      	    $dbconnect = mysql_connect ($dbhost, $dbusername, $dbpass) or die("<p>Ошибка подключения к базе данных: " . mysql_error() . "</p>");
