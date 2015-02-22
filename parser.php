@@ -12,9 +12,9 @@ function searchUser($first_name, $last_name){//ищем юзера по url во
           $row=mysql_fetch_array($res);//получение результата запроса из базы;
           return $row;
      }
-     function addUser($first_name, $last_name){//добавление пользователя
-          $query = "INSERT INTO vk_users (first_name, last_name)" .
-          "VALUES ('{$first_name}', '{$last_name}');";
+     function addUser($first_name, $last_name, $author_id){//добавление пользователя
+          $query = "INSERT INTO vk_users (first_name, last_name, vk_id)" .
+          "VALUES ('{$first_name}', '{$last_name}', '{$author_id}');";
           $result = mysql_query($query) or die("<p>Невозможно добавить пользователя " . mysql_error() . "</p>");
      }
 
@@ -37,11 +37,14 @@ $url="https://m.vk.com/wall-43932139_5970";
 $html = file_get_html($url);
 if(!$html) echo "error";
 
-$fnd_author=$html->find('div.pi_head a');
+$fnd_author=$html->find('a.pi_author');
 $author=end($fnd_author);
+sscanf($author, "<a class=\"pi_author\" href=\"/%s\">", $author_id);
 $author=$author->innertext;
 sscanf($author, "%s %s", $first_name, $last_name);
-echo "$first_name $last_name </br>";
+echo "$first_name $last_name</br>";
+$author_id=substr($author_id, 0, strpos($author_id, "\">"));
+echo "$author_id</br>";
 
 $fnd=$html->find('a.item_date');
 $comment_time=end($fnd);
@@ -66,9 +69,10 @@ echo " LIFE = $comment_life </br>";
 $html->clear();//очистка памяти от объекта
 unset($html);
 
-if($comment_life>=30){
-	$message = "Последний коммент был оставлен $comment_life минут(ы) назад пользователем $author
-	$url";
+if($comment_life>=30 && $author_id!="id152223765"){
+	$message = "Последний коммент был оставлен $comment_life минут(ы) назад пользователем $first_name $last_name
+  http://vk.com/$author_id 
+  обсуждение $url";
 	mail("good-1991@mail.ru", "Chat", $message);
 
      	  $dbconnect = mysql_connect ($dbhost, $dbusername, $dbpass) or die("<p>Ошибка подключения к базе данных: " . mysql_error() . "</p>");
@@ -84,7 +88,7 @@ if($comment_life>=30){
                if($user_id) addComment($user_id, $comment_life, $comment_time);
                getCommentsCount($user_id);
           } else {
-            addUser($first_name, $last_name);
+            addUser($first_name, $last_name, $author_id);
             $row=searchUser($first_name, $last_name);
             $user_id=$row['id'];//получаем id вновьдобавленного пользователя
             addComment($user_id, $comment_life, $comment_time);
