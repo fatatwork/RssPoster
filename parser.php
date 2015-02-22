@@ -36,15 +36,21 @@ function searchUser($first_name, $last_name){//ищем юзера по url во
 $url="https://m.vk.com/wall-43932139_5970";
 $html = file_get_html($url);
 if(!$html) echo "error";
+$fnd_author=$html->find('a.pi_author');//в масссиве вк всегда 51 коммент
+$fnd_comment=$html->find('div.pi_text');
+for($i=1; $i<count($fnd_author); $i++){
+  $author=trim($fnd_author[$i]->innertext);
+  if($author=="Официальное сообщество Plantronics"){
+  $message="Сообщение от администрации $url";
+  mail("good-1991@mail.ru", "Chat", $message);
+  break;
+  }
+}
 
-$fnd_author=$html->find('a.pi_author');
 $author=end($fnd_author);
 sscanf($author, "<a class=\"pi_author\" href=\"/%s\">", $author_id);
 $author=trim($author->innertext);
-if($author=="Официальное сообщество Plantronics"){
-  $message="Сообщение от администрации $url";
-  mail("good-1991@mail.ru", "Chat", $message);
-}
+
 sscanf($author, "%s %s", $first_name, $last_name);
 echo "$first_name $last_name $other_name</br>";
 $author_id=substr($author_id, 0, strpos($author_id, "\">"));
@@ -68,19 +74,19 @@ sscanf($currentDate,"%d:%d" ,$hour, $min);
 $currentMin=$hour*60+$min;
 echo "$currentMin</br>";
 $comment_life=$currentMin-$minLastComm;//разница в минутах
-echo " LIFE = $comment_life </br>";
+echo "DIFF = $comment_life </br>";
 echo "<a href=\"https://m.vk.com/wall-43932139_5970?post_add#post_add\">Add post</a>";
 $html->clear();//очистка памяти от объекта
 unset($html);
 
-if($comment_life>=45 && $author_id!="id152223765"){
+if($comment_life>=30 && $author_id!="id152223765"){
 	$message = "Последний коммент был оставлен $comment_life минут(ы) назад пользователем
   $first_name $last_name
   http://vk.com/$author_id 
   обсуждение $url";
 	mail("good-1991@mail.ru", "Chat", $message);
 
-     	  $dbconnect = mysql_connect ($dbhost, $dbusername, $dbpass) or die("<p>Ошибка подключения к базе данных: " . mysql_error() . "</p>");
+     	    $dbconnect = mysql_connect ($dbhost, $dbusername, $dbpass) or die("<p>Ошибка подключения к базе данных: " . mysql_error() . "</p>");
           //говорим базе что записываем в нее все в utf8
           mysql_query("SET NAMES 'utf8';"); 
           mysql_query("SET CHARACTER SET 'utf8';"); 
