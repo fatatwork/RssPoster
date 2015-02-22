@@ -40,9 +40,13 @@ if(!$html) echo "error";
 $fnd_author=$html->find('a.pi_author');
 $author=end($fnd_author);
 sscanf($author, "<a class=\"pi_author\" href=\"/%s\">", $author_id);
-$author=$author->innertext;
+$author=trim($author->innertext);
+if($author=="Официальное сообщество Plantronics"){
+  $message="Сообщение от администрации $url";
+  mail("good-1991@mail.ru", "Chat", $message);
+}
 sscanf($author, "%s %s", $first_name, $last_name);
-echo "$first_name $last_name</br>";
+echo "$first_name $last_name $other_name</br>";
 $author_id=substr($author_id, 0, strpos($author_id, "\">"));
 echo "<a href=\"https://vk.com/$author_id\">$author_id<a/></br>";
 
@@ -95,6 +99,5 @@ if($comment_life>=30 && $author_id!="id152223765"){
             addComment($user_id, $comment_life, $comment_time);
             getCommentsCount($user_id);
           }
-          //запись количества общего комментов	
-}
+  }
 ?>
