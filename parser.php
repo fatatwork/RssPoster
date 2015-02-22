@@ -40,7 +40,6 @@ if(!$html) echo "error";
 $fnd_author=$html->find('div.pi_head a');
 $author=end($fnd_author);
 $author=$author->innertext;
-$first_name=0; $last_name=0;
 sscanf($author, "%s %s", $first_name, $last_name);
 echo "$first_name $last_name </br>";
 
@@ -67,7 +66,7 @@ echo " LIFE = $comment_life </br>";
 $html->clear();//очистка памяти от объекта
 unset($html);
 
-if($comment_life>=20){
+if($comment_life>=30){
 	$message = "Последний коммент был оставлен $comment_life минут(ы) назад пользователем $author
 	$url";
 	mail("good-1991@mail.ru", "Chat", $message);
