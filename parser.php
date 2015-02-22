@@ -44,7 +44,7 @@ $author=$author->innertext;
 sscanf($author, "%s %s", $first_name, $last_name);
 echo "$first_name $last_name</br>";
 $author_id=substr($author_id, 0, strpos($author_id, "\">"));
-echo "$author_id</br>";
+echo "<a href=\"https://vk.com/$author_id\">$author_id<a/></br>";
 
 $fnd=$html->find('a.item_date');
 $comment_time=end($fnd);
@@ -65,12 +65,13 @@ $currentMin=$hour*60+$min;
 echo "$currentMin</br>";
 $comment_life=$currentMin-$minLastComm;//разница в минутах
 echo " LIFE = $comment_life </br>";
-
+echo "<a href=\"https://m.vk.com/wall-43932139_5970?post_add#post_add\">Add post</a>";
 $html->clear();//очистка памяти от объекта
 unset($html);
 
 if($comment_life>=30 && $author_id!="id152223765"){
-	$message = "Последний коммент был оставлен $comment_life минут(ы) назад пользователем $first_name $last_name
+	$message = "Последний коммент был оставлен $comment_life минут(ы) назад пользователем
+  $first_name $last_name
   http://vk.com/$author_id 
   обсуждение $url";
 	mail("good-1991@mail.ru", "Chat", $message);
