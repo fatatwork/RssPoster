@@ -6,8 +6,8 @@ chdir("/home/user1137761/www/bsmu.akson.by");
 require_once 'simplehtmldom/simple_html_dom.php';
 require_once 'app_config.php';
 
-function searchUser($first_name, $last_name){//ищем юзера по url возвращаем в качестве результата всю строку row
-          $query="SELECT * FROM vk_users WHERE first_name='{$first_name}'"." AND last_name='{$last_name}';";
+      function searchUser($author_id){//ищем юзера по url возвращаем в качестве результата всю строку row
+          $query="SELECT * FROM vk_users WHERE vk_id='{$author_id}';";
           $res=mysql_query($query) or die("<p>searchUser Невозможно сделать запрос поиска пользователя: " . mysql_error() . "</p>");
           $row=mysql_fetch_array($res);//получение результата запроса из базы;
           return $row;
@@ -19,12 +19,23 @@ function searchUser($first_name, $last_name){//ищем юзера по url во
      }
 
      function addComment($user_id, $comment_life, $comment_time){//добавляем комментарий
+          $query="SELECT comment_time FROM vk_comments WHERE user_id='{$user_id}';";
+          $res=mysql_query($query) or die("<p>searchUser Невозможно сделать запрос поиска комментария для пользователя $user_id: " . mysql_error() . "</p>");
+          $row=mysql_fetch_array($res);//получение результата запроса из базы;
+          if($row){
+            $com_time=end($row);
+            if($com_time!=$comment_time){
+              $query= "INSERT INTO vk_comments (user_id, comment_life, comment_time) VALUES ('{$user_id}', '{$comment_life}', '{$comment_time}');";
+              $res =mysql_query($query) or die("<p>Невозможно сделать запись комментария: " . mysql_error() . "</p>");
+            }
+          } else {
           $query= "INSERT INTO vk_comments (user_id, comment_life, comment_time) VALUES ('{$user_id}', '{$comment_life}', '{$comment_time}');";
           $res =mysql_query($query) or die("<p>Невозможно сделать запись комментария: " . mysql_error() . "</p>");
+          }
           return $res;
      }
      function getCommentsCount($u_id){
-     	  $query="SELECT * FROM vk_comments WHERE user_id='{$u_id}';";
+     	    $query="SELECT * FROM vk_comments WHERE user_id='{$u_id}';";
           $res=mysql_query($query) or die("<p>getCommentsCountНевозможно сделать запрос поиска пользователя: " . mysql_error() . "</p>");
           $row=mysql_fetch_array($res);//получение результата запроса из базы;
           $rows=mysql_num_rows($res);
@@ -50,7 +61,6 @@ for($i=31; $i<count($fnd_author); $i++){
 $author=end($fnd_author);
 sscanf($author, "<a class=\"pi_author\" href=\"/%s\">", $author_id);
 $author=trim($author->innertext);
-
 sscanf($author, "%s %s", $first_name, $last_name);
 echo "$first_name $last_name $other_name</br>";
 $author_id=substr($author_id, 0, strpos($author_id, "\">"));
@@ -75,18 +85,19 @@ $currentMin=$hour*60+$min;
 echo "$currentMin</br>";
 $comment_life=$currentMin-$minLastComm;//разница в минутах
 echo "DIFF = $comment_life </br>";
-echo "<a href=\"https://m.vk.com/wall-43932139_5970?post_add#post_add\">Add post</a>";
+echo "<a href=\"https://m.vk.com/wall-43932139_5970?post_add#post_add\">Add post</a></br>";
 $html->clear();//очистка памяти от объекта
 unset($html);
 
-if($comment_life>=30 && $author_id!="id152223765"){
+if($comment_life>=20){
+  if($comment_life>=30 && $author_id!="id152223765"){
 	$message = "Последний коммент был оставлен $comment_life минут(ы) назад пользователем
   $first_name $last_name
   http://vk.com/$author_id 
   обсуждение 
-  $url";
+  $url?post_add#post_add";
 	mail("good-1991@mail.ru", "Chat", $message);
-
+  }
      	    $dbconnect = mysql_connect ($dbhost, $dbusername, $dbpass) or die("<p>Ошибка подключения к базе данных: " . mysql_error() . "</p>");
           //говорим базе что записываем в нее все в utf8
           mysql_query("SET NAMES 'utf8';"); 
@@ -94,14 +105,14 @@ if($comment_life>=30 && $author_id!="id152223765"){
           mysql_query("SET SESSION collation_connection = 'utf8_general_ci';");
           mysql_select_db($db_name) or die ("<p>Невозможно выбрать базу: " . mysql_error() . "</p>");
 
-          $row=searchUser($first_name, $last_name);
+          $row=searchUser($author_id);
           if($row){
                $user_id=$row['id'];
                if($user_id) addComment($user_id, $comment_life, $comment_time);
                getCommentsCount($user_id);
           } else {
             addUser($first_name, $last_name, $author_id);
-            $row=searchUser($first_name, $last_name);
+            $row=searchUser($author_id);
             $user_id=$row['id'];//получаем id вновьдобавленного пользователя
             addComment($user_id, $comment_life, $comment_time);
             getCommentsCount($user_id);
