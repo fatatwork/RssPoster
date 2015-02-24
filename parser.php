@@ -49,11 +49,14 @@ $html = file_get_html($url);
 if(!$html) echo "error";
 $fnd_author=$html->find('a.pi_author');//в масссиве вк всегда 51 коммент
 $fnd_comment=$html->find('div.pi_text');
-for($i=31; $i<count($fnd_author); $i++){
+for($i=40; $i<count($fnd_author); ++$i){
   $author=trim($fnd_author[$i]->innertext);
   if($author=="Официальное сообщество Plantronics"){
-  $message="Сообщение от администрации $url";
-  mail("good-1991@mail.ru", "Chat", $message);
+  $message="Message from admin";    
+  mail("good-1991@mail.ru","Chat", $message);
+  mail("feliasfogg1@yandex.ru", "Chat", $message);
+  mail("pavel.felias@gmail.com","Chat", $message);
+  mail("feliasfogg@outlook.com","Chat", $message);
   break;
   }
 }
@@ -89,16 +92,18 @@ echo "<a href=\"https://m.vk.com/wall-43932139_5970?post_add#post_add\">Add post
 $html->clear();//очистка памяти от объекта
 unset($html);
 
-if($comment_life>=20){
+
+
+if($comment_life>=25){
   if($comment_life>=35 && $author_id!="id152223765"){
-	$message = "Последний коммент был оставлен $comment_life минут(ы) назад пользователем
-  $first_name $last_name
-  http://vk.com/$author_id 
-  обсуждение 
-  $url?post_add#post_add";
-	mail("good-1991@mail.ru", "Chat", $message);
+	$message = "Last comment was added $comment_life minutes ago by user
+  $first_name $last_name";
+	mail("good-1991@mail.ru","Chat", $message);
+  mail("feliasfogg1@yandex.ru", "Chat", $message);
+  mail("pavel.felias@gmail.com","Chat", $message);
+  mail("feliasfogg@outlook.com","Chat", $message);
   if($comment_life>=45){
-  $sms=file_get_contents("http://sms.ru/sms/send?api_id=b8646699-0b12-1c14-ad92-7ab16971b8a1&to=375259466591&text=".urlencode(iconv("windows-1251","utf-8","Last comment was added $comment_life minutes ago.$url")));    
+  $sms=file_get_contents("http://sms.ru/sms/send?api_id=b8646699-0b12-1c14-ad92-7ab16971b8a1&to=375259466591&text=".urlencode(iconv("windows-1251","utf-8","Last comment was added $comment_life minutes ago")));    
     }
   }
      	    $dbconnect = mysql_connect ($dbhost, $dbusername, $dbpass) or die("<p>Ошибка подключения к базе данных: " . mysql_error() . "</p>");
