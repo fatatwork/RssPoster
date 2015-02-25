@@ -1,7 +1,9 @@
 <?php
 session_start();
+if(!isset($user)){
 $s = file_get_contents('http://ulogin.ru/token.php?token=' . $_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
 $user = json_decode($s, true);
+}
 if(isset($user)){
     $first_name = $user['first_name'];
     $last_name = $user['last_name'];
@@ -10,11 +12,14 @@ if(isset($user)){
     $page_adress = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     $_SESSION['user']=$user;
     $_SESSION['page_adress'] = $page_adress;
-    setcookie('first_name', $first_name, time()+604800);
-    setcookie('last_name', $last_name, time()+604800);
-    setcookie('network', $network, time()+604800);
-    setcookie('identity', $identity, time()+604800);
-    setcookie('page_adress', $page_adress, time()+604800);
+    $life_time = time()+(60 * 60 * 24 * 7);
+    $access_path = "/";
+    $access_domain = "bsmu.akson.by";
+    setcookie('first_name', $first_name, $life_time, $access_path, $access_domain);
+    setcookie('last_name', $last_name, $life_time, $access_path, $access_domain);
+    setcookie('network', $network, $life_time, $access_path, $access_domain);
+    setcookie('identity', $identity, $life_time, $access_path, $access_domain);
+    setcookie('page_adress', $page_adress, $life_time, $access_path, $access_domain);
 }
 ?>
 <!DOCTYPE html>
@@ -32,7 +37,7 @@ if(isset($user)){
 
     <script type="text/javascript" src="http://www.bsmu.by/scripts/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.bsmu.by/scripts/upper.js"></script>
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
     function saveform (data) //Скрипт отправляющий комментарий без перезагрузки страницы
     {
         var user_comment = data.user_comment.value;
@@ -49,6 +54,19 @@ if(isset($user)){
       });
     });
     </script>
+
+    <script type="text/javascript">
+        $(function(){
+          $('#myform').submit(function(){
+            if($(this).hasClass('submitted')) {
+              return false;
+            } else {
+              $(('#submit_button').attr('disabled',true);
+              $(this).addClass('submitted');
+            }
+          });
+        });
+    </script>-->
     <link rel="stylesheet" type="text/css" href="http://www.bsmu.by/style_main_ru.css">
     <link rel="stylesheet" type="text/css" href="http://www.bsmu.by/style_ru.css">
 
@@ -134,9 +152,10 @@ if(isset($user)){
                 <script src="//ulogin.ru/js/ulogin.js"></script>
                 <div id="uLogin" data-ulogin="display=small;fields=first_name,last_name;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri=http%3A%2F%2Fbsmu.akson.by%2Flove.php"></div>
                 
-                <form class="comments" method="POST" action="">
+                <form class="comments" method="POST" action="sample.php">
                    <textarea name="user_comment" cols="50" rows="10"></textarea>
-                <input type="submit" id="send_button" onClick="saveform (this.form);return false;"/>
+                <input type="submit" id="send_button"/>
+                <!--onClick="saveform (this.form);return false;"-->
                 </form>
                 <script charset="utf-8" src="http://yandex.st/share/share.js" type="text/javascript"></script>
                 <!--<div data-yasharel10n="ru" data-yasharetype="none" data-yasharequickservices="facebook,twitter,vkontakte,odnoklassniki,moimir,lj,gplus,yaru,friendfeed,moikrug" class="yashare-auto-init"></div>-->

@@ -1,6 +1,5 @@
-<?php
+﻿<?php
      $boolCheckCookie = false;
-     $pageAdressCheck = false;
      if(isset($_COOKIE['first_name'])){ 
           $username['first_name'] = $_COOKIE['first_name']; 
           $username['last_name'] = $_COOKIE['last_name'];
@@ -11,7 +10,7 @@
           echo "Отработали куки <br>";
      }
      else{
-          if($boolCheckCookie == false OR $pageAdressCheck == false){
+          if($boolCheckCookie == false){
                session_start();
                if(isset($_SESSION['user'], $_SESSION['page_adress'])){
                $username = $_SESSION['user'];
