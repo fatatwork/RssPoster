@@ -1,26 +1,35 @@
 <?php
-session_start();
-if(!isset($user)){
-$s = file_get_contents('http://ulogin.ru/token.php?token=' . $_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
-$user = json_decode($s, true);
-}
-if(isset($user)){
-    $first_name = $user['first_name'];
-    $last_name = $user['last_name'];
-    $network = $user['network'];
-    $identity = $user['identity'];
-    $page_adress = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-    $_SESSION['user']=$user;
-    $_SESSION['page_adress'] = $page_adress;
-    $life_time = time()+(60 * 60 * 24 * 7);
-    $access_path = "/";
-    $access_domain = "bsmu.akson.by";
-    setcookie('first_name', $first_name, $life_time, $access_path, $access_domain);
-    setcookie('last_name', $last_name, $life_time, $access_path, $access_domain);
-    setcookie('network', $network, $life_time, $access_path, $access_domain);
-    setcookie('identity', $identity, $life_time, $access_path, $access_domain);
-    setcookie('page_adress', $page_adress, $life_time, $access_path, $access_domain);
-}
+    $s = file_get_contents('http://ulogin.ru/token.php?token=' . $_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
+    $user = json_decode($s, true);
+
+    $boolCheckCookie = false;
+     if(isset($_COOKIE['first_name'])){
+          $boolCheckCookie = true;
+          echo "Отработали куки <br>";
+     }
+     else {
+         if ($boolCheckCookie == false && isset($user)) {//если куков нет - ставим куки
+             $first_name = $user['first_name'];
+             $last_name = $user['last_name'];
+             $network = $user['network'];
+             $identity = $user['identity'];
+             $page_adress = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+             $life_time = time() + (60 * 60 * 24 * 7);
+             $access_path = "/";
+             $access_domain = "bsmu.akson.by";
+             setcookie('first_name', $first_name, $life_time, $access_path, $access_domain);
+             setcookie('last_name', $last_name, $life_time, $access_path, $access_domain);
+             setcookie('network', $network, $life_time, $access_path, $access_domain);
+             setcookie('identity', $identity, $life_time, $access_path, $access_domain);
+             setcookie('page_adress', $page_adress, $life_time, $access_path, $access_domain);
+             echo "Установлены куки <br>";
+             //допольнительно устанавливаем сессию, при наличии кук сесссия не запускается
+             session_start();
+             $_SESSION['user'] = $user;
+             $_SESSION['page_adress'] = $page_adress;
+             echo "Отработала сессия <br>";
+         }
+     }
 ?>
 <!DOCTYPE html>
 <meta charset="UTF8">

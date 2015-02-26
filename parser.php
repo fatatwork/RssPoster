@@ -65,7 +65,7 @@ $author=end($fnd_author);
 sscanf($author, "<a class=\"pi_author\" href=\"/%s\">", $author_id);
 $author=trim($author->innertext);
 sscanf($author, "%s %s", $first_name, $last_name);
-echo "$first_name $last_name $other_name</br>";
+echo "$first_name $last_name </br>";
 $author_id=substr($author_id, 0, strpos($author_id, "\">"));
 echo "<a href=\"https://vk.com/$author_id\">$author_id<a/></br>";
 
