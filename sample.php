@@ -68,9 +68,6 @@ function addUser( $username ) {//добавление пользователя
 }
 
 function addComment( $article_id, $user_id, $comment ) {//добавляем комментарий
-	echo "$article_id ";
-	echo "$user_id ";
-	echo "$comment ";
 	$query
 		= "INSERT INTO comments (news_id, user_id, comment) VALUES ('{$article_id}', '{$user_id}', '{$comment}');";
 	$res = mysql_query( $query )
@@ -94,16 +91,23 @@ if ( isset( $username ) ) {
 	mysql_select_db( $db_name ) or die ( "<p>Невозможно выбрать базу: "
 	                                     . mysql_error() . "</p>" );
 
-	$article_id
-		     = searchActicle( $page_adress ); //Получаем идентификатор страницы на которой нужно разместить комментарий
+	$article_id = searchActicle( $page_adress ); //Получаем идентификатор страницы на которой нужно разместить комментарий
 	$user_id = searchUser( $username );//первоначально ищем пользователя
 	if ( $user_id ) {//пишем коммент
-		addComment( $article_id, $user_id, $comment );
+		
+		$comment_result = addComment( $article_id, $user_id, $comment );
+		if ( $comment_result ) {
+			echo "<br> Комментарий добавлен";
+		} else {
+			echo "<br> Комментарий НЕ добавлен";
+		}
+
 	} else {//если пользователя нет - добавляем нового и пишем коммент
 		addUser( $username );
+
 		$user_id        = searchUser( $username );
 		$comment_result = addComment( $article_id, $user_id, $comment );
-		if ( comment ) {
+		if ( $comment_result ) {
 			echo "<br> Комментарий добавлен";
 		} else {
 			echo "<br> Комментарий НЕ добавлен";

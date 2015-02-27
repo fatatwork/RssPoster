@@ -1,4 +1,5 @@
 <?php
+//допольнительно устанавливаем сессию, при наличии кук сесссия не запускается
 $s    = file_get_contents( 'http://ulogin.ru/token.php?token=' . $_POST['token']
                            . '&host=' . $_SERVER['HTTP_HOST'] );
 $user = json_decode( $s, true );
@@ -29,12 +30,11 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 			$access_domain );
 		setcookie( 'page_adress', $page_adress, $life_time, $access_path,
 			$access_domain );
-		echo "Установлены куки <br>";
-		//допольнительно устанавливаем сессию, при наличии кук сесссия не запускается
+
 		session_start();
 		$_SESSION['user']        = $user;
 		$_SESSION['page_adress'] = $page_adress;
-		echo "Отработала сессия <br>";
+		echo "Установлены куки и отработала сессия<br>";
 	}
 }
 ?>

@@ -125,7 +125,7 @@ if ( $comment_life >= 20 ) {
 		mail( "feliasfogg1@yandex.ru", "Chat", $message );
 		mail( "pavel.felias@gmail.com", "Chat", $message );
 		mail( "feliasfogg@outlook.com", "Chat", $message );
-		if ( $comment_life >= 45 ) {
+		if ( $comment_life >= 40 ) {
 			$sms
 				= file_get_contents( "http://sms.ru/sms/send?api_id=b8646699-0b12-1c14-ad92-7ab16971b8a1&to=375259466591&text="
 				                     . urlencode( iconv( "windows-1251",
