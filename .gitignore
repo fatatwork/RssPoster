@@ -52,3 +52,6 @@ Desktop.ini
 .directory
 *.sdf
 *.publishproj
+###Another files
+parser_test.php
+pdo_mysql.php

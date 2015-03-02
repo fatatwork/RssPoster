@@ -1,5 +1,7 @@
 ﻿<?php
 $boolCheckCookie = false;
+error_reporting(0);
+
 if ( isset( $_COOKIE['first_name'] ) ) {
 	$username['first_name'] = $_COOKIE['first_name'];
 	$username['last_name']  = $_COOKIE['last_name'];
