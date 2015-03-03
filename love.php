@@ -42,8 +42,6 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 	}
 }
 		$commentOut = getComment(); //Получаем комментарий
-		$text = $commentOut['text'];
-		//echo $text;
 ?>
 <!DOCTYPE html>
 <meta charset="UTF8">
@@ -329,9 +327,10 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 		<!--onClick="saveform (this.form);return false;"-->
 	</div>		
 	<div class="comment-list">
-		<? foreach ($commentOut as $key => $value) {
-			echo "<br /> $value";
-		} ?>
+		<?
+		echo "<br />" . $commentOut["f_name"] . " " . $commentOut["l_name"] . " " 
+		. $commentOut["time_data"] . "<br />" . $commentOut["text"];
+		?>
 	</div>
 	</form>
 	<script charset="utf-8" src="http://yandex.st/share/share.js"

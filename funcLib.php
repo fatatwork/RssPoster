@@ -42,8 +42,9 @@ function addUser( $username ) {//добавление пользователя
 }
 
 function addComment( $article_id, $user_id, $comment ) {//добавляем комментарий
+	$add_time = time();
 	$query
-		= "INSERT INTO comments (news_id, user_id, comment) VALUES ('{$article_id}', '{$user_id}', '{$comment}');";
+		= "INSERT INTO comments (news_id, user_id, comment, add_time) VALUES ('{$article_id}', '{$user_id}', '{$comment}', '{$add_time}');";
 	$res = mysql_query( $query )
 	or die( "<p>Невозможно сделать запись комментария: " . mysql_error()
 	        . "</p>" );
@@ -72,12 +73,13 @@ function getComment(){
 			$row   = pdo_fetch_row( $res );
 			$userID      = $row[2];
 			$commentText = $row[3];//сам текст комментария
+			$seconds = $row[4];
 
 			$query="SELECT * FROM users WHERE id='{$userID}';";
 			$res=pdo_query($query);
 			$row=pdo_fetch_row($res);
-
-			$userArray=array('f_name'=>$row[1], 'l_name'=>$row[2], 'text'=>$commentText);
+			$time_comment = date("d.m.y - H.i", $seconds); //Формируем дату и время из секунд
+			$userArray=array('f_name'=>$row[1], 'l_name'=>$row[2], 'text'=>$commentText, 'time_data'=>$time_comment);
 			return $userArray;
 		} else {
 			return NULL;
