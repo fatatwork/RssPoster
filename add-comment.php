@@ -53,7 +53,6 @@ if ( isset( $username ) ) {
 
 	} else {//если пользователя нет - добавляем нового и пишем коммент
 		addUser( $username );
-
 		$user_id        = searchUser( $username );
 		$comment_result = addComment( $article_id, $user_id, $comment );
 		if ( $comment_result ) {
@@ -66,6 +65,7 @@ if ( isset( $username ) ) {
 } else {
 	echo( "Error: user not exist." );
 }
+
 //$user['network'] - соц. сеть, через которую авторизовался пользователь
 //$user['identity'] - уникальная строка определяющая конкретного пользователя соц. сети
 //$user['first_name'] - имя пользователя

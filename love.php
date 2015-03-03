@@ -1,22 +1,46 @@
 <?php
 header('Content-type: text/html; charset=utf-8');
 require_once 'funcLib.php';
-//допольнительно устанавливаем сессию, при наличии кук сесссия не запускается
+//дополнительно устанавливаем сессию, при наличии кук сесссия не запускается
 $s    = file_get_contents( 'http://ulogin.ru/token.php?token=' . $_POST['token']
                            . '&host=' . $_SERVER['HTTP_HOST'] );
 $user = json_decode( $s, true );
-$userName;
 $boolCheckCookie = false;
+if($_GET['logout'] == 1){ //Выход
+	if(isset($_COOKIE['first_name'])){
+		$first_name    = $_COOKIE['first_name'];
+		$last_name     = $_COOKIE['last_name'];
+		$network       = $_COOKIE['network'];
+		$identity      = $_COOKIE['identity'];
+		$page_adress   = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+		$life_time     = time() - 2592000; //Для удаления кук устанавливаем время в прошлом
+		$access_path   = "/";
+		$access_domain = "bsmu.akson.by";
+		setcookie( 'first_name', $first_name, $life_time, $access_path, $access_domain );
+		setcookie( 'last_name', $last_name, $life_time, $access_path, $access_domain );
+		setcookie( 'network', $network, $life_time, $access_path, $access_domain );
+		setcookie( 'identity', $identity, $life_time, $access_path, $access_domain );
+		setcookie( 'page_adress', $page_adress, $life_time, $access_path, $access_domain );
+	}
+	if(session_id() != "" || isset($_COOKIE[session_name()])){
+		unset($_SESSION['user']);
+		unset($_SESSION['page_adress']);
+		setcookie(session_name(), '', $life_time, $access_path, $access_domain);
+	}
+	$_GET['logout'] = 0;
+	$header_query = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];//Формируем URL
+	$header_query = substr($header_query, 0, -9); //Обрезаем "?logout=1"
+	header("Location: http://".$header_query); //После удаления данных авторизации перенаправляем на исходную страницу
+	exit;
+}
 if ( isset( $_COOKIE['first_name'] ) ) {
 	$boolCheckCookie = true;
 	
 	$userName = $_COOKIE['first_name'] . " " . $_COOKIE['last_name'];
 	$userLink = $_COOKIE['identity'];
-	//echo "$userName";
-} else {
-	if ( $boolCheckCookie == false
-	     && isset( $user )
-	) {//если куков нет - ставим куки
+} 
+else {
+	if ( $boolCheckCookie == false && isset( $user )) {//если куков нет - ставим куки
 		$first_name    = $user['first_name'];
 		$last_name     = $user['last_name'];
 		$network       = $user['network'];
@@ -39,9 +63,13 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 		session_start();
 		$_SESSION['user']        = $user;
 		$_SESSION['page_adress'] = $page_adress;
+
+		$userName = $first_name . " " . $last_name;
+		$userLink = $identity;
 	}
 }
 		$commentOut = getComment(); //Получаем комментарий
+
 ?>
 <!DOCTYPE html>
 <meta charset="UTF8">
@@ -322,6 +350,7 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 	
 	<form class="comments" method="POST" action="add-comment.php">
 	<div class="comment-send-area">
+		<p>Вы вошли как: <a href="<? echo $userLink;?>"><? echo $userName;?></a> <a href="<?echo $_SERVER['REQUEST_URI']."?logout=1";?>">Выйти</a></p>
 		<textarea name="user_comment" cols="50" rows="10"></textarea>
 		<input type="submit" id="send_button"/>
 		<!--onClick="saveform (this.form);return false;"-->
