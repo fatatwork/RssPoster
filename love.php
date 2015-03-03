@@ -1,6 +1,6 @@
 <?php
 header('Content-type: text/html; charset=utf-8');
-require_once 'get-comment.php';
+require_once 'funcLib.php';
 //допольнительно устанавливаем сессию, при наличии кук сесссия не запускается
 $s    = file_get_contents( 'http://ulogin.ru/token.php?token=' . $_POST['token']
                            . '&host=' . $_SERVER['HTTP_HOST'] );
@@ -12,7 +12,7 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 	
 	$userName = $_COOKIE['first_name'] . " " . $_COOKIE['last_name'];
 	$userLink = $_COOKIE['identity'];
-	echo "$userName";
+	//echo "$userName";
 } else {
 	if ( $boolCheckCookie == false
 	     && isset( $user )
@@ -41,6 +41,9 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 		$_SESSION['page_adress'] = $page_adress;
 	}
 }
+		$commentOut = getComment(); //Получаем комментарий
+		$text = $commentOut['text'];
+		//echo $text;
 ?>
 <!DOCTYPE html>
 <meta charset="UTF8">
@@ -320,21 +323,16 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 	     data-ulogin="display=small;fields=first_name,last_name;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri=http%3A%2F%2Fbsmu.akson.by%2Flove.php"></div>
 	
 	<form class="comments" method="POST" action="add-comment.php">
-	
+	<div class="comment-send-area">
 		<textarea name="user_comment" cols="50" rows="10"></textarea>
 		<input type="submit" id="send_button"/>
 		<!--onClick="saveform (this.form);return false;"-->
-	</form>
-	<form class="comments">
-		<?php
-		$commentData=getComment(2);
-		if($commentData) {
-			$f_name = $commentData['f_name'];
-			$l_name = $commentData['l_name'];
-			$text   = $commentData['text'];
-
-		}
-		?>
+	</div>		
+	<div class="comment-list">
+		<? foreach ($commentOut as $key => $value) {
+			echo "<br /> $value";
+		} ?>
+	</div>
 	</form>
 	<script charset="utf-8" src="http://yandex.st/share/share.js"
 	        type="text/javascript"></script>
