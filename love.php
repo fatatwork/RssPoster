@@ -316,7 +316,6 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 	<br/>
 	<!-- Форма отправляющая данные -->
 	<script src="//ulogin.ru/js/ulogin.js"></script>
-	<p><? echo $userName; echo $userLink; ?></p>
 	<div id="uLogin"
 	     data-ulogin="display=small;fields=first_name,last_name;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri=http%3A%2F%2Fbsmu.akson.by%2Flove.php"></div>
 	

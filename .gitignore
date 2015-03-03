@@ -54,4 +54,3 @@ Desktop.ini
 *.publishproj
 ###Another files
 parser_test.php
-pdo_mysql.php
