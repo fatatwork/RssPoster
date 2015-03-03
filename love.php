@@ -1,13 +1,18 @@
 <?php
+header('Content-type: text/html; charset=utf-8');
+require_once 'funcLib.php';
 //допольнительно устанавливаем сессию, при наличии кук сесссия не запускается
 $s    = file_get_contents( 'http://ulogin.ru/token.php?token=' . $_POST['token']
                            . '&host=' . $_SERVER['HTTP_HOST'] );
 $user = json_decode( $s, true );
-
+$userName;
 $boolCheckCookie = false;
 if ( isset( $_COOKIE['first_name'] ) ) {
 	$boolCheckCookie = true;
-	echo "Отработали куки <br>";
+	
+	$userName = $_COOKIE['first_name'] . " " . $_COOKIE['last_name'];
+	$userLink = $_COOKIE['identity'];
+	//echo "$userName";
 } else {
 	if ( $boolCheckCookie == false
 	     && isset( $user )
@@ -34,9 +39,9 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 		session_start();
 		$_SESSION['user']        = $user;
 		$_SESSION['page_adress'] = $page_adress;
-		echo "Установлены куки и отработала сессия<br>";
 	}
 }
+		$commentOut = getComment(); //Получаем комментарий
 ?>
 <!DOCTYPE html>
 <meta charset="UTF8">
@@ -314,11 +319,19 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 	<script src="//ulogin.ru/js/ulogin.js"></script>
 	<div id="uLogin"
 	     data-ulogin="display=small;fields=first_name,last_name;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri=http%3A%2F%2Fbsmu.akson.by%2Flove.php"></div>
-
-	<form class="comments" method="POST" action="sample.php">
+	
+	<form class="comments" method="POST" action="add-comment.php">
+	<div class="comment-send-area">
 		<textarea name="user_comment" cols="50" rows="10"></textarea>
 		<input type="submit" id="send_button"/>
 		<!--onClick="saveform (this.form);return false;"-->
+	</div>		
+	<div class="comment-list">
+		<?
+		echo "<br />" . $commentOut["f_name"] . " " . $commentOut["l_name"] . " " 
+		. $commentOut["time_data"] . "<br />" . $commentOut["text"];
+		?>
+	</div>
 	</form>
 	<script charset="utf-8" src="http://yandex.st/share/share.js"
 	        type="text/javascript"></script>

@@ -83,7 +83,7 @@ function getCommentsCount( $u_id ) {
 	        . mysql_error() . "</p>" );
 		$rows_num=mysql_num_rows($res);
 
-		if($rows_num){
+		if($rows_num>=0){
 			$query="SELECT * FROM vk_comment_stat WHERE day='{$currentDay}';";
 			$res = mysql_query( $query )
 			or die( "<p>getCommentsCountНевозможно сделать запрос для анализа статистика: "
@@ -111,7 +111,6 @@ function getCommentsCount( $u_id ) {
 
 }
 	function connect($dbhost, $dbusername, $dbpass, $db_name){
-
 	$dbconnect = mysql_connect( $dbhost, $dbusername, $dbpass )
 	or die( "<p>Ошибка подключения к базе данных: " . mysql_error() . "</p>" );
 	//говорим базе что записываем в нее все в utf8
@@ -204,6 +203,6 @@ if ( $comment_life >=20 ) {
 		addComment( $user_id, $comment_life, $comment_time, $currentDay );
 		getCommentsCount( $user_id );
 	}
-}
-commentStat($currentDay, $dbhost, $dbusername, $dbpass, $db_name);
+	commentStat($currentDay, $dbhost, $dbusername, $dbpass, $db_name);
+ } 
 ?>

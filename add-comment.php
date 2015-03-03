@@ -1,5 +1,8 @@
 ﻿<?php
+require_once 'funcLib.php';
 $boolCheckCookie = false;
+error_reporting(0);
+
 if ( isset( $_COOKIE['first_name'] ) ) {
 	$username['first_name'] = $_COOKIE['first_name'];
 	$username['last_name']  = $_COOKIE['last_name'];
@@ -24,60 +27,6 @@ require_once 'app_config.php'; //подключение файла с данны
 $comment = trim( $_REQUEST['user_comment'] );
 if ( ! $comment ) {
 	die( "Error comment" );
-}
-
-function searchActicle( $page_adress ) {
-	$query = "SELECT id FROM news WHERE link = '{$page_adress}';";
-	$result = mysql_query( $query )
-	or die( "<p>Невозможно получить адрес страницы: " . mysql_error()
-	        . "</p>" );
-	$row        = mysql_fetch_array( $result );
-	$article_id = $row['id'];
-
-	return $article_id;
-}
-
-function searchUser(
-	$username
-) {//ищем юзера по url возвращаем в качестве результата всю строку row
-	$query
-		=
-		"SELECT id, first_name, last_name, network_url FROM users WHERE first_name='{$username['first_name']}'"
-		.
-		" AND last_name='{$username['last_name']}' AND network_url = '{$username['identity']}'";//ищем есть ли такой же url в базе
-	$res = mysql_query( $query )
-	or die( "<p>Невозможно сделать запрос поиска пользователя: " . mysql_error()
-	        . "</p>" );
-	$row     = mysql_fetch_array( $res );//получение результата запроса из базы;
-	$user_id = $row['id'];//получаем id пользователя
-	return $user_id;
-}
-
-function addUser( $username ) {//добавление пользователя
-	if ( $username['first_name'] ) {
-		$query
-			=
-			"INSERT INTO users (first_name, last_name, network, network_url)" .
-			"VALUES ('{$username['first_name']}', '{$username['last_name']}', '{$username['network']}', '{$username['identity']}');";
-		$result = mysql_query( $query )
-		or die( "<p>Невозможно добавить пользователя " . mysql_error()
-		        . "</p>" );
-	} else {
-		die( "Ошибка: нет данных о пользователе\n" );
-	}
-}
-
-function addComment( $article_id, $user_id, $comment ) {//добавляем комментарий
-	$query
-		= "INSERT INTO comments (news_id, user_id, comment) VALUES ('{$article_id}', '{$user_id}', '{$comment}');";
-	$res = mysql_query( $query )
-	or die( "<p>Невозможно сделать запись комментария: " . mysql_error()
-	        . "</p>" );
-	if ( $res ) {
-		return true;
-	} else {
-		return false;
-	}
 }
 
 if ( isset( $username ) ) {
