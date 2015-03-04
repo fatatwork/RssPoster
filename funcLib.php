@@ -5,25 +5,20 @@ function searchActicle( $page_adress ) {
 	$result = pdo_query( $query )
 	or die( "<p>Невозможно получить адрес страницы: " . mysql_error()
 	        . "</p>" );
-	$row        = pdo_fetch_row( $result );
+	$row = $result->fetch(PDO::FETCH_ASSOC);
 	$article_id = $row['id'];
-
 	return $article_id;
 }
 
-function searchUser(
-	$username
-) {//ищем юзера по url возвращаем в качестве результата всю строку row
-	$query
-		=
-		"SELECT id, first_name, last_name, network_url FROM users WHERE first_name='{$username['first_name']}'"
+function searchUser($username) {//ищем юзера по url возвращаем в качестве результата всю строку row
+	$query = "SELECT user_id, first_name, last_name, network_url FROM users WHERE first_name='{$username['first_name']}'"
 		.
 		" AND last_name='{$username['last_name']}' AND network_url = '{$username['identity']}'";//ищем есть ли такой же url в базе
 	$res = mysql_query( $query )
 	or die( "<p>Невозможно сделать запрос поиска пользователя: " . mysql_error()
 	        . "</p>" );
 	$row     = mysql_fetch_array( $res );//получение результата запроса из базы;
-	$user_id = $row['id'];//получаем id пользователя
+	$user_id = $row['user_id'];//получаем id пользователя
 	return $user_id;
 }
 
@@ -55,35 +50,24 @@ function addComment( $article_id, $user_id, $comment ) {//добавляем к�
 	}
 }
 
-function getComment(){
+function getComments(){
 	if(isset($_COOKIE['page_adress'])){
 		$newsID = searchActicle($_COOKIE['page_adress']);
 		//Получаем адрес страницы из кук или сессии, и, используя фуннцию из add-comment.php ищем по адресу id страницы
 	}
 	else{
 		$newsID = searchActicle($_SESSION['page_adress']);
-	}	$actualTime = time();
-		$query = $temp->prepare("SELECT id, user_id, comment FROM comments WHERE news_id='{$newsID}' AND (ban_time<='{$actualTime}' OR ban_time="NULL");");
-		$query->execute();
-		$res=pdo_query($query);
-		$row=pdo_fetch_row($res);
-		if($row[0]!=NULL) {//если новость существует
-			$maxID=$row[0];
-			$query = "SELECT * FROM comments WHERE id='{$maxID}';";
-			$res   = pdo_query( $query );
-			$row   = pdo_fetch_row( $res );
-			$userID      = $row[2];
-			$commentText = $row[3];//сам текст комментария
-			$seconds = $row[4];
-
-			$query="SELECT * FROM users WHERE id='{$userID}';";
-			$res=pdo_query($query);
-			$row=pdo_fetch_row($res);
-			$time_comment = date("d.m.y - H.i", $seconds); //Формируем дату и время из секунд
-			$userArray=array('f_name'=>$row[1], 'l_name'=>$row[2], 'text'=>$commentText, 'time_data'=>$time_comment);
-			return $userArray;
-		} else {
-			return NULL;
-		}
+	}	
+	$actualTime = time();
+	//Создаем запрос на слияние данных о пользователях с данными об их комментариях
+	$query = "SELECT id, user_id, comment, add_time, first_name, last_name, network_url FROM users NATURAL JOIN comments WHERE news_id='{$newsID}' ORDER BY id;";
+	$result_obj = pdo_query($query) or die("<p>Невозможно получить данные о комментариях: " . mysql_error()
+	        . "</p>");
+	$commentArray = array();
+	while($row = $result_obj->fetch(PDO::FETCH_ASSOC)){ //Сюда должна лечь новая строка ассоциативного массива
+		$row['add_time'] = date("d.m.y - H:i", $row['add_time']); //преобразуем время к формату
+		array_push($commentArray, $row);
+	}
+	return $commentArray;
 }
 ?>

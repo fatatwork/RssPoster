@@ -68,7 +68,7 @@ else {
 		$userLink = $identity;
 	}
 }
-		$commentOut = getComment(); //Получаем комментарий
+		$commentOut = getComments(); //Получаем комментарии
 
 ?>
 <!DOCTYPE html>
@@ -357,8 +357,12 @@ else {
 	</div>		
 	<div class="comment-list">
 		<?
-		echo "<br />" . $commentOut["f_name"] . " " . $commentOut["l_name"] . " " 
-		. $commentOut["time_data"] . "<br />" . $commentOut["text"];
+		if(is_array($commentOut)){
+			foreach ($commentOut as $value) {
+				echo "<br />" . $value["first_name"] . " " . $value["last_name"] . " " 
+			. $value["add_time"] . "<br />" . $value["comment"];
+			}
+		}
 		?>
 	</div>
 	</form>
