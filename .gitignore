@@ -25,7 +25,7 @@ bin/
 #################
 .idea/
 ##############
-##Разработка
+##Р”РёР·Р°Р№РЅ
 ##############
 design/
 *.jpg
@@ -54,4 +54,5 @@ Desktop.ini
 *.publishproj
 ###Another files
 parser_test.php
-1.php
+parser.php
+/simplehtmldom
