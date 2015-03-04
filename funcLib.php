@@ -62,8 +62,9 @@ function getComment(){
 	}
 	else{
 		$newsID = searchActicle($_SESSION['page_adress']);
-	}
-		$query="SELECT MAX(id) FROM comments WHERE news_id='{$newsID}';";
+	}	$actualTime = time();
+		$query = $temp->prepare("SELECT id, user_id, comment FROM comments WHERE news_id='{$newsID}' AND (ban_time<='{$actualTime}' OR ban_time="NULL");");
+		$query->execute();
 		$res=pdo_query($query);
 		$row=pdo_fetch_row($res);
 		if($row[0]!=NULL) {//если новость существует
