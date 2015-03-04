@@ -25,7 +25,7 @@ bin/
 #################
 .idea/
 ##############
-##Р”РёР·Р°Р№РЅ
+##Разработка
 ##############
 design/
 *.jpg
@@ -37,6 +37,8 @@ design/
 ## Sublime Text
 ############
 *.json
+*.sublime-project
+*.sublime-workspace
 ############
 ## Windows VS
 ############
@@ -54,5 +56,5 @@ Desktop.ini
 *.publishproj
 ###Another files
 parser_test.php
-parser.php
 /simplehtmldom
+parser.php
