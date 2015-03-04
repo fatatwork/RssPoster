@@ -71,8 +71,7 @@ function getCommentsCount( $u_id ) {
 	echo "All = $rows";
 }
 
- function commentStat($currentDay, $dbhost, $dbusername, $dbpass, $db_name){
- 	connect($dbhost, $dbusername, $dbpass,$db_name);
+ function commentStat($currentDay){
  	$all_results=array(0=>20, 1=>30, 2=>40, 3=>50);
  	$fields=array(0=>'comment_life_20', 1=>'comment_life_30', 2=>'comment_life_40', 3=>'comment_life_50');
 
@@ -177,7 +176,6 @@ if ( $comment_life >=20 ) {
 		$message = "Last comment was added $comment_life minutes ago by user
   $first_name $last_name at $comment_time";
 		mail( "good-1991@mail.ru", "Chat", $message );
-		mail( "feliasfogg1@yandex.ru", "Chat", $message );
 		mail( "pavel.felias@gmail.com", "Chat", $message );
 		mail( "feliasfogg@outlook.com", "Chat", $message );
 		if ( $comment_life >= 40 ) {
@@ -203,6 +201,6 @@ if ( $comment_life >=20 ) {
 		addComment( $user_id, $comment_life, $comment_time, $currentDay );
 		getCommentsCount( $user_id );
 	}
-	commentStat($currentDay, $dbhost, $dbusername, $dbpass, $db_name);
+	commentStat($currentDay);
  } 
 ?>
