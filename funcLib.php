@@ -2,10 +2,10 @@
 require_once 'connectDB.php';
 function searchActicle( $page_adress ) {
 	$query = "SELECT id FROM news WHERE link = '{$page_adress}';";
-	$result = pdo_query( $query )
+	$result = mysql_query( $query )
 	or die( "<p>Невозможно получить адрес страницы: " . mysql_error()
 	        . "</p>" );
-	$row = $result->fetch(PDO::FETCH_ASSOC);
+	$row = mysql_fetch_array($result);
 	$article_id = $row['id'];
 	return $article_id;
 }
@@ -61,10 +61,10 @@ function getComments(){
 	$actualTime = time();
 	//Создаем запрос на слияние данных о пользователях с данными об их комментариях
 	$query = "SELECT id, user_id, comment, add_time, first_name, last_name, network_url FROM users NATURAL JOIN comments WHERE news_id='{$newsID}' ORDER BY id;";
-	$result_obj = pdo_query($query) or die("<p>Невозможно получить данные о комментариях: " . mysql_error()
+	$result_obj = mysql_query($query) or die("<p>Невозможно получить данные о комментариях: " . mysql_error()
 	        . "</p>");
 	$commentArray = array();
-	while($row = $result_obj->fetch(PDO::FETCH_ASSOC)){ //Сюда должна лечь новая строка ассоциативного массива
+	while($row = mysql_fetch_array($result_obj)){ //Сюда должна лечь новая строка ассоциативного массива
 		$row['add_time'] = date("d.m.y - H:i", $row['add_time']); //преобразуем время к формату
 		array_push($commentArray, $row);
 	}
