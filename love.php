@@ -15,7 +15,7 @@ if($_GET['logout'] == 1){ //Выход
 		$page_adress   = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 		$life_time     = time() - 2592000; //Для удаления кук устанавливаем время в прошлом
 		$access_path   = "/";
-		$access_domain = "bsmu.akson.by";
+		$access_domain = "example.com";
 		setcookie( 'first_name', $first_name, $life_time, $access_path, $access_domain );
 		setcookie( 'last_name', $last_name, $life_time, $access_path, $access_domain );
 		setcookie( 'network', $network, $life_time, $access_path, $access_domain );

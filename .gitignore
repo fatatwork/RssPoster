@@ -56,5 +56,6 @@ Desktop.ini
 *.publishproj
 ###Another files
 parser_test.php
-/simplehtmldom
 parser.php
+/simplehtmldom
+/vk_auth

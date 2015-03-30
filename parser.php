@@ -42,8 +42,7 @@ function addComment(
 	$row=mysql_fetch_row($res);
 
 	if ( $row ) {
-		$com_time = $row[3];
-		if ( $com_time != $comment_time ) {
+		if ( $row[3] != $comment_time ) {
 			$query
 				= "INSERT INTO vk_comments (user_id, comment_life, comment_time, day) VALUES ('{$user_id}', '{$comment_life}', '{$comment_time}', '{$currentDay}');";
 			$res = mysql_query( $query )
@@ -75,7 +74,6 @@ function getCommentsCount( $u_id ) {
 	$res = mysql_query( $query )
 	or die( "<p>Невозможно сделать запрос поиска пользователя: " . mysql_error()
 	        . "</p>" );
-	echo "All = $rows";
 }
 
 function getCommentNum($vk_id){
@@ -147,7 +145,6 @@ for ( $i = 49; $i < count( $fnd_author ); ++ $i ) {
 	$author = trim( $fnd_author[ $i ]->innertext );
 	if ( $author == "Официальное сообщество Plantronics" ) {
 		$message = "Message from admin";
-		mail( "good-1991@mail.ru", "Chat", $message );
 		mail( "pavel.felias@gmail.com", "Chat", $message );
 		break;
 	}
@@ -164,7 +161,6 @@ echo "<a href=\"https://vk.com/$author_id\">$author_id<a/></br>";
 $fnd          = $html->find( 'a.item_date' );
 $comment_time = end( $fnd );
 $comment_time = $comment_time->innertext;
-$num          = strlen( $comment_time );
 $comment_time = substr( $comment_time, 18 );
 echo "$comment_time ";
 
@@ -186,12 +182,13 @@ $html->clear();//очистка памяти от объекта
 unset( $html );
 
 if ( $comment_life >=20 ){
-	if ( $comment_life >= 45 && $author_id != "id152223765" ) {
+	if ( $comment_life >= 47 && $author_id != "id152223765" ) {
 		$message = "Last comment was added $comment_life minutes ago by user
   		$first_name $last_name at $comment_time";
+
 		mail( "good-1991@mail.ru", "Chat", $message );
-		mail( "pavel.felias@gmail.com", "Chat", $message );
-		if ( $comment_life >= 50 ) {
+		if( $comment_life >= 50 ) mail( "pavel.felias@gmail.com", "Chat", $message );
+		if ( $comment_life >= 53 ) {
 			$sms = file_get_contents( "http://sms.ru/sms/send?api_id=b8646699-0b12-1c14-ad92-7ab16971b8a1&to=375259466591&text="
 				                     . urlencode( iconv( "windows-1251",
 					"utf-8",
@@ -210,7 +207,7 @@ if ( $comment_life >=20 ){
 	} else {
 		addUser( $first_name, $last_name, $author_id );
 		$row     = searchUser( $author_id );
-		$user_id = $row['id'];//получаем id вновьдобавленного пользователя
+		$user_id = $row['id'];//получаем id вновь добавленного пользователя
 		addComment( $user_id, $comment_life, $comment_time, $currentDay );
 		getCommentsCount( $user_id );
 	}
