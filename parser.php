@@ -1,6 +1,6 @@
-<html>
-<meta charset="UTF-8">
-</html>
+	<html>
+	<meta charset="UTF-8">
+	</html>
 <?php
 chdir( "/home/user1137761/www/bsmu.akson.by" );
 require_once 'simplehtmldom/simple_html_dom.php';
