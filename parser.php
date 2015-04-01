@@ -5,12 +5,10 @@
 chdir( "/home/user1137761/www/bsmu.akson.by" );
 require_once 'simplehtmldom/simple_html_dom.php';
 require_once 'app_config.php';
+require_once 'poster/VKclass.php';
 /*$e->tag            Читает или записывает имя тега элемента.
-
 $e->outertext   Читает или записывает весь HTML элемента, включая его самого.
-
 $e->innertext   Читает или записывает внутренний HTML элемента
-
 $e->plaintext    Читает или записывает простой текст элемента, это эквивалентно функции strip_tags($e->innertext).
 Хотя поле доступно для записи, запись в него ничего не даст, и исходный html не изменит
 */
@@ -141,11 +139,43 @@ function commentStat($currentDay){
 	mysql_select_db( $db_name ) or die ( "<p>Невозможно выбрать базу: "
 	                                     . mysql_error() . "</p>" );
 	}
+	function wallComment(){
+		$token = '92b73575a455b69bd32a54215038a3a74e7997d73923a364bd93790912b7f576c18b813f440348dfb5321&expires_in=0&user_id=152223765';
+		$delta = '100';
+		$app_id = '4832378';
+		$group_id = '43932139';//plantonics
+		$post_id='5970';//tank post
+		$Arr = array(
+   		    "Долго",
+   			"Хватит с тебя",
+   		 	"Все не спиться",
+   		 	"Хорошая ночка",
+   		 	"Lol^^",
+  		  	"OMG",
+  		  	"Хачу галду!))",
+			"Не спите...",
+			"ясно(",
+			"сорян((",
+			"лолки вы",
+			"норм",
+			"нормас продержался)",
+			"ну ок...",
+			"хватит уже",
+			"слишком долго",
+			"идите спать",
+			"и чего вам все неспится(",
+		);
+		$phrase=$Arr[rand(0, sizeof($Arr)-1)];
+		$vk = new vk( $token, $delta, $app_id, $group_id );
+		$vk_online=$vk->setOnline(0);
+		$vk_comment = $vk->addComment($phrase, $post_id);
+	}
 
 $url  = "https://m.vk.com/wall-43932139_5970";
 $html = file_get_html( $url );
 if ( ! $html ) {
-	echo "error";
+	$message = "Не могу получить страницу";
+	mail( "good-1991@mail.ru", "Error", $message );
 }
 $fnd_author  = $html->find( 'a.pi_author' );//в масссиве вк всегда 51 коммент
 $fnd_comment = $html->find( 'div.pi_text' );
@@ -190,20 +220,8 @@ $html->clear();//очистка памяти от объекта
 unset( $html );
 
 if ( $comment_life >=20 ){
-	if ( $comment_life >= 47 && $author_id != "id152223765" ) {
-		$message = "Last comment was added $comment_life minutes ago by user
-  		$first_name $last_name at $comment_time";
+	if ( $comment_life >= 49 && $author_id != "id152223765" ) wallComment();//самая важная функция
 
-		mail( "good-1991@mail.ru", "Chat", $message );
-		if( $comment_life >= 50 ) mail( "pavel.felias@gmail.com", "Chat", $message );
-		if ( $comment_life >= 53 ) {
-			$sms = file_get_contents( "http://sms.ru/sms/send?api_id=b8646699-0b12-1c14-ad92-7ab16971b8a1&to=375259466591&text="
-				                     . urlencode( iconv( "windows-1251",
-					"utf-8",
-					"Last comment was added $comment_life minutes ago" ) ) );
-		}
-	}
-	
 	connect($dbhost, $dbusername, $dbpass, $db_name);
 	$row = searchUser( $author_id );
 	if ( $row ) {
@@ -220,7 +238,16 @@ if ( $comment_life >=20 ){
 		getCommentsCount( $user_id );
 	}
 	commentStat($currentDay);
- }
+  }
+ if( $comment_life >= 55 ) {
+		$message = "Последний коммент оставлен $comment_life минут назад
+  		$first_name $last_name в $comment_time";
+		mail( "good-1991@mail.ru", "Chat", $message );
+		$sms = file_get_contents( "http://sms.ru/sms/send?api_id=b8646699-0b12-1c14-ad92-7ab16971b8a1&to=375259466591&text="
+				                     . urlencode( iconv( "windows-1251",
+					"utf-8",
+					"Last comment was added $comment_life minutes ago" ) ) );
+	}
 
  connect($dbhost, $dbusername, $dbpass, $db_name);
  $n=getCommentNum($author_id);
