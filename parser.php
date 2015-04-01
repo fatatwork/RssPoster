@@ -5,7 +5,15 @@
 chdir( "/home/user1137761/www/bsmu.akson.by" );
 require_once 'simplehtmldom/simple_html_dom.php';
 require_once 'app_config.php';
+/*$e->tag            Читает или записывает имя тега элемента.
 
+$e->outertext   Читает или записывает весь HTML элемента, включая его самого.
+
+$e->innertext   Читает или записывает внутренний HTML элемента
+
+$e->plaintext    Читает или записывает простой текст элемента, это эквивалентно функции strip_tags($e->innertext).
+Хотя поле доступно для записи, запись в него ничего не даст, и исходный html не изменит
+*/
 function searchUser(
 	$author_id
 ) {//ищем юзера по url возвращаем в качестве результата всю строку row
