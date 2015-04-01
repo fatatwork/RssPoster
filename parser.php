@@ -174,11 +174,17 @@ function commentStat($currentDay){
 $url  = "https://m.vk.com/wall-43932139_5970";
 $html = file_get_html( $url );
 if ( ! $html ) {
-	$message = "Не могу получить страницу";
-	mail( "good-1991@mail.ru", "Error", $message );
+	connect($dbhost, $dbusername, $dbpass, $db_name);
+	$currentDay=date("d.m.Y");
+	$currentTime = date( "H:i" );
+	$query = "INSERT INTO errors (time, day) VALUES ('{$currentTime}', '{$currentDay}');";
+	$res = mysql_query( $query )
+			or die( "<p>commentStat Невозможно сделать запрос для анализа статистики: "
+	        . mysql_error() . "</p>" );
 }
 $fnd_author  = $html->find( 'a.pi_author' );//в масссиве вк всегда 51 коммент
 $fnd_comment = $html->find( 'div.pi_text' );
+
 for ( $i = 49; $i < count( $fnd_author ); ++ $i ) {
 	$author = trim( $fnd_author[ $i ]->innertext );
 	if ( $author == "Официальное сообщество Plantronics" ) {
@@ -220,7 +226,7 @@ $html->clear();//очистка памяти от объекта
 unset( $html );
 
 if ( $comment_life >=20 ){
-	if ( $comment_life >= 49 && $author_id != "id152223765" ) wallComment();//самая важная функция
+	if (($comment_life >= 49 && $comment_life < 65) && $author_id != "id152223765") wallComment();//самая важная функция
 
 	connect($dbhost, $dbusername, $dbpass, $db_name);
 	$row = searchUser( $author_id );
@@ -239,7 +245,7 @@ if ( $comment_life >=20 ){
 	}
 	commentStat($currentDay);
   }
- if( $comment_life >= 55 ) {
+ if( $comment_life >= 54 ) {
 		$message = "Последний коммент оставлен $comment_life минут назад
   		$first_name $last_name в $comment_time";
 		mail( "good-1991@mail.ru", "Chat", $message );
