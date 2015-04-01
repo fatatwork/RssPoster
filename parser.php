@@ -177,7 +177,7 @@ if ( ! $html ) {
 	connect($dbhost, $dbusername, $dbpass, $db_name);
 	$currentDay=date("d.m.Y");
 	$currentTime = date( "H:i" );
-	$query = "INSERT INTO errors (time, day) VALUES ('{$currentTime}', '{$currentDay}');";
+	$query = "INSERT INTO vk_errors (time, day) VALUES ('{$currentTime}', '{$currentDay}');";
 	$res = mysql_query( $query )
 			or die( "<p>commentStat Невозможно сделать запрос для анализа статистики: "
 	        . mysql_error() . "</p>" );
