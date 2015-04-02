@@ -146,29 +146,24 @@ function commentStat($currentDay){
 		$group_id = '43932139';//plantonics
 		$post_id='5970';//tank post
 		$Arr = array(
-   		    "Долго",
-   			"Хватит с тебя",
-   		 	"Все не спиться",
-   		 	"Хорошая ночка",
-   		 	"Lol^^",
-  		  	"OMG",
-  		  	"Хачу галду!))",
-			"Не спите...",
-			"ясно(",
-			"сорян((",
-			"лолки вы",
-			"норм",
-			"нормас продержался)",
-			"ну ок...",
-			"хватит уже",
-			"слишком долго",
-			"идите спать",
-			"и чего вам все неспится(",
+   		    "Долго","Хватит с тебя","это еще не все","Хорошая погода))","Lol^^",
+  		  	"OMG","Хачу галду!))","отдохните","ясно(","сорян((","лолки вы",
+			"норм","нормас продержался)","ну ок...","хватит уже","слишком долго",
+			"идите отдыхать","и чего вам все неймется","так-то","эх",
+			"все тут сидите","ну почти))", "хорош", "много минут"
 		);
 		$phrase=$Arr[rand(0, sizeof($Arr)-1)];
 		$vk = new vk( $token, $delta, $app_id, $group_id );
 		$vk_online=$vk->setOnline(0);
 		$vk_comment = $vk->addComment($phrase, $post_id);
+
+
+		$currentDay=date("d.m.Y");
+		$currentTime = date( "H:i" );
+		$query = "INSERT INTO vk_answers (time, day) VALUES ('{$currentTime}', '{$currentDay}');";
+		$res = mysql_query( $query )
+			or die( "<p>commentStat Невозможно сделать запрос для анализа статистики: "
+	        . mysql_error() . "</p>" );
 	}
 
 $url  = "https://m.vk.com/wall-43932139_5970";
@@ -225,9 +220,13 @@ echo "<a href=\"https://m.vk.com/wall-43932139_5970?post_add#post_add\">ADD POST
 $html->clear();//очистка памяти от объекта
 unset( $html );
 
-if ( $comment_life >=20 ){
-	if (($comment_life >= 49 && $comment_life < 65) && $author_id != "id152223765") wallComment();//самая важная функция
 
+if ( $comment_life >=20 ){
+	if (($comment_life >= 49 && $comment_life < 65) && $author_id != "id152223765"){
+	 connect($dbhost, $dbusername, $dbpass, $db_name);
+	 wallComment();//самая важная функция
+	}
+	
 	connect($dbhost, $dbusername, $dbpass, $db_name);
 	$row = searchUser( $author_id );
 	if ( $row ) {
