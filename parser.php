@@ -1,6 +1,6 @@
-	<html>
+<html>
 	<meta charset="UTF-8">
-	</html>
+</html>
 <?php
 chdir( "/home/user1137761/www/bsmu.akson.by" );
 require_once 'simplehtmldom/simple_html_dom.php';
@@ -139,30 +139,66 @@ function commentStat($currentDay){
 	mysql_select_db( $db_name ) or die ( "<p>Невозможно выбрать базу: "
 	                                     . mysql_error() . "</p>" );
 	}
-	function wallComment(){
+	function wallComment($txt){
 		$token = '92b73575a455b69bd32a54215038a3a74e7997d73923a364bd93790912b7f576c18b813f440348dfb5321&expires_in=0&user_id=152223765';
 		$delta = '100';
 		$app_id = '4832378';
 		$group_id = '43932139';//plantonics
 		$post_id='5970';//tank post
-		$Arr = array(
-   		    "Долго","Хватит с тебя","это еще не все","Хорошая погода))","Lol^^",
+		$phrases = array(
+   		    "Долго","Хватит с тебя","это еще не все","Хорошая попытка)","Lol^^",
   		  	"OMG","Хачу галду!))","отдохните","ясно(","сорян((","лолки вы",
 			"норм","нормас продержался)","ну ок...","хватит уже","слишком долго",
 			"идите отдыхать","и чего вам все неймется","так-то","эх",
-			"все тут сидите","ну почти))", "хорош", "много минут"
-		);
-		$phrase=$Arr[rand(0, sizeof($Arr)-1)];
+			"все тут сидите","ну почти))", "хорош", "много минут",
+			"достаточно", "круто однако", "ну как вы тут?","однако, долго","Ап","UP",
+			"тутэ", "написал пост - пошел спать", "сделал дело и спать", "up", "norm",
+			"ага)", "угу...", "aga;)", "отдыхать идите))", "лал", "вы так не шутите",
+			"почти испугался", "фух, пронесло", "сгонял за чаем)", "не надо так", "лалки",
+			"эээээээ, не шутите", "лолд", "-_-", "^_^" , "=)", "бываит)))", "от оно как...",
+			"ничоси", "нифигаси", "фигасе))", 
+			"&#128522;", "&#128515;", "&#128521;", " &#128518;", "&#128540;", "&#128523;", "&#128526;",
+			"&#128527;", " &#128528;", "&#128516;", " &#128556;", "&#128512;", "&#128517;"
+			);
+		$phrase=$phrases[rand(0, sizeof($phrases)-1)];
 		$vk = new vk( $token, $delta, $app_id, $group_id );
 		$vk_online=$vk->setOnline(0);
-		$vk_comment = $vk->addComment($phrase, $post_id);
-
-
 		$currentDay=date("d.m.Y");
 		$currentTime = date( "H:i" );
-		$query = "INSERT INTO vk_answers (time, day) VALUES ('{$currentTime}', '{$currentDay}');";
+		$query;
+		if($txt){//если задана строка- постим строку
+		 $vk_comment = $vk->addComment($txt, $post_id, NULL);
+		}
+		else {
+			if(rand(0, 3) == 3){
+			 $stckr=rand(97, 117);
+			 $vk_comment = $vk->addComment(NULL, $post_id, $stckr);//30% шанс запостить стикер 
+			 $query="INSERT INTO vk_answers (phrase, time, day) VALUES ('{$stckr}', '{$currentTime}', '{$currentDay}');";
+			}
+			else{
+				$query="SELECT MAX(num) FROM vk_answers;";
+				$res = mysql_query( $query );
+				$row=mysql_fetch_row($res);
+				while(1){//проверка не совпадает ли последняя фраза в базе с текущей выбранной рандомом
+					if($row[1]==$phrase) $phrase=[rand(0, sizeof($phrases)-1)];
+					else break;
+				}
+				if(rand(0, 3) == 3) {//30%шанс добавить к фразе смайл
+					$smiles=array(
+					"&#128522;", "&#128515;", "&#128521;", " &#128518;", "&#128540;", "&#128523;", "&#128526;",
+					"&#128527;", " &#128528;", "&#128516;", " &#128556;", "&#128512;", "&#128517;"
+					);
+					$smile=$smiles[rand(0, sizeof($smiles)-1)];
+					if($phrase!=$smile) $phrase.=$smile;
+				}
+				$vk_comment = $vk->addComment($phrase, $post_id, NULL);
+				$query = "INSERT INTO vk_answers (phrase, time, day) VALUES ('{$phrase}', '{$currentTime}', '{$currentDay}');";
+			}
+		}
+		if($txt) $query = "INSERT INTO vk_answers (phrase, time, day) VALUES ('{$txt}', '{$currentTime}', '{$currentDay}');";
+
 		$res = mysql_query( $query )
-			or die( "<p>commentStat Невозможно сделать запрос для анализа статистики: "
+			or die( "<p>commentStat Невозможно сделать добавление ответа в базу"
 	        . mysql_error() . "</p>" );
 	}
 
@@ -220,13 +256,26 @@ echo "<a href=\"https://m.vk.com/wall-43932139_5970?post_add#post_add\">ADD POST
 $html->clear();//очистка памяти от объекта
 unset( $html );
 
+if($comment_life<0 && $currentMin>=4 && $currentMin<=12 && $author_id != "id152223765"){
+	$arr = array( "Эх", "доброй ночи ребят", "хорошей ночки", "продуктивно посидеть",
+		"Доброй ночи", "спокойной", "эх...", "удачи неспящим", "все неспят", "все неспите)))",
+		"интересно, какой будет рекорд", "стерегите голду))", "наступает ночь", "у меня уже стемнело",
+		"&#128522;", "&#128515;", "&#128521;", "&#128540;", "&#128518;", "&#128527;", "всем спать &#128540;",
+		"стемнело на дворе..."
+		);
+	$txt=$arr[rand(0, sizeof($arr)-1)];
 
+	connect($dbhost, $dbusername, $dbpass, $db_name);
+	wallComment($txt);
+}
+
+//wallComment($res_str);
 if ( $comment_life >=20 ){
-	if (($comment_life >= 49 && $comment_life < 65) && $author_id != "id152223765"){
+	if (($comment_life >= 45+rand(0, 5)) && $comment_life < 65 && $author_id != "id152223765"){
 	 connect($dbhost, $dbusername, $dbpass, $db_name);
-	 wallComment();//самая важная функция
+	 wallComment(NULL);//самая важная функция
 	}
-	
+
 	connect($dbhost, $dbusername, $dbpass, $db_name);
 	$row = searchUser( $author_id );
 	if ( $row ) {
@@ -243,16 +292,15 @@ if ( $comment_life >=20 ){
 		getCommentsCount( $user_id );
 	}
 	commentStat($currentDay);
-  }
- if( $comment_life >= 54 ) {
-		$message = "Последний коммент оставлен $comment_life минут назад
-  		$first_name $last_name в $comment_time";
-		mail( "good-1991@mail.ru", "Chat", $message );
+}
+if( $comment_life >= 60 && $comment_life<65) {
+		$message = "winner is $first_name $last_name";
+		mail( "pavel.felias@gmail.com", "Winner", $message );
 		$sms = file_get_contents( "http://sms.ru/sms/send?api_id=b8646699-0b12-1c14-ad92-7ab16971b8a1&to=375259466591&text="
 				                     . urlencode( iconv( "windows-1251",
 					"utf-8",
-					"Last comment was added $comment_life minutes ago" ) ) );
-	}
+					"Winner is $first_name $last_name" ) ) );
+}
 
  connect($dbhost, $dbusername, $dbpass, $db_name);
  $n=getCommentNum($author_id);

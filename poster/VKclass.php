@@ -30,7 +30,7 @@ class vk {
 		}
 		return 0;
 	}
-	public function addComment( $desc, $post_id) {
+	public function addComment( $desc, $post_id, $sticker) {
 			$data = json_decode(
 				$this->execute(
 					'wall.addComment',
@@ -38,7 +38,8 @@ class vk {
 						'owner_id' => -$this->group_id,
 						'from_group' => 0,
 						'text' => $desc,
-						'post_id'=>$post_id
+						'post_id'=>$post_id,
+						'sticker_id'=>$sticker
 					)
 				)
 			);
