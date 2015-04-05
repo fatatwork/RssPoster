@@ -46,8 +46,8 @@ if(count($links)){
 	foreach($links as $href) {
 			$res=searchArticle($href->href);
 			if($res[0]==NULL){
-				addArticle($href->innertext, $href->href);
-				$vk_post = $vk->post(NULL, NULL, $href->href);
+				addArticle( $href->innertext, $href->href );
+				$vk_post = $vk->post( null, null, $href->href );
 			}
 	}
 }

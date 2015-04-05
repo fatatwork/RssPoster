@@ -145,27 +145,58 @@ function commentStat($currentDay){
 		$app_id = '4832378';
 		$group_id = '43932139';//plantonics
 		$post_id='5970';//tank post
-		$Arr = array(
+		$phrases = array(
    		    "Долго","Хватит с тебя","это еще не все","Хорошая попытка)","Lol^^",
-  		  	"OMG","Хачу галду!))","отдохните","ясно(","сорян((","лолки вы",
+  		  	"OMG","Хачу галду!))","отдохните","ясно(","сорян((","лолки вы", "хмммм &#128529;",
 			"норм","нормас продержался)","ну ок...","хватит уже","слишком долго",
-			"идите отдыхать","и чего вам все неймется","так-то","эх",
-			"все тут сидите","ну почти))", "хорош", "много минут",
+			"идите отдыхать","и чего вам все неймется","так-то","эх", "и даже так..",
+			"все тут сидите","ну почти))", "хорош", "много минут", "хватит наверное", 
 			"достаточно", "круто однако", "ну как вы тут?","однако, долго","Ап","UP",
 			"тутэ", "написал пост - пошел спать", "сделал дело и спать", "up", "norm",
 			"ага)", "угу...", "aga;)", "отдыхать идите))", "лал", "вы так не шутите",
 			"почти испугался", "фух, пронесло", "сгонял за чаем)", "не надо так", "лалки",
-			"эээээээ, не шутите", "лолд" 
+			"эээээээ, не шутите так", "лолд", "-_-", "^_^" , "бываит)))", "от оно как...",
+			"ничоси", "нифигаси", "фигасе))", "на страже)", "стерегу голду)))", "ничавоси",
+			"&#128522;", "&#128515;", "&#128521;", " &#128518;", "&#128540;", "&#128523;", "&#128526;",
+			"&#128527;", " &#128528;", "&#128516;", " &#128556;", "&#128512;", "&#128517;"
 			);
-		$phrase=$Arr[rand(0, sizeof($Arr)-1)];
+		$phrase=$phrases[rand(0, sizeof($phrases)-1)];
 		$vk = new vk( $token, $delta, $app_id, $group_id );
 		$vk_online=$vk->setOnline(0);
-		if($txt) $vk_comment = $vk->addComment($txt, $post_id);
-		else $vk_comment = $vk->addComment($phrase, $post_id); 
-
 		$currentDay=date("d.m.Y");
 		$currentTime = date( "H:i" );
-		$query = "INSERT INTO vk_answers (time, day) VALUES ('{$currentTime}', '{$currentDay}');";
+		$query;
+		if($txt){//если задана строка- постим строку
+		 $vk_comment = $vk->addComment($txt, $post_id, NULL);
+		 $query = "INSERT INTO vk_answers (phrase, time, day) VALUES ('{$txt}', '{$currentTime}', '{$currentDay}');";
+		}
+		else {
+			if(rand(0, 3) == 3){
+			 $stckr=rand(97, 117);
+			 $vk_comment = $vk->addComment(NULL, $post_id, $stckr);//30% шанс запостить стикер 
+			 $query="INSERT INTO vk_answers (phrase, time, day) VALUES ('{$stckr}', '{$currentTime}', '{$currentDay}');";
+			}
+			else{
+				$query="SELECT MAX(num) FROM vk_answers;";
+				$res = mysql_query( $query );
+				$row=mysql_fetch_row($res);
+				while(1){//проверка не совпадает ли последняя фраза в базе с текущей выбранной рандомом
+					if($row[1]==$phrase) $phrase=[rand(0, sizeof($phrases)-1)];
+					else break;
+				}
+				if(rand(0, 3) == 3) {//30%шанс добавить к фразе смайл
+					$smiles=array(
+					"&#128522;", "&#128515;", "&#128521;", " &#128518;", "&#128540;", "&#128523;", "&#128526;",
+					"&#128527;", " &#128528;", "&#128516;", " &#128556;", "&#128512;", "&#128517;"
+					);
+					$smile=$smiles[rand(0, sizeof($smiles)-1)];
+					if($phrase!=$smile) $phrase.=$smile;
+				}
+				$vk_comment = $vk->addComment($phrase, $post_id, NULL);
+				$query = "INSERT INTO vk_answers (phrase, time, day) VALUES ('{$phrase}', '{$currentTime}', '{$currentDay}');";
+			}
+		}
+
 		$res = mysql_query( $query )
 			or die( "<p>commentStat Невозможно сделать добавление ответа в базу"
 	        . mysql_error() . "</p>" );
@@ -185,16 +216,11 @@ if ( ! $html ) {
 $fnd_author  = $html->find( 'a.pi_author' );//в масссиве вк всегда 51 коммент
 $fnd_comment = $html->find( 'div.pi_text' );
 
-for ( $i = 49; $i < count( $fnd_author ); ++ $i ) {
-	$author = trim( $fnd_author[ $i ]->innertext );
-	if ( $author == "Официальное сообщество Plantronics" ) {
+$author = end( $fnd_author );
+if ( $author == "Официальное сообщество Plantronics" ) {
 		$message = "Message from admin";
 		mail( "pavel.felias@gmail.com", "Chat", $message );
-		break;
 	}
-}
-
-$author = end( $fnd_author );
 sscanf( $author, "<a class=\"pi_author\" href=\"/%s\">", $author_id );
 $author = trim( $author->innertext );
 sscanf( $author, "%s %s", $first_name, $last_name );
@@ -225,10 +251,12 @@ echo "<a href=\"https://m.vk.com/wall-43932139_5970?post_add#post_add\">ADD POST
 $html->clear();//очистка памяти от объекта
 unset( $html );
 
-if($currentMin>=3 && $currentMin<=7 && $author_id != "id152223765"){
+if($comment_life<0 && $currentMin>=4 && $currentMin<=12 && $author_id != "id152223765"){
 	$arr = array( "Эх", "доброй ночи ребят", "хорошей ночки", "продуктивно посидеть",
 		"Доброй ночи", "спокойной", "эх...", "удачи неспящим", "все неспят", "все неспите)))",
-		"интересно, какой будет рекорд", "стерегите голду))", "наступает ночь", "у меня уже стемнело"
+		"интересно, какой будет рекорд", "стерегите голду))", "наступает ночь", "у меня уже стемнело",
+		"&#128522;", "&#128515;", "&#128521;", "&#128540;", "&#128518;", "&#128527;", "всем спать &#128540;",
+		"стемнело на дворе..."
 		);
 	$txt=$arr[rand(0, sizeof($arr)-1)];
 
@@ -236,20 +264,11 @@ if($currentMin>=3 && $currentMin<=7 && $author_id != "id152223765"){
 	wallComment($txt);
 }
 
-
+//wallComment($res_str);
 if ( $comment_life >=20 ){
-	if (($comment_life >= 44+rand(0, 6)) && $comment_life < 65 && $author_id != "id152223765"){
+	if (($comment_life >= 45+rand(0, 5)) && $comment_life < 65 && $author_id != "id152223765"){
 	 connect($dbhost, $dbusername, $dbpass, $db_name);
 	 wallComment(NULL);//самая важная функция
-	}
-	if( $comment_life >= 54 && $comment_life<65) {
-		$message = "Последний коммент оставлен $comment_life минут назад
-  		$first_name $last_name в $comment_time";
-		mail( "good-1991@mail.ru", "Chat", $message );
-		$sms = file_get_contents( "http://sms.ru/sms/send?api_id=b8646699-0b12-1c14-ad92-7ab16971b8a1&to=375259466591&text="
-				                     . urlencode( iconv( "windows-1251",
-					"utf-8",
-					"Last comment was added $comment_life minutes ago" ) ) );
 	}
 
 	connect($dbhost, $dbusername, $dbpass, $db_name);
@@ -268,7 +287,15 @@ if ( $comment_life >=20 ){
 		getCommentsCount( $user_id );
 	}
 	commentStat($currentDay);
-  }
+}
+if( $comment_life >= 60 && $comment_life<65) {
+		$message = "winner is $first_name $last_name";
+		mail( "pavel.felias@gmail.com", "Winner", $message );
+		$sms = file_get_contents( "http://sms.ru/sms/send?api_id=b8646699-0b12-1c14-ad92-7ab16971b8a1&to=375259466591&text="
+				                     . urlencode( iconv( "windows-1251",
+					"utf-8",
+					"Winner is $first_name $last_name" ) ) );
+}
 
  connect($dbhost, $dbusername, $dbpass, $db_name);
  $n=getCommentNum($author_id);
