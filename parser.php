@@ -147,16 +147,16 @@ function commentStat($currentDay){
 		$post_id='5970';//tank post
 		$phrases = array(
    		    "Долго","Хватит с тебя","это еще не все","Хорошая попытка)","Lol^^",
-  		  	"OMG","Хачу галду!))","отдохните","ясно(","сорян((","лолки вы",
+  		  	"OMG","Хачу галду!))","отдохните","ясно(","сорян((","лолки вы", "хмммм &#128529;",
 			"норм","нормас продержался)","ну ок...","хватит уже","слишком долго",
-			"идите отдыхать","и чего вам все неймется","так-то","эх",
-			"все тут сидите","ну почти))", "хорош", "много минут",
+			"идите отдыхать","и чего вам все неймется","так-то","эх", "и даже так..",
+			"все тут сидите","ну почти))", "хорош", "много минут", "хватит наверное", 
 			"достаточно", "круто однако", "ну как вы тут?","однако, долго","Ап","UP",
 			"тутэ", "написал пост - пошел спать", "сделал дело и спать", "up", "norm",
 			"ага)", "угу...", "aga;)", "отдыхать идите))", "лал", "вы так не шутите",
 			"почти испугался", "фух, пронесло", "сгонял за чаем)", "не надо так", "лалки",
-			"эээээээ, не шутите", "лолд", "-_-", "^_^" , "=)", "бываит)))", "от оно как...",
-			"ничоси", "нифигаси", "фигасе))", 
+			"эээээээ, не шутите так", "лолд", "-_-", "^_^" , "бываит)))", "от оно как...",
+			"ничоси", "нифигаси", "фигасе))", "на страже)", "стерегу голду)))", "ничавоси",
 			"&#128522;", "&#128515;", "&#128521;", " &#128518;", "&#128540;", "&#128523;", "&#128526;",
 			"&#128527;", " &#128528;", "&#128516;", " &#128556;", "&#128512;", "&#128517;"
 			);
@@ -168,6 +168,7 @@ function commentStat($currentDay){
 		$query;
 		if($txt){//если задана строка- постим строку
 		 $vk_comment = $vk->addComment($txt, $post_id, NULL);
+		 $query = "INSERT INTO vk_answers (phrase, time, day) VALUES ('{$txt}', '{$currentTime}', '{$currentDay}');";
 		}
 		else {
 			if(rand(0, 3) == 3){
@@ -195,7 +196,6 @@ function commentStat($currentDay){
 				$query = "INSERT INTO vk_answers (phrase, time, day) VALUES ('{$phrase}', '{$currentTime}', '{$currentDay}');";
 			}
 		}
-		if($txt) $query = "INSERT INTO vk_answers (phrase, time, day) VALUES ('{$txt}', '{$currentTime}', '{$currentDay}');";
 
 		$res = mysql_query( $query )
 			or die( "<p>commentStat Невозможно сделать добавление ответа в базу"
@@ -216,16 +216,11 @@ if ( ! $html ) {
 $fnd_author  = $html->find( 'a.pi_author' );//в масссиве вк всегда 51 коммент
 $fnd_comment = $html->find( 'div.pi_text' );
 
-for ( $i = 49; $i < count( $fnd_author ); ++ $i ) {
-	$author = trim( $fnd_author[ $i ]->innertext );
-	if ( $author == "Официальное сообщество Plantronics" ) {
+$author = end( $fnd_author );
+if ( $author == "Официальное сообщество Plantronics" ) {
 		$message = "Message from admin";
 		mail( "pavel.felias@gmail.com", "Chat", $message );
-		break;
 	}
-}
-
-$author = end( $fnd_author );
 sscanf( $author, "<a class=\"pi_author\" href=\"/%s\">", $author_id );
 $author = trim( $author->innertext );
 sscanf( $author, "%s %s", $first_name, $last_name );
@@ -256,7 +251,7 @@ echo "<a href=\"https://m.vk.com/wall-43932139_5970?post_add#post_add\">ADD POST
 $html->clear();//очистка памяти от объекта
 unset( $html );
 
-if($comment_life<0 && $currentMin>=4 && $currentMin<=12 && $author_id != "id152223765"){
+if($comment_life<0 && $currentMin>=6 && $currentMin<=12 && $author_id != "id152223765"){
 	$arr = array( "Эх", "доброй ночи ребят", "хорошей ночки", "продуктивно посидеть",
 		"Доброй ночи", "спокойной", "эх...", "удачи неспящим", "все неспят", "все неспите)))",
 		"интересно, какой будет рекорд", "стерегите голду))", "наступает ночь", "у меня уже стемнело",
