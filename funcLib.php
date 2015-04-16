@@ -1,4 +1,4 @@
-<?
+<?php
 require_once 'connectDB.php';
 function searchActicle( $page_adress ) {
 	$query = "SELECT id FROM news WHERE link = '{$page_adress}';";

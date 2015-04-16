@@ -15,7 +15,7 @@ if($_GET['logout'] == 1){ //Выход
 		$page_adress   = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 		$life_time     = time() - 2592000; //Для удаления кук устанавливаем время в прошлом
 		$access_path   = "/";
-		$access_domain = "example.com";
+		$access_domain = "bsmu.home";
 		setcookie( 'first_name', $first_name, $life_time, $access_path, $access_domain );
 		setcookie( 'last_name', $last_name, $life_time, $access_path, $access_domain );
 		setcookie( 'network', $network, $life_time, $access_path, $access_domain );
@@ -48,7 +48,7 @@ else {
 		$page_adress   = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 		$life_time     = time() + ( 60 * 60 * 24 * 7 );
 		$access_path   = "/";
-		$access_domain = "bsmu.akson.by";
+		$access_domain = "bsmu.home";
 		setcookie( 'first_name', $first_name, $life_time, $access_path,
 			$access_domain );
 		setcookie( 'last_name', $last_name, $life_time, $access_path,
@@ -350,7 +350,8 @@ else {
 	
 	<form class="comments" method="POST" action="add-comment.php">
 	<div class="comment-send-area">
-		<p>Вы вошли как: <a href="<? echo $userLink;?>"><? echo $userName;?></a> <a href="<?echo $_SERVER['REQUEST_URI']."?logout=1";?>">Выйти</a></p>
+		<p>Вы вошли как: <a href="<? echo $userLink;?>"><? echo $userName;?></a> 
+		<a href="<?echo $_SERVER['REQUEST_URI']."?logout=1";?>">Выйти</a></p>
 		<textarea name="user_comment" cols="50" rows="10"></textarea>
 		<input type="submit" id="send_button"/>
 		<!--onClick="saveform (this.form);return false;"-->

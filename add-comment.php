@@ -2,7 +2,7 @@
 require_once 'funcLib.php';
 $boolCheckCookie = false;
 error_reporting(0);
-
+session_start();
 if ( isset( $_COOKIE['first_name'] ) ) {
 	$username['first_name'] = $_COOKIE['first_name'];
 	$username['last_name']  = $_COOKIE['last_name'];
@@ -10,14 +10,16 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 	$username['identity']   = $_COOKIE['identity'];
 	$page_adress            = $_COOKIE['page_adress'];
 	$boolCheckCookie        = true;
-	echo "Отработали куки <br>";
+	//echo "Отработали куки <br>";
 } else {
 	if ( $boolCheckCookie == false ) {
-		session_start();
-		if ( isset( $_SESSION['user'], $_SESSION['page_adress'] ) ) {
-			$username    = $_SESSION['user'];
-			$page_adress = $_SESSION['page_adress'];
-			echo "Отработала сессия <br>";
+		if ( isset( $_SESSION['first_name'], $_SESSION['last_name'] ) ) {
+			$username['first_name'] = $_SESSION['first_name'];
+			$username['last_name']  = $_SESSION['last_name'];
+			$username['network']    = $_SESSION['network'];
+			$username['identity']   = $_SESSION['identity'];
+			$page_adress            = $_SESSION['page_adress'];
+			//echo "Отработала сессия <br>";
 		}
 	}
 }
