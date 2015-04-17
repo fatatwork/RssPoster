@@ -24,17 +24,18 @@ $filter="owner"; $count=sizeof($items)*4;
 $posts = $vk->getPosts($filter, $count);
 
 if ( sizeof($items) ) {
-	$flag=1;
 	foreach ( $items as $item ) {
-		$news_title = $item->title;
-		$news_link  = $item->link;
+		$flag=1;//флаг разрешения дла отправки поста
 		for($i=1; $i<sizeof($posts); ++$i){
-			if($posts[$i]->media->share_url == $news_link){
-				$flag=0;
+			if($posts[$i]->media->share_url == $item->link){
+				//проверка, если изменили название статьи, но ссылка осталась той же
+				//удаляем текущий пост и делаем новый с той же ссылкой
+				if($posts[$i]->text!=$item->title) $vk->deletePost($posts[$i]->id);
+				else $flag=0;
 				break;
-			} else $flag=1;
+			}
 		}
-		if($flag) $vk->post(null, null, $news_link);
+		if($flag) $vk->post(null, null, $item->link);
 	}
 }
 ?>
