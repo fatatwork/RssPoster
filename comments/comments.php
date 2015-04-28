@@ -15,10 +15,11 @@ if($_GET){
 					if(!$comment['ban_time']){
 						echo "<form class='ban_form' method='POST' action='".$_SERVER['REQUEST_URI']."'>
 								<div class='ban_buttons'>
-									<input type='radio'  name='day' value='day'/>День
-									<input type='radio'  name='month' value='month'/>Месяц
-									<input type='radio'  name='year' value='year'/>Год
-									<input type='radio'  name='forever' value='forever'/>Навсегда<br />
+									<input type='radio'  name='ban' value='day'/>День
+									<input type='radio'  name='ban' value='week'/>День
+									<input type='radio'  name='ban' value='month'/>Месяц
+									<input type='radio'  name='ban' value='year'/>Год
+									<input type='radio'  name='ban' value='forever'/>Навсегда<br />
 									<input type='submit' name='user_id_".$comment['user_id']."' value='забанить'/>
 									<input type='submit' name='comment_id_".$comment['id']."' value='удалить'/>
 									<input type='reset' value='очистить'/>
@@ -40,10 +41,7 @@ if($_REQUEST){
 	foreach($usersOut as $user){
 		switch($_REQUEST['user_id_'.$user['user_id']]){
 			case 'забанить':
-				if(isset($_REQUEST['day'])) banUser($user['user_id'], $_REQUEST['day']);
-				if(isset($_REQUEST['month'])) banUser($user['user_id'], $_REQUEST['month']);
-				if(isset($_REQUEST['year'])) banUser($user['user_id'], $REQUEST['year']);
-				if(isset($_REQUEST['forever'])) banUser($user['user_id'], $_REQUEST['forever']);
+				if(isset($_REQUEST['ban'])) banUser($user['user_id'], $_REQUEST['ban']);
 				break;
 			case 'разбанить': 
 				banUser($user['user_id'], NULL);

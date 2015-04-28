@@ -27,7 +27,7 @@ function searchUser(
 	$username
 ) {//ищем юзера по url возвращаем в качестве результата всю строку row
 	$query
-		= "SELECT * FROM users WHERE network_url = '{$username['identity']}'";//ищем есть ли такой же url в базе
+		= "SELECT * FROM users WHERE network_url = '{$username['identity']}';";//ищем есть ли такой же url в базе
 	$res = mysql_query( $query )
 	or die( "<p>Невозможно сделать запрос поиска пользователя: " . mysql_error()
 	        . "</p>" );
@@ -76,7 +76,7 @@ function addComment( $article_id, $user_id, $comment ) {//добавляем к�
 	$query    = "SELECT ban_time FROM users WHERE user_id='{$user_id}';";
 	$res      = mysql_query( $query );
 	$ban_time = mysql_fetch_row( $res );
-	if ( $ban_time[0] < 0 ) {
+	if ( $ban_time[0] != 0 ) {
 		return false;
 	}
 
@@ -132,6 +132,8 @@ function banUser( $user_id, $ban_time ) {
 		switch($ban_time){
 			case 'day': $ban_time=time()+24*3600;
 				break;
+			case 'week': $ban_time=time()+7*24*3600;
+				break;
 			case 'month': $ban_time=time()+31*24*3600;
 				break;
 			case 'year': $ban_time=time()+12*31*24*3600;
@@ -150,7 +152,7 @@ function banUser( $user_id, $ban_time ) {
 function getBannedUsers() {
 	$time = time();
 	$query
-	      = "SELECT user_id  FROM users WHERE ban_time>='{$time}' AND ban_time<0;";
+	      = "SELECT user_id  FROM users WHERE ban_time!=0;";
 	$result = mysql_query( $query )
 	or die( "<p>Невозможно получить данные о пользователях: " . mysql_error()
 	        . "</p>" );
