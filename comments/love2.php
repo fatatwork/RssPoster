@@ -18,7 +18,7 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 }
 
 $commentOut = getComments($_SESSION['page_adress']); //Получаем комментарии
-
+$commentOut=array_reverse($commentOut, true);
 ?>
 <style>
 .comment-list{
@@ -354,14 +354,14 @@ $commentOut = getComments($_SESSION['page_adress']); //Получаем комм
 	<div class="comment-list">
 		<?
 		if(is_array($commentOut)){
-			for($i=sizeof($commentOut)-1; $i>=0; --$i){
-			echo "<div class=\"comment\">".
-			"<a href=\"http://vk.com/id".$commentOut[$i]['network_url']."\">".
-			"<img src=\"".$commentOut[$i]['image']."\"/></a>".
-			"<span> <h4>"."<a href=\"http://vk.com/id".$commentOut[$i]['network_url']."\">".
-			$commentOut[$i]['first_name'] . " " . $commentOut[$i]['last_name'] . "</a> " 
-			. $commentOut[$i]['add_time'] . "</h4>" . $commentOut[$i]['comment']."</span>".
-			"</div>";
+			foreach($commentOut as $comment){
+				echo "<div class=\"comment\">".
+				"<a href=\"http://vk.com/id".$comment['network_url']."\">".
+				"<img src=\"".$comment['image']."\"/></a>".
+				"<span> <h4>"."<a href=\"http://vk.com/id".$comment['network_url']."\">".
+				$comment['first_name'] . " " . $comment['last_name'] . "</a> " 
+				. $comment['add_time'] . "</h4>" . $comment['comment']."</span>".
+				"</div>";
 			}
 		}
 		?>
