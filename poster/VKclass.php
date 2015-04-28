@@ -30,6 +30,56 @@ class vk {
 		}
 		return 0;
 	}
+	public function getOneUser($user_id){
+		$data = json_decode(
+			$this->execute(
+				'users.get',
+				array(
+					'user_ids' => $user_id,
+					'fields'=>"photo_50",
+					'name_case'=>'nom'
+				)
+			)
+		);
+		if( isset( $data->error ) ) {
+			return $this->error( $data );
+		}
+		return $data->response;
+	}
+	public function getComments($post_id, $count, $sort){
+		$data = json_decode(
+			$this->execute(
+				'wall.getComments',
+				array(
+					'owner_id' => $this->group_id,
+					'post_id'=>$post_id,
+					'need_likes'=>0,
+					'count'=>$count,
+					'sort'=>$sort,//asc — от старых к новым, desc - от новых к старым)
+					'preview_length'=>0
+				)
+			)
+		);
+		if( isset( $data->error ) ) {
+			return $this->error( $data );
+		}
+		return $data->response;
+	}
+	public function getRepost($object_str, $group_id){
+		$data = json_decode(
+			$this->execute(
+				'wall.repost',
+				array(
+					'object' => $object_str,
+					'group_id'=>$group_id
+				)
+			)
+		);
+		if( isset( $data->error ) ) {
+			return $this->error( $data );
+		}
+		return $data->response;
+	}
 	public function addComment( $desc, $post_id, $sticker) {
 			$data = json_decode(
 				$this->execute(
@@ -46,13 +96,14 @@ class vk {
 			if( isset( $data->error ) ) {
 				return $this->error( $data );
 			}
-			return $data->response->comment_id;
+			return $data->response;
 	}
-	public function setOnline($voip) {
+	public function setOnline() {
 			$data = json_decode(
 				$this->execute(
 					'account.setOnline',
 					array(
+						'voip'=>0
 					)
 				)
 			);
@@ -69,7 +120,7 @@ class vk {
 					'wall.get',
 					array(
 						'owner_id' => $this->group_id,
-						'owner' => $filter,
+						'filter' => $filter,
 						'count' =>$count
 					)
 				)

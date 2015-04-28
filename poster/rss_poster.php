@@ -4,10 +4,7 @@
 </head>
 </html>
 <?php
-require_once '../app_config.php';
 require_once 'VKclass.php';
-
-ini_set( 'display_errors', 'Off' );
 //инациализация вк
 $token    = '92b73575a455b69bd32a54215038a3a74e7997d73923a364bd93790912b7f576c18b813f440348dfb5321&expires_in=0&user_id=152223765';
 $delta    = '100';
@@ -19,10 +16,8 @@ $rss_url = "http://www.bsmu.by/rss/rss.xml";
 $rss     = simplexml_load_file( $rss_url );
 $items   = $rss->channel->item;
 
-$filter="owner"; $count=sizeof($items)*4;
-//получаем последние 32 поста со стенки
+$filter="owner"; $count=sizeof($items)*2;
 $posts = $vk->getPosts($filter, $count);
-
 if ( sizeof($items) ) {
 	foreach ( $items as $item ) {
 		$flag=1;//флаг разрешения дла отправки поста

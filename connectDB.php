@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require_once 'app_config.php';
 	$dbconnect = mysql_connect( $dbhost, $dbusername, $dbpass )
 	or die( "<p>Ошибка подключения к базе данных: " . mysql_error() . "</p>" );

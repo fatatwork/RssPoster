@@ -1,51 +1,63 @@
 <?php
 session_start();
 header('Content-type: text/html; charset=utf-8');
-require_once 'funcLib.php';
-//дополнительно устанавливаем сессию, при наличии кук сесссия не запускается
-$boolCheckCookie = false;
-if($_GET['logout'] == 1){ //Выход
-	if(isset($_COOKIE['first_name'])){
-		$first_name    = $_COOKIE['first_name'];
-		$last_name     = $_COOKIE['last_name'];
-		$network       = $_COOKIE['network'];
-		$identity      = $_COOKIE['identity'];
-		$page_adress   = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-		$life_time     = time() - 2592000; //Для удаления кук устанавливаем время в прошлом
-		$access_path   = "/";
-		$access_domain = "bsmu.akson.by";
-		setcookie( 'first_name', $first_name, $life_time, $access_path, $access_domain );
-		setcookie( 'last_name', $last_name, $life_time, $access_path, $access_domain );
-		setcookie( 'network', $network, $life_time, $access_path, $access_domain );
-		setcookie( 'identity', $identity, $life_time, $access_path, $access_domain );
-		setcookie( 'page_adress', $page_adress, $life_time, $access_path, $access_domain );
-	}
-	if(session_id() != "" || isset($_COOKIE[session_name()])){
-		unset($_SESSION['user']);
-		unset($_SESSION['page_adress']);
-		setcookie(session_name(), '', $life_time, $access_path, $access_domain);
-	}
-	$_GET['logout'] = 0;
-	$header_query = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];//Формируем URL
-	$header_query = substr($header_query, 0, -9); //Обрезаем "?logout=1"
-	header("Location: http://".$header_query); //После удаления данных авторизации перенаправляем на исходную страницу
-	exit;
-}
+require_once '../funcLib.php';
+
+//адрес странички с которой перенаправляемься на авторизацию
+$_SESSION['page_adress']  = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 if ( isset( $_COOKIE['first_name'] ) ) {
-	echo "Куки";
+	//echo "куки";
 	$userName = $_COOKIE['first_name'] . " " . $_COOKIE['last_name'];
-	$userLink = $_COOKIE['identity'];
+	$userLink = "http://vk.com/id".$_COOKIE['identity'];
 }else {
 	if(isset($_SESSION['first_name'])){
-		echo "сессия";
+		//echo "сессия";
 		$userName=$_SESSION['first_name']." ".$_SESSION['last_name'];
 		$userLink=$_SESSION['identity'];
 	}
 }
 
-$commentOut = getComments(); //Получаем комментарии
+$commentOut = getComments($_SESSION['page_adress']); //Получаем комментарии
 
 ?>
+<style>
+.comment-list{
+	display: block;
+}
+#Login{
+	font-size: 15px;
+}
+.comment{
+	margin-top: 40px;
+	display: flex;
+	word-wrap:break-word;
+}
+.comment a, .comment img{
+	width:50px;
+	height:50px;
+	min-width: 50px;
+    min-height: 50px;
+}
+.comment span{
+	text-align: left;
+	padding-left: 10px;	
+	float: right;
+}
+.comment span p{
+	font-size: 12px;
+	margin:auto;
+}
+.comment span h4{
+	margin: auto;
+}
+.comment span h4 a{
+	text-decoration: none;
+}
+.comment span h4 a:hover {
+	color: blue;
+	text-decoration: underline;
+}
+</style>
 <!DOCTYPE html>
 <meta charset="UTF8">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -319,31 +331,41 @@ $commentOut = getComments(); //Получаем комментарии
 	<p><em>Методист ОВРМ Янь Ольга Юрьевна</em></p></p>
 	<br/>
 	<!-- Форма отправляющая данные -->
-	<div id="uLogin"><a href='vk_auth2.php'>Войти через ВКонтакте</a></div>
-	
-	<form class="comments" method="POST" action="add-comment.php">
+	<?php
+	if(!isset($userName)&&!isset($userLink))
+	echo "<div id=\"Login\">
+			<p>Вы не авторизированы. Войдите через соц-сеть</p><br />
+			<a href='vk_auth2.php'><img src='../design/vk_icon.png'></a>
+			</div>";
+	?>
+	<form class="comments" method="POST" action="../add-comment.php">
 	<div class="comment-send-area">
 		<?php
 		if(isset($userName) && isset($userLink)){
-		echo "<p>Вы вошли как: <a href='$userLink;'>$userName</a>"; 
-		echo "<p><a href=\"".$_SERVER['REQUEST_URI']."?logout=1\">Выйти</a></p>";
+		echo "<p>Вы вошли как: <a href='$userLink'>$userName</a>"; 
+		echo "<p><a href='http://bsmu.akson.by/comments/logout.php?logout=1'>Выйти</a></p>";
 		}
 		?>
 		<textarea name="user_comment" cols="50" rows="10"></textarea>
 		<input type="submit" id="send_button"/>
 		<!--onClick="saveform (this.form);return false;"-->
-	</div>		
+	</div>
+	</form>		
 	<div class="comment-list">
 		<?
 		if(is_array($commentOut)){
-			foreach ($commentOut as $value) {
-				echo "<br />" . $value["first_name"] . " " . $value["last_name"] . " " 
-			. $value["add_time"] . "<br />" . $value["comment"];
+			for($i=sizeof($commentOut)-1; $i>=0; --$i){
+			echo "<div class=\"comment\">".
+			"<a href=\"http://vk.com/id".$commentOut[$i]['network_url']."\">".
+			"<img src=\"".$commentOut[$i]['image']."\"/></a>".
+			"<span> <h4>"."<a href=\"http://vk.com/id".$commentOut[$i]['network_url']."\">".
+			$commentOut[$i]['first_name'] . " " . $commentOut[$i]['last_name'] . "</a> " 
+			. $commentOut[$i]['add_time'] . "</h4>" . $commentOut[$i]['comment']."</span>".
+			"</div>";
 			}
 		}
 		?>
 	</div>
-	</form>
 	<script charset="utf-8" src="http://yandex.st/share/share.js"
 	        type="text/javascript"></script>
 	<!--<div data-yasharel10n="ru" data-yasharetype="none" data-yasharequickservices="facebook,twitter,vkontakte,odnoklassniki,moimir,lj,gplus,yaru,friendfeed,moikrug" class="yashare-auto-init"></div>-->
