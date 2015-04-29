@@ -16,9 +16,6 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 		$userLink=$_SESSION['identity'];
 	}
 }
-
-$commentOut = getComments($_SESSION['page_adress']); //Получаем комментарии
-$commentOut=array_reverse($commentOut, true);
 ?>
 <style>
 .comment-list{
@@ -77,8 +74,8 @@ $commentOut=array_reverse($commentOut, true);
 
 	<script type="text/javascript"
 	        src="http://www.bsmu.by/scripts/jquery.min.js"></script>
-	<script type="text/javascript"
-	        src="http://www.bsmu.by/scripts/upper.js"></script>
+	<script type="text/javascript" src="http://www.bsmu.by/scripts/upper.js"></script>
+	<script type="text/javascript" src="/comments/ajax_control.js"></script>
 	<!--<script type="text/javascript">
 	function saveform (data) //Скрипт отправляющий комментарий без перезагрузки страницы
 	{
@@ -338,7 +335,7 @@ $commentOut=array_reverse($commentOut, true);
 			<a href='vk_auth2.php'><img src='../design/vk_icon.png'></a>
 			</div>";
 	?>
-	<form class="comments" method="POST" action="../add-comment.php">
+	<form class="comments" action="#">
 	<div class="comment-send-area">
 		<?php
 		if(isset($userName) && isset($userLink)){
@@ -347,25 +344,12 @@ $commentOut=array_reverse($commentOut, true);
 		}
 		?>
 		<textarea name="user_comment" cols="50" rows="10"></textarea>
-		<input type="submit" id="send_button"/>
 		<!--onClick="saveform (this.form);return false;"-->
 	</div>
 	</form>		
-	<div class="comment-list">
-		<?
-		if(is_array($commentOut)){
-			foreach($commentOut as $comment){
-				echo "<div class=\"comment\">".
-				"<a href=\"http://vk.com/id".$comment['network_url']."\">".
-				"<img src=\"".$comment['image']."\"/></a>".
-				"<span> <h4>"."<a href=\"http://vk.com/id".$comment['network_url']."\">".
-				$comment['first_name'] . " " . $comment['last_name'] . "</a> " 
-				. $comment['add_time'] . "</h4>" . $comment['comment']."</span>".
-				"</div>";
-			}
-		}
-		?>
-	</div>
+		<button id="send_button">Отправить</button>
+
+	<div class="comment-list"></div>
 	<script charset="utf-8" src="http://yandex.st/share/share.js"
 	        type="text/javascript"></script>
 	<!--<div data-yasharel10n="ru" data-yasharetype="none" data-yasharequickservices="facebook,twitter,vkontakte,odnoklassniki,moimir,lj,gplus,yaru,friendfeed,moikrug" class="yashare-auto-init"></div>-->

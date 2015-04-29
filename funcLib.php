@@ -104,10 +104,8 @@ function getComments( $page_adress ) {
 	or die( "<p>Невозможно получить данные о комментариях: " . mysql_error()
 	        . "</p>" );
 	$commentArray = array();
-	while ( $row
-		= mysql_fetch_array( $result_obj ) ) { //Сюда должна лечь новая строка ассоциативного массива
-		$row['add_time'] = date( "d.m.y - H:i",
-			$row['add_time'] ); //преобразуем время к формату
+	while ( $row = mysql_fetch_array( $result_obj ) ) { //Сюда должна лечь новая строка ассоциативного массива
+		$row['add_time'] = date( "d.m.y - H:i", $row['add_time'] ); //преобразуем время к формату
 		array_push( $commentArray, $row );
 	}
 
