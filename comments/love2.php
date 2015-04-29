@@ -17,44 +17,6 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 	}
 }
 ?>
-<style>
-.comment-list{
-	display: block;
-}
-#Login{
-	font-size: 15px;
-}
-.comment{
-	margin-top: 40px;
-	display: flex;
-	word-wrap:break-word;
-}
-.comment a, .comment img{
-	width:50px;
-	height:50px;
-	min-width: 50px;
-    min-height: 50px;
-}
-.comment span{
-	text-align: left;
-	padding-left: 10px;	
-	float: right;
-}
-.comment span p{
-	font-size: 12px;
-	margin:auto;
-}
-.comment span h4{
-	margin: auto;
-}
-.comment span h4 a{
-	text-decoration: none;
-}
-.comment span h4 a:hover {
-	color: blue;
-	text-decoration: underline;
-}
-</style>
 <!DOCTYPE html>
 <meta charset="UTF8">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -68,9 +30,8 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 	<meta http-equiv="X-UA-Compatible" content="IE=9">
 
 	<meta http-equiv="Content-Type" content="text/html; CHARSET=windows-1251">
-	<link
-		href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700&subset=cyrillic-ext"
-		rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700&subset=cyrillic-ext" rel="stylesheet" type="text/css">
+	<link href="/comments/comments_style.css" rel="stylesheet" type="text/css">
 
 	<script type="text/javascript"
 	        src="http://www.bsmu.by/scripts/jquery.min.js"></script>
@@ -347,8 +308,8 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 		<!--onClick="saveform (this.form);return false;"-->
 	</div>
 	</form>		
-		<button id="send_button">Отправить</button>
-
+	<a id="send_button"><span>Оставить сообшение</span></a>
+	
 	<div class="comment-list"></div>
 	<script charset="utf-8" src="http://yandex.st/share/share.js"
 	        type="text/javascript"></script>
