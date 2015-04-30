@@ -9,21 +9,23 @@ $(document).ready(function(){
 
 	function getExistComments(){
 		var params = "getComments=true"; 
-		insertNewData(params, "../add-comment.php", "comment-list");
+		insertNewData(params, "../add-comment.php", "comment-list", "POST");
 	}
 
-	function insertNewData(params, php_script_path, targetHTMLid){
+	function insertNewData(params, php_script_path, targetHTMLid, method){
 		sucessful = false;
 		request = new ajaxRequest(); /*Создаем новый обьект запроса (функция снизу)*/
-		request.open("POST", php_script_path, true); /*Настраиваем обьект на создаение post запроса по адресу файла php сценария. true - указывает на включение асинхронного режима*/
+		request.open(method, php_script_path, true); /*Настраиваем обьект на создаение post запроса по адресу файла php сценария. true - указывает на включение асинхронного режима*/
 		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); 
 		/*Отправляем http заголовки, для того чтобы сервер знал о поступлении POST запроса*/
 		request.onreadystatechange = function(){ /*Указывает на CALLBACK функцию, которая должна вызываться при каждом изменении свойства readyState*/
 			if (this.readyState == 4) {
 				if(this.status == 200){
 					clearTimeout(timeoutHandle);
-					if(this.responseText != null){
-						document.getElementById(targetHTMLid).innerHTML = this.responseText;
+					if(this.responseText != null || this.responseText == true){
+						if(targetHTMLid != null){ //Если есть необходимость делать вставку в документ
+							document.getElementById(targetHTMLid).innerHTML = this.responseText;
+						}
 						sucessful = true;
 					}
 					else{
@@ -75,13 +77,14 @@ $(document).ready(function(){
  	function (){
  		var btn = this;
  		if(approve == true){
+ 			firstValue = $(btn).context.innerHTML;
  			approve = false; //Кнопка нажата, больше жать нельзя
  			messageOnce = false; //Можно снова выводить сообщения
 	 		$(btn).addClass("send_button_loading");
 			/*Извлекаем текст комментария из текстового поля*/
 			var textOfComment = $('textarea[name=user_comment]')[0].value;
 			var params = "currentComment=" + textOfComment; /*Параметры: пара = значение*/
-			insertNewData(params, "../add-comment.php", "comment-list");
+			insertNewData(params, "../add-comment.php", "comment-list", "POST");
 			var intervalHandle = setInterval( function(){ /*Таймаут на соединение*/
 					if(sucessful == true){
 						$(btn).removeClass("send_button_loading");
@@ -90,7 +93,6 @@ $(document).ready(function(){
 						setTimeout(function(){ //Выставляем таймаут для спамеров, которые не знают js или надеятся на то, что нет проверки на сервере
 							approve = true;
 							if(firstValue != "" || firstValue != "undefined"){
-								firstValue =
 								$(btn).context.innerHTML = "<span>" + firstValue + "</span>";
 							}
 							$(btn).removeClass("send_button_blocked");
@@ -112,7 +114,8 @@ $(document).ready(function(){
 
 	/*$("#vk_auth").click(
 		function () {
-			
+			var params = "goAuth=true";
+			insertNewData(params, "/vk_auth2.php", null, "POST"); //Просто вызываем скрипт
 		});*/
 
 });
