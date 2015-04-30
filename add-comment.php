@@ -51,6 +51,4 @@ if(is_array($commentOut)){
 		"</div>";
 	}
 }
-//редирект на страницу с которой пришли
-//header("Location: http://".$_SESSION['page_adress']);
 ?>

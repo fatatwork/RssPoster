@@ -9,13 +9,13 @@ $(document).ready(function(){
 
 	function getExistComments(){
 		var params = "getComments=true"; 
-		makeRequest(params);
+		insertNewData(params, "../add-comment.php", "comment-list");
 	}
 
-	function makeRequest(params){
+	function insertNewData(params, php_script_path, targetHTMLid){
 		sucessful = false;
 		request = new ajaxRequest(); /*Создаем новый обьект запроса (функция снизу)*/
-		request.open("POST", "../add-comment.php", true); /*Настраиваем обьект на создаение post запроса по адресу файла php сценария. true - указывает на включение асинхронного режима*/
+		request.open("POST", php_script_path, true); /*Настраиваем обьект на создаение post запроса по адресу файла php сценария. true - указывает на включение асинхронного режима*/
 		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); 
 		/*Отправляем http заголовки, для того чтобы сервер знал о поступлении POST запроса*/
 		request.onreadystatechange = function(){ /*Указывает на CALLBACK функцию, которая должна вызываться при каждом изменении свойства readyState*/
@@ -23,8 +23,7 @@ $(document).ready(function(){
 				if(this.status == 200){
 					clearTimeout(timeoutHandle);
 					if(this.responseText != null){
-						var comments = this.responseText;
-						document.getElementsByClassName("comment-list")[0].innerHTML = comments;
+						document.getElementById(targetHTMLid).innerHTML = this.responseText;
 						sucessful = true;
 					}
 					else{
@@ -82,7 +81,7 @@ $(document).ready(function(){
 			/*Извлекаем текст комментария из текстового поля*/
 			var textOfComment = $('textarea[name=user_comment]')[0].value;
 			var params = "currentComment=" + textOfComment; /*Параметры: пара = значение*/
-			makeRequest(params);
+			insertNewData(params, "../add-comment.php", "comment-list");
 			var intervalHandle = setInterval( function(){ /*Таймаут на соединение*/
 					if(sucessful == true){
 						$(btn).removeClass("send_button_loading");
@@ -91,7 +90,8 @@ $(document).ready(function(){
 						setTimeout(function(){ //Выставляем таймаут для спамеров, которые не знают js или надеятся на то, что нет проверки на сервере
 							approve = true;
 							if(firstValue != "" || firstValue != "undefined"){
-								$(btn).context.innerHTML = firstValue;
+								firstValue =
+								$(btn).context.innerHTML = "<span>" + firstValue + "</span>";
 							}
 							$(btn).removeClass("send_button_blocked");
 						}, antiSpamTimeout);
@@ -109,5 +109,10 @@ $(document).ready(function(){
  			
  		}
 	});
+
+	/*$("#vk_auth").click(
+		function () {
+			
+		});*/
 
 });

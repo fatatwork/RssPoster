@@ -310,7 +310,7 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 	</form>		
 	<a id="send_button"><span>Оставить сообшение</span></a>
 	
-	<div class="comment-list"></div>
+	<div id="comment-list"></div>
 	<script charset="utf-8" src="http://yandex.st/share/share.js"
 	        type="text/javascript"></script>
 	<!--<div data-yasharel10n="ru" data-yasharetype="none" data-yasharequickservices="facebook,twitter,vkontakte,odnoklassniki,moimir,lj,gplus,yaru,friendfeed,moikrug" class="yashare-auto-init"></div>-->
