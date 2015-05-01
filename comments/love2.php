@@ -36,6 +36,7 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 	<script type="text/javascript"
 	        src="http://www.bsmu.by/scripts/jquery.min.js"></script>
 	<script type="text/javascript" src="http://www.bsmu.by/scripts/upper.js"></script>
+	<script type="text/javascript" src="/comments/ajax_funcLib.js"></script>
 	<script type="text/javascript" src="/comments/ajax_control.js"></script>
 	<!--<script type="text/javascript">
 	function saveform (data) //Скрипт отправляющий комментарий без перезагрузки страницы

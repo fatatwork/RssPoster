@@ -45,20 +45,20 @@ function searchUserById( $user_id ) {
 	return $row;
 }
 
-function addUser( $username ) {//добавление пользователя
+function addUser( $username, $user_ip ) {//добавление пользователя
 	if ( isset( $username['first_name'] ) ) {
 		$query
 			=
-			"INSERT INTO users (first_name, last_name, image, network, network_url)"
-			.
-			"VALUES ('{$username['first_name']}', '{$username['last_name']}','{$username['image']}' ,'{$username['network']}', '{$username['identity']}');";
+			"INSERT INTO users (first_name, last_name, image, network, network_url, user_ip) 
+			VALUES ('{$username['first_name']}', '{$username['last_name']}','{$username['image']}', 
+				'{$username['network']}', '{$username['identity']}', INET_ATON('{$user_ip}'));";
 		$result = mysql_query( $query )
 		or die( "<p>Невозможно добавить пользователя " . mysql_error()
 		        . "</p>" );
 	}
 }
 
-function updateUser( $username, $user_id ) {
+function updateUser( $username, $user_id, $user_ip ) {
 	//$user_id айди пользователя внутри нашей собственной базы
 	$app_id   = '4832378';
 	$vk       = new vk( $token, $delta, $app_id, $group_id );
@@ -66,9 +66,8 @@ function updateUser( $username, $user_id ) {
 	$userinfo = $userinfo[0];//т.к вернется массив из 1 пользователя
 	$query
 	          =
-		"UPDATE users SET first_name='{$userinfo->first_name}',last_name='{$userinfo->last_name}', image='{$userinfo->photo_50}'"
-		.
-		"WHERE user_id='{$user_id}';";
+		"UPDATE users SET first_name='{$userinfo->first_name}',last_name='{$userinfo->last_name}', image='{$userinfo->photo_50}', 
+		user_ip=INET_ATON('{$user_ip}') WHERE user_id='{$user_id}';";
 	$result   = mysql_query( $query );
 }
 
@@ -94,11 +93,12 @@ function addComment( $article_id, $user_id, $comment ) {//добавляем к�
 }
 
 function getComments( $page_adress ) {
+	 //INET_ATON-преобразует ip В число и INET_NTOA-число в ip
 	$newsID     = searchActicle( $page_adress );
 	$actualTime = time();
 	//Создаем запрос на слияние данных о пользователях с данными об их комментариях
 	$query
-		= "SELECT id, user_id, comment, add_time, first_name, last_name, image, network_url, ban_time 
+		= "SELECT id, user_id, comment, add_time, first_name, last_name, image, network_url, ban_time, user_ip 
 		FROM users NATURAL JOIN comments WHERE news_id='{$newsID}' AND deleted=false ORDER BY id;";
 	$result_obj = mysql_query( $query )
 	or die( "<p>Невозможно получить данные о комментариях: " . mysql_error()

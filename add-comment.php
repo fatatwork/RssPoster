@@ -23,20 +23,20 @@ if ( isset( $_COOKIE['first_name'], $_COOKIE['last_name'] ) ) {
 
 if(isset($_POST['currentComment'])){
 	$comment = trim( $_POST['currentComment'] );
+	$user_ip=$_SERVER["REMOTE_ADDR"];
 	if ( isset( $username ) ) {
 	$article_id = searchActicle( $page_adress ); //Получаем идентификатор страницы на которой нужно разместить комментарий
 	$user_id = searchUser( $username );//первоначально ищем пользователя
 		if ( $user_id) {//пишем коммент
-			updateUser($username, $user_id);	
-			$comment_result = addComment( $article_id, $user_id, $comment );
+			updateUser($username, $user_id, $user_ip);	
+			$comment_result = addComment( $article_id, $user_id, $comment);
 		} else {//если пользователя нет - добавляем нового и пишем коммент
-			addUser( $username );
+			addUser( $username, $user_ip);
 			$user_id        = searchUser( $username );
 			$comment_result = addComment( $article_id, $user_id, $comment );
 		}
 	}
 }
-
 $commentOut = getComments($_SESSION['page_adress']); //Получаем комментарии
 $commentOut = array_reverse($commentOut, true);
 

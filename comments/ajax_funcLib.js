@@ -1,4 +1,7 @@
-function insertNewData(params, php_script_path, targetHTMLid, method){
+	sucessful = false;
+	errorDelay = 10000;
+
+	function insertNewData(params, php_script_path, targetHTMLid, method){
 		sucessful = false;
 		request = new ajaxRequest(); /*Создаем новый обьект запроса (функция снизу)*/
 		request.open(method, php_script_path, true); /*Настраиваем обьект на создаение post запроса по адресу файла php сценария. true - указывает на включение асинхронного режима*/
@@ -49,4 +52,12 @@ function insertNewData(params, php_script_path, targetHTMLid, method){
 			}
 		}
 		return request;
+	}
+
+	function errorHandler(errorText){
+		alert("Ошибка AJAX: " + errorText);
+	}
+
+	function adminGetExistArticles(){
+	insertNewData("", "admin_get_articles.php", "list", "POST");
 	}
