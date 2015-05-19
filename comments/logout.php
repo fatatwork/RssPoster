@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_GET['logout'] == 1){ //Выход
+if($_POST['logout'] == '1'){ //Выход
 	if(isset($_COOKIE['first_name'])){
 		$first_name    = $_COOKIE['first_name'];
 		$last_name     = $_COOKIE['last_name'];
@@ -23,8 +23,12 @@ if($_GET['logout'] == 1){ //Выход
 		setcookie(session_name(), '', $life_time, $access_path, $access_domain);
 	}
 	$_GET['logout'] = 0;
-	$header_query = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];//Формируем URL
+	echo "<div id='Login'>
+			<p>Вы не авторизированы. Войдите через соц-сеть</p><br />
+			<a id='vk_auth' onClick='vk_auth()'><img src='../design/vk_icon.png'></a>
+			</div>";
+	/*$header_query = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];//Формируем URL
 	header("Location: http://".$_SESSION['page_adress']); //После удаления данных авторизации перенаправляем на исходную страницу
-	exit;
+	exit;*/
 }
 ?>

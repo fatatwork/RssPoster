@@ -1,5 +1,6 @@
 	sucessful = false;
 	errorDelay = 10000;
+	ajaxReturn = null;
 
 	function insertNewData(params, php_script_path, targetHTMLid, method){
 		sucessful = false;
@@ -13,7 +14,16 @@
 					clearTimeout(timeoutHandle);
 					if(this.responseText != null || this.responseText == true){
 						if(targetHTMLid != null){ //Если есть необходимость делать вставку в документ
-							document.getElementById(targetHTMLid).innerHTML = this.responseText;
+							if(this.responseText !== ""){
+								document.getElementById(targetHTMLid).innerHTML = this.responseText;
+							}
+							else{
+								sucessful = false;
+								alert("Ошибка AJAX: Нет данных.");
+							}
+						}
+						else{
+							ajaxReturn = this.responseText;
 						}
 						sucessful = true;
 					}
@@ -59,5 +69,23 @@
 	}
 
 	function adminGetExistArticles(){
-	insertNewData("", "admin_get_articles.php", "list", "POST");
+		insertNewData("", "admin_get_articles.php", "list", "POST");
 	}
+
+	function banPressed(comment_id, user_id, param){
+		var form = $("#form_" + comment_id);
+		var radios = $("#form_" + comment_id + " input[name="+param+"]");
+		switch(param){
+			case 'ban': for(var i=0; i != radios.lenght; ++i){
+									if(radios[i].checked == true){
+										insertNewData(param+'='+radios[i].value+'&'+'user_id='+user_id,'admin_get_comments.php', 'list', 'POST');
+										break;
+									}
+								}
+				break;
+			case 'delete': insertNewData(param+'='+comment_id,'admin_get_comments.php', 'list', 'POST');
+				break;
+			case 'unban_user': insertNewData(param+'='+user_id,'admin_get_comments.php', 'list', 'POST');
+				break;
+		}	 
+ }

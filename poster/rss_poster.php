@@ -15,20 +15,18 @@ $vk       = new vk( $token, $delta, $app_id, $group_id );
 $rss_url = "http://www.bsmu.by/rss/rss.xml";
 $rss     = simplexml_load_file( $rss_url );
 $items   = $rss->channel->item;
-$items   = array_reverse($items);
 
 $filter="owner"; $count=sizeof($items)*2;
 $posts = $vk->getPosts($filter, $count);
 if ( sizeof($items) ) {
-
 	foreach ( $items as $item ) {
-		$flag=1;//флаг разрешения дла отправки поста
+		$flag=true;//флаг разрешения для отправки поста
 		for($i=1; $i<sizeof($posts); ++$i){
 			if($posts[$i]->media->share_url == $item->link){
 				//проверка, если изменили название статьи, но ссылка осталась той же
 				//удаляем текущий пост и делаем новый с той же ссылкой
-				if($posts[$i]->text!=$item->title) $vk->deletePost($posts[$i]->id);
-				else $flag=0;
+				if(strcasecmp($posts[$i]->text, $item->title)) $vk->deletePost($posts[$i]->id);
+				else $flag=false;
 				break;
 			}
 		}

@@ -6,9 +6,11 @@ session_start();
 //данные для инициализации в вк
 $client_id = '4832378'; // ID приложения
 $client_secret = '7S006k5mPrcsGwGY7FCI'; // Защищённый ключ
+
 if(!$_GET['code']){
-$_SESSION['redirect_uri'] = 'http://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; // Адрес страницы авторизации на сайте
+	$_SESSION['redirect_uri'] = 'http://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; // Адрес страницы авторизации на сайте
 }
+
 $url = 'http://oauth.vk.com/authorize';
 $params = array(
 	'client_id'     => $client_id,
@@ -16,12 +18,30 @@ $params = array(
 	'response_type' => 'code'
 );
 
-if (isset($_GET['code'])) {//авторизация чеерез вк
+//Запрос кода -> запись кода -> использование кода 
+
+//формирование ссылки для авторизации
+if((!isset($_COOKIE['first_name'])&&!isset($_SESSION['first_name'])) && $_SESSION['codeRequested'] != true){
+	$_SESSION['codeRequested'] = true;
+	header('Content-type: text/html; charset=utf-8');
+	header("Location:" . $url . '?' . urldecode(http_build_query($params))); //Передаем ссылку API
+	echo "true";
+	exit();
+	//echo $url . '?' . urldecode(http_build_query($params));
+	//echo $link = '<p><a href="' . $url . '?' .urldecode(http_build_query($params)) . '">Нажмите, чтобы войти через VK</a></p>';
+}
+
+if (isset($_GET['code'])) {//записываем код авторизации в сессию
 	$set_cookie_result = false;
+	$_SESSION['code'] = $_GET['code'];
+	echo "true";
+}
+
+if(isset($_SESSION['code']) && isset($_POST['getData'])){
 	$params = array(
 		'client_id' => $client_id,
 		'client_secret' => $client_secret,
-		'code' => $_GET['code'],
+		'code' => $_SESSION['code'],
 		'redirect_uri' => $_SESSION['redirect_uri']
 	);
 
@@ -64,13 +84,11 @@ if (isset($_GET['code'])) {//авторизация чеерез вк
 			$access_domain );
 		setcookie( 'page_adress', $_SESSION['page_adress'], $life_time, $access_path,
 			$access_domain );
-		header("Location: http://".$_SESSION['page_adress']);
-	}
-}
-//формирование ссылки для авторизации
-if(!isset($_COOKIE['first_name'])||!isset($_SESSION['first_name'])){
-header('Content-type: text/html; charset=utf-8');
-echo $link = '<p><a href="' . $url . '?' .urldecode(http_build_query($params)) . '">Нажмите, чтобы войти через VK</a></p>';
+		echo "<p>Вы вошли как: <a href='" . $_SESSION['page_adress'] . "'>" . $userInfo['first_name'] . " " . $userInfo['last_name'] ."</a></p>"; 
+		echo "<p><a href='http://bsmu.akson.by/comments/logout.php?logout=1'>Выйти</a></p>";
+		};
+		//header("Location: http://".$_SESSION['page_adress']);
+	unset($_SESSION['code']); //Убираем код из сессии
 }
 
 ?>

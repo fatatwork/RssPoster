@@ -36,38 +36,6 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 	<script type="text/javascript"
 	        src="http://www.bsmu.by/scripts/jquery.min.js"></script>
 	<script type="text/javascript" src="http://www.bsmu.by/scripts/upper.js"></script>
-	<script type="text/javascript" src="/comments/ajax_funcLib.js"></script>
-	<script type="text/javascript" src="/comments/ajax_control.js"></script>
-	<!--<script type="text/javascript">
-	function saveform (data) //Скрипт отправляющий комментарий без перезагрузки страницы
-	{
-		var user_comment = data.user_comment.value;
-		$.post('sample.php',{user_comment:user_comment},function(data){
-			$('love.php').html(data);
-		},'json');
-	}
-	</script>
-
-	<script type="text/javascript"> //Скрипт блокирующий кнопку
-	$(function(){
-	  $('#send_button').click(function(){
-		$(this).attr('disabled',true);
-	  });
-	});
-	</script>
-
-	<script type="text/javascript">
-		$(function(){
-		  $('#myform').submit(function(){
-			if($(this).hasClass('submitted')) {
-			  return false;
-			} else {
-			  $(('#submit_button').attr('disabled',true);
-			  $(this).addClass('submitted');
-			}
-		  });
-		});
-	</script>-->
 	<link rel="stylesheet" type="text/css"
 	      href="http://www.bsmu.by/style_main_ru.css">
 	<link rel="stylesheet" type="text/css"
@@ -76,14 +44,6 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 	<link href="http://www.bsmu.by/rss/rss.xml" rel="alternate"
 	      type="application/atom+xml" title="Atom 1.0"/>
 	<link rel="SHORTCUT ICON" href="/favicon.ico">
-
-	<!--[if lt IE 9]>
-
-
-	<link rel="stylesheet" type="text/css" href="/style_IE.css"
-	      media="all"></link>
-
-	<![endif]-->
 	<meta name="viewport"
 	      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -290,26 +250,27 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 	<p><em>Методист ОВРМ Янь Ольга Юрьевна</em></p></p>
 	<br/>
 	<!-- Форма отправляющая данные -->
+	<div id="user_info">
 	<?php
-	if(!isset($userName)&&!isset($userLink))
-	echo "<div id=\"Login\">
+	if(!isset($userName)&&!isset($userLink)){
+	echo "<div id='Login'>
 			<p>Вы не авторизированы. Войдите через соц-сеть</p><br />
-			<a href='vk_auth2.php'><img src='../design/vk_icon.png'></a>
+			<a id='vk_auth' onClick='vk_auth()'><img src='../design/vk_icon.png'></a>
 			</div>";
+		}
+		else{
+			$out = "<p>Вы вошли как: <a href='$userLink'>".$userName."</a></p>" . "<p><a id='vk_logout' href='#' onClick='vk_logout()'>Выйти</a></p>";
+			echo $out;
+		}
 	?>
+	</div>
 	<form class="comments" action="#">
 	<div class="comment-send-area">
-		<?php
-		if(isset($userName) && isset($userLink)){
-		echo "<p>Вы вошли как: <a href='$userLink'>$userName</a>"; 
-		echo "<p><a href='http://bsmu.akson.by/comments/logout.php?logout=1'>Выйти</a></p>";
-		}
-		?>
 		<textarea name="user_comment" cols="50" rows="10"></textarea>
 		<!--onClick="saveform (this.form);return false;"-->
 	</div>
 	</form>		
-	<a id="send_button"><span>Оставить сообшение</span></a>
+	<a id="send_button"><span>Оставить сообщение</span></a>
 	
 	<div id="comment-list"></div>
 	<script charset="utf-8" src="http://yandex.st/share/share.js"
@@ -523,6 +484,8 @@ if ( isset( $_COOKIE['first_name'] ) ) {
 					width="60" height="56"/></a></p>
 	</div>
 </div>
+<script type="text/javascript" src="/comments/ajax_funcLib.js"></script>
+	<script type="text/javascript" src="/comments/ajax_control.js"></script>
 <script src="http://www.bsmu.by/scripts/menu.js"
         type="text/javascript"></script>
 <script src="http://www.bsmu.by/scripts/lang_box.js"

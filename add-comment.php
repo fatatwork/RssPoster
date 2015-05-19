@@ -2,13 +2,13 @@
 session_start();
 require_once 'funcLib.php';
 
+$page_adress            = $_SESSION['page_adress'];		
 if ( isset( $_COOKIE['first_name'], $_COOKIE['last_name'] ) ) {
 	$username['first_name'] = $_COOKIE['first_name'];
 	$username['last_name']  = $_COOKIE['last_name'];
 	$username['image']		= $_COOKIE['image'];
 	$username['network']    = $_COOKIE['network'];
 	$username['identity']   = $_COOKIE['identity'];
-	$page_adress            = $_COOKIE['page_adress'];
 	$boolCheckCookie        = true;
 } else {
 		if ( isset( $_SESSION['first_name'], $_SESSION['last_name'] ) ) {
@@ -17,10 +17,8 @@ if ( isset( $_COOKIE['first_name'], $_COOKIE['last_name'] ) ) {
 			$username['image']		= $_SESSION['image'];
 			$username['network']    = $_SESSION['network'];
 			$username['identity']   = $_SESSION['identity'];
-			$page_adress            = $_SESSION['page_adress'];		
 		}
 }
-
 if(isset($_POST['currentComment'])){
 	$comment = trim( $_POST['currentComment'] );
 	$user_ip=$_SERVER["REMOTE_ADDR"];

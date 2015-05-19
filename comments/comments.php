@@ -20,15 +20,15 @@ if($_GET){
 									<input type='radio'  name='ban' value='month'/>Месяц
 									<input type='radio'  name='ban' value='year'/>Год
 									<input type='radio'  name='ban' value='forever'/>Навсегда<br />
-									<button type='submit' name='user_id' value='".$comment['user_id']."'/>забанить</button>
-									<button type='submit' name='comment_id' value='".$comment['id']."'/>удалить</button>
-									<input type='reset' value='очистить'/>
+									<button type='submit' name='user_id' value='".$comment['user_id']."'>забанить</button>
+									<button type='submit' name='comment_id' value='".$comment['id']."'>удалить</button>
+									<input type='reset' value='сбросить'/>
 								</div>
 				 			 </form>";
 				} else {
 						echo 
 						"<form action='".$_SERVER['REQUEST_URI']."' method = 'POST'>".
-							"<button type='submit' name='unban_user_id' value='".$comment['user_id']."'/>разбанить</button>
+							"<button type='submit' name='unban_user_id' value='".$comment['user_id']."'>разбанить</button>
 						</form>";
 						}
 					echo "</li><br />";

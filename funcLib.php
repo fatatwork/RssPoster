@@ -78,18 +78,14 @@ function addComment( $article_id, $user_id, $comment ) {//добавляем к�
 	if ( $ban_time[0] != 0 ) {
 		return false;
 	}
-
-	$add_time = time();
+	$time=time();
 	$query  = "INSERT INTO comments (news_id, user_id, comment, add_time) 
-	          VALUES ('{$article_id}', '{$user_id}', '{$comment}', '{$add_time}');";
+	          VALUES ('{$article_id}', '{$user_id}', '{$comment}', NOW());";
 	$res = mysql_query( $query )
 	or die( "<p>Невозможно сделать запись комментария: " . mysql_error()
 	        . "</p>" );
-	if ( $res ) {
-		return true;
-	} else {
-		return false;
-	}
+	if ( $res )	return true;
+    else return false;
 }
 
 function getComments( $page_adress ) {
@@ -105,13 +101,12 @@ function getComments( $page_adress ) {
 	        . "</p>" );
 	$commentArray = array();
 	while ( $row = mysql_fetch_array( $result_obj ) ) { //Сюда должна лечь новая строка ассоциативного массива
-		$row['add_time'] = date( "d.m.y - H:i", $row['add_time'] ); //преобразуем время к формату
+		//$row['add_time'] = date( "d.m.y - H:i", $row['add_time'] ); //преобразуем время к формату
 		array_push( $commentArray, $row );
 	}
 
 	return $commentArray;
 }
-
 function getUsers() {
 	$query = "SELECT * FROM users ORDER BY last_name";
 	$result = mysql_query( $query )
