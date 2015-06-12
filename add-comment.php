@@ -41,8 +41,9 @@ $commentOut = array_reverse($commentOut, true);
 if(is_array($commentOut)){
 	foreach($commentOut as $comment){
 		echo "<div class=\"comment\">".
+		/*вывод аватарки
 		"<a href=\"http://vk.com/id".$comment['network_url']."\">".
-		"<img src=\"".$comment['image']."\"/></a>".
+		"<img src=\"".$comment['image']."\"/></a>".*/
 		"<span> <h4>"."<a href=\"http://vk.com/id".$comment['network_url']."\">".
 		$comment['first_name'] . " " . $comment['last_name'] . "</a> " 
 		. $comment['add_time'] . "</h4>" . $comment['comment']."</span>".

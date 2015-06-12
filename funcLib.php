@@ -78,7 +78,6 @@ function addComment( $article_id, $user_id, $comment ) {//добавляем к�
 	if ( $ban_time[0] != 0 ) {
 		return false;
 	}
-	$time=time();
 	$query  = "INSERT INTO comments (news_id, user_id, comment, add_time) 
 	          VALUES ('{$article_id}', '{$user_id}', '{$comment}', NOW());";
 	$res = mysql_query( $query )
