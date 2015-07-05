@@ -6,6 +6,7 @@
 <?php
 require_once 'VKclass.php';
 //инациализация вк
+//$token="c76ae506cd10e151a03b47f0ca8160552cb64ac8799bfddeecebd44674b4175ff25323df2933c530470fb&expires_in=0&user_id=152223765";
 $token    = '92b73575a455b69bd32a54215038a3a74e7997d73923a364bd93790912b7f576c18b813f440348dfb5321&expires_in=0&user_id=152223765';
 $delta    = '100';
 $app_id   = '4832378';
